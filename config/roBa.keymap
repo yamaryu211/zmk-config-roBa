@@ -72,7 +72,7 @@
 
         default_win {
             bindings = <
-&kp Q               &kp W        &kp E                &kp R         &kp T                                                    &kp Y            &kp U    &lt 5 I    &kp O           &kp P
+&kp Q               &kp W        &kp E                &kp R         &kp T                                                    &kp Y            &kp U    &lt 0 I    &kp O           &kp P
 &kp A               &kp S        &lt 4 D              &lt 2 F       &kp G             &kp ESCAPE                &none        &kp H            &lt 2 J  &lt 4 K    &mt LEFT_ALT L  &mt LCTRL MINUS
 &mt LEFT_SHIFT Z    &kp X        &kp C                &kp V         &kp B             &none                     &none        &kp N            &kp M    &kp COMMA  &kp DOT         &mt LEFT_SHIFT SLASH
 &lt 2 INT_MUHENKAN  &kp LS(F10)  &mt LEFT_WIN ESCAPE  &kp LEFT_ALT  &mt LCTRL DELETE  &mt LEFT_SHIFT SPACE      &lt 2 ENTER  &lt 4 BACKSPACE                                      &lt 6 INT_HENKAN
@@ -83,10 +83,10 @@
 
         default_mac {
             bindings = <
-&kp Q               &kp W        &kp E                    &kp R         &kp T                                                           &kp Y            &kp U    &lt 5 I    &kp O           &kp P
-&kp A               &kp S        &lt 5 D                  &lt 0 F       &kp G                    &kp ESCAPE                &none        &kp H            &lt 0 J  &lt 5 K    &mt LEFT_ALT L  &mt LEFT_COMMAND MINUS
+&kp Q               &kp W        &kp E                    &kp R         &kp T                                                           &kp Y            &kp U    &lt 0 I    &kp O           &kp P
+&kp A               &kp S        &lt 0 D                  &lt 0 F       &kp G                    &kp ESCAPE                &none        &kp H            &lt 0 J  &lt 0 K    &mt LEFT_ALT L  &mt LEFT_COMMAND MINUS
 &mt LEFT_SHIFT Z    &kp X        &kp C                    &kp V         &kp B                    &none                     &none        &kp N            &kp M    &kp COMMA  &kp DOT         &mt LEFT_SHIFT SLASH
-&lt 0 INT_MUHENKAN  &kp LS(F10)  &mt LEFT_CONTROL ESCAPE  &kp LEFT_ALT  &mt LEFT_COMMAND DELETE  &mt LEFT_SHIFT SPACE      &lt 0 ENTER  &lt 5 BACKSPACE                                      &lt 7 INT_HENKAN
+&lt 0 INT_MUHENKAN  &kp LS(F10)  &mt LEFT_CONTROL ESCAPE  &kp LEFT_ALT  &mt LEFT_COMMAND DELETE  &mt LEFT_SHIFT SPACE      &lt 0 ENTER  &lt 0 BACKSPACE                                      &lt 0 INT_HENKAN
             >;
 
             sensor-bindings = <&inc_dec_kp K_SCROLL_DOWN K_SCROLL_UP>;
@@ -99,6 +99,8 @@
 &kp KP_N0      &kp KP_NUMBER_1  &kp KP_NUMBER_2   &kp KP_NUMBER_3   &kp KP_EQUAL          &trans      &trans  &kp HOME    &kp PAGE_DOWN  &kp PAGE_UP  &kp END    &trans
 &mo 8          &trans           &kp LS(LEFT_WIN)  &kp LS(LEFT_ALT)  &kp LS(LEFT_CONTROL)  &trans      &trans  &trans                                             &mo 9
             >;
+
+            sensor-bindings = <&inc_dec_kp K_VOLUME_UP K_VOLUME_DOWN>;
         };
 
         num_mac {
@@ -108,6 +110,8 @@
 &kp KP_N0      &kp KP_NUMBER_1         &kp KP_NUMBER_2       &kp KP_NUMBER_3   &kp KP_EQUAL      &trans      &trans  &kp LG(LEFT)  &kp LG(DOWN)  &kp LG(UP)  &kp LG(RIGHT)  &trans
 &mo 8          &kp LC(LG(LEFT_SHIFT))  &kp LS(LEFT_CONTROL)  &kp LS(LEFT_ALT)  &kp LS(LEFT_GUI)  &trans      &trans  &trans                                                 &mo 9
             >;
+
+            sensor-bindings = <&inc_dec_kp K_VOLUME_UP K_VOLUME_DOWN>;
         };
 
         symbol_win {
@@ -117,50 +121,58 @@
 &trans       &kp ASTERISK       &kp COLON         &kp CARET         &kp GRAVE         &trans      &trans  &kp AMPERSAND  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans    &kp SLASH
 &trans       &trans             &kp LS(LEFT_GUI)  &kp LS(LEFT_ALT)  &kp LS(LCTRL)     &trans      &trans  &trans                                                                &trans
             >;
+
+            sensor-bindings = <&inc_dec_kp C_BRIGHTNESS_INC C_BRIGHTNESS_DEC>;
         };
 
         symbol_mac {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+&kp SQT      &kp DOUBLE_QUOTES  &kp EXCLAMATION  &kp QUESTION      &kp TILDE                             &kp BACKSLASH  &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans    &kp PERCENT
+&kp AT_SIGN  &kp SEMICOLON      &kp DOLLAR       &kp LESS_THAN     &kp GREATER_THAN  &trans      &trans  &kp HASH       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PIPE  &kp EQUAL
+&trans       &kp ASTERISK       &kp COLON        &kp CARET         &kp GRAVE         &trans      &trans  &kp AMPERSAND  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans    &kp SLASH
+&trans       &trans             &kp LS(LCTRL)    &kp LS(LEFT_ALT)  &kp LS(LEFT_GUI)  &trans      &trans  &trans                                                                &trans
             >;
+
+            sensor-bindings = <&inc_dec_kp C_BRIGHTNESS_INC C_BRIGHTNESS_DEC>;
         };
 
         func_scroll_win {
             bindings = <
-&trans  &trans        &trans        &trans        &trans                           &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans        &trans        &trans        &trans        &trans
-&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans      &bootloader  &trans        &trans        &trans        &trans        &bt BT_CLR
-&trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans                                                  &bt BT_CLR_ALL
+&kp F12  &kp F7      &kp F8  &kp F9  &trans                      &none         &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)  &none          &kp LS(LG(S))
+&kp F11  &kp F4      &kp F5  &kp F6  &trans  &trans      &trans  &kp LA(LEFT)  &kp LS(LC(TAB))  &kp LC(TAB)        &kp LA(RIGHT)  &trans
+&kp F10  &kp LC(F1)  &kp F2  &kp F3  &trans  &trans      &trans  &trans        &trans           &trans             &trans         &trans
+&trans   &trans      &trans  &trans  &trans  &trans      &trans  &trans                                                           &trans
             >;
+
+            sensor-bindings = <&inc_dec_kp LC(K_SCROLL_UP) LC(K_SCROLL_DOWN)>;
         };
 
         func_scroll_mac {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+&kp F12  &kp F7      &kp F8  &kp F9  &trans                      &none         &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)  &none          &kp LS(LG(NUMBER_4))
+&kp F11  &kp F4      &kp F5  &kp F6  &trans  &trans      &trans  &kp LG(LEFT)  &kp LS(LC(TAB))  &kp LC(TAB)        &kp LG(RIGHT)  &trans
+&kp F10  &kp LG(F1)  &kp F2  &kp F3  &trans  &trans      &trans  &trans        &trans           &trans             &trans         &trans
+&trans   &trans      &trans  &trans  &trans  &trans      &trans  &trans                                                           &trans
             >;
+
+            sensor-bindings = <&inc_dec_kp LG(K_SCROLL_UP) LG(K_SCROLL_DOWN)>;
         };
 
         aml {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB2  &mkp MB3  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans    &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                &trans
             >;
         };
 
         kbd_setting {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+&trans        &trans        &trans        &trans        &trans                                   &trans  &trans  &trans  &trans  &trans
+&trans        &bt BT_SEL 4  &trans        &trans        &trans  &bt BT_CLR          &trans       &trans  &trans  &trans  &trans  &trans
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &trans  &bt BT_CLR_ALL      &bootloader  &trans  &trans  &trans  &trans  &trans
+&trans        &trans        &trans        &trans        &trans  &trans              &trans       &trans                          &trans
             >;
         };
     };
