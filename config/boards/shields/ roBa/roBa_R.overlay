@@ -86,7 +86,7 @@ roBa_R.overlayに以下を追記すると、レイヤー4ではカーソル移�
 
         arrows {
             layers = <1 2>;
-            bindings = <&kp RIGHT_ARROW &kp LEFT_ARROW &kp UP_ARROW &kp DOWN_ARROW>;
+            bindings = <&kp RIGHT_ARROW>, <&kp LEFT_ARROW>, <&kp UP_ARROW>, <&kp DOWN_ARROW>;
             /*   optional: ball action configuration  */
             tick = <10>;
             // wait-ms = <5>;
