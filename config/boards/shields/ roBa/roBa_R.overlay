@@ -59,21 +59,7 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        // automouse-layer = <4>; //
-        scroll-layers = <6 7>; // スクロールレイヤーの複数指定
-        // レイヤー1と2で、トラックボールの動きを矢印キーに変換
-        arrows {
-            layers = <1 2>;
-            bindings =
-                <&kp RIGHT_ARROW>,
-                <&kp LEFT_ARROW>,
-                <&kp UP_ARROW>,
-                <&kp DOWN_ARROW>;
-            /*   optional: ball action configuration  */
-            tick = <10>;
-            // wait-ms = <5>;
-            // tap-ms = <5>;
-        };
+        scroll-layers = <6 7>;
     };
 };
 
@@ -95,6 +81,16 @@ roBa_R.overlayに以下を追記すると、レイヤー4ではカーソル移�
                 // <&zip_xy_scaler 3 2>,
                 <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
                 <&zip_xy_to_scroll_mapper>;
+        };
+
+        arrows {
+            layers = <1 2>;
+            bindings =
+                <&kp RIGHT_ARROW>,
+                <&kp LEFT_ARROW>,
+                <&kp UP_ARROW>,
+                <&kp DOWN_ARROW>;
+            tick = <10>;
         };
     };
 };
