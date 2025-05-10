@@ -1,4 +1,6 @@
 #include "roBa.dtsi"
+#include <input/processors.dtsi>
+#include <dt-bindings/zmk/input_transform.h>
 
 &default_transform {
     col-offset = <6>;
@@ -57,8 +59,43 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        automouse-layer = <4>;
-        scroll-layers = <5>;
+        // automouse-layer = <4>; //
+        scroll-layers = <6 7>; // スクロールレイヤーの複数指定
+        // レイヤー1と2で、トラックボールの動きを矢印キーに変換
+        arrows {
+            layers = <1 2>;
+            bindings =
+                <&kp RIGHT_ARROW>,
+                <&kp LEFT_ARROW>,
+                <&kp UP_ARROW>,
+                <&kp DOWN_ARROW>;
+            /*   optional: ball action configuration  */
+            tick = <10>;
+            // wait-ms = <5>;
+            // tap-ms = <5>;
+        };
+    };
+};
+
+// スクロールレイヤー
+/*
+roBa_R.overlayに以下を追記すると、レイヤー4ではカーソル移動がスクロールに変換される。 
+自分の試したところ、y方向のスクロールが逆になったので&zip_xy_transformで反転させている。 
+スクロール量が多すぎるor少なすぎる場合は、&zip_xy_scalerの部分をコメント解除して調整できる。
+<&zip_xy_scaler X Y> X: X軸（水平方向）のスケーリング係数, : Y軸（垂直方向）のスケーリング係数
+*/
+/ {
+    trackball_listener {
+        compatible = "zmk,input-listener";
+        device = <&trackball>;
+
+        scroller {
+            layers = <6 7>;
+            input-processors =
+                // <&zip_xy_scaler 3 2>,
+                <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
+                <&zip_xy_to_scroll_mapper>;
+        };
     };
 };
 
