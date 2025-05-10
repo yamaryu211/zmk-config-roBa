@@ -14,6 +14,9 @@
 #define AML 8
 #define KBD_SETTING 9
 
+// ロータリーエンコーダー: スクロール量変更の定義を追記
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 80
+
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;
@@ -72,6 +75,16 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
+        // ロータリーエンコーダーでスクロールする設定
+        // スクロール方向を逆にしたい場合は <&msc SCRL_DOWN> と <&msc SCRL_UP> を入れ替え
+        // 使い方: 設定したいレイヤーに sensor-bindings = <&encoder_msc_down_up>; を追記
+        encoder_msc_down_up: encoder_msc_down_up {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "ENCODER_MSC_DOWN_UP";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+            tap-ms = <20>;
+        };
     };
 
     keymap {
@@ -85,7 +98,7 @@
 &lt 2 INT_MUHENKAN  &kp LS(F10)  &mt LEFT_WIN ESCAPE  &kp LEFT_ALT  &mt LCTRL DELETE  &mt LEFT_SHIFT SPACE      &lt 2 ENTER  &lt 4 BACKSPACE                                      &lt 6 INT_HENKAN
             >;
 
-            sensor-bindings = <&inc_dec_kp K_SCROLL_DOWN K_SCROLL_UP>;
+            sensor-bindings = <&encoder_msc_down_up>;
         };
 
         DEFAULT_MAC {
@@ -96,7 +109,7 @@
 &lt 0 INT_MUHENKAN  &kp LS(F10)  &mt LEFT_CONTROL ESCAPE  &kp LEFT_ALT  &mt LEFT_COMMAND DELETE  &mt LEFT_SHIFT SPACE      &lt 0 ENTER  &lt 0 BACKSPACE                                      &lt 0 INT_HENKAN
             >;
 
-            sensor-bindings = <&inc_dec_kp K_SCROLL_DOWN K_SCROLL_UP>;
+            sensor-bindings = <&encoder_msc_down_up>;
         };
 
         NUM_WIN {
@@ -151,7 +164,7 @@
 &trans   &trans      &trans  &trans  &trans  &trans      &trans  &trans                                                           &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(K_SCROLL_UP) LC(K_SCROLL_DOWN)>;
+            sensor-bindings = <&encoder_msc_down_up>;
         };
 
         FUNC_SCROLL_MAC {
@@ -162,7 +175,7 @@
 &trans   &trans      &trans  &trans  &trans  &trans      &trans  &trans                                                           &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp LG(K_SCROLL_UP) LG(K_SCROLL_DOWN)>;
+            sensor-bindings = <&encoder_msc_down_up>;
         };
 
         AML {
