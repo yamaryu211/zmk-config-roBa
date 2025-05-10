@@ -1,0 +1,12 @@
+{
+  "files.associations": {
+    "*.keymap": "c",
+    "*.dtsi": "c",
+    "*.overlay": "c"
+  },
+  "C_Cpp.intelliSenseEngine": "default",
+  "C_Cpp.default.includePath": [
+    "${workspaceFolder}/**",
+    "${workspaceFolder}/config/**"
+  ]
+}
