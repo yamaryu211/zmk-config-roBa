@@ -5,11 +5,6 @@
     automouse-layer = <AML>;
     scroll-layers = <FUNC_SCROLL_MAC FUNC_SCROLL_WIN>;
     // snipe-layers = <3>;
-    input-processors =
-                <&zip_xy_scaler 3 2>,
-                <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-                <&zip_xy_to_scroll_mapper>;
-
     // スクロールレイヤー
     /*
     roBa_R.overlayに以下を追記すると、レイヤー4ではカーソル移動がスクロールに変換される。 
