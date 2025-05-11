@@ -1,7 +1,10 @@
 #include "roBa.dtsi"
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
-#include "roBa_L.keymap"
+
+#define FUNC_SCROLL_WIN 6
+#define FUNC_SCROLL_MAC 7
+
 
 &default_transform {
     col-offset = <6>;
