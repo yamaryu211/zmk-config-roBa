@@ -1,6 +1,6 @@
 #include "roBa_L.keymap"
 
-#include "boards/shields/Test/roBa_R.overlay"
+#include "boards/shields/roBa/roBa_R.overlay"
 &trackball {
     automouse-layer = <AML>;
     scroll-layers = <FUNC_SCROLL_MAC FUNC_SCROLL_WIN>;
