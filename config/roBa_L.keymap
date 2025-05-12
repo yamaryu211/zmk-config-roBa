@@ -160,13 +160,13 @@
 
         DEFAULT_WIN {
             bindings = <
-&kp Q               &kp W        &kp E                &kp R         &kp T                                                    &kp Y            &kp U    &lt 0 I    &kp O           &kp P
-&kp A               &kp S        &lt 4 D              &lt 2 F       &kp G             &kp ESCAPE                &none        &kp H            &lt 2 J  &lt 4 K    &mt LEFT_ALT L  &mt LCTRL MINUS
-&mt LEFT_SHIFT Z    &kp X        &kp C                &kp V         &kp B             &none                     &none        &kp N            &kp M    &kp COMMA  &kp DOT         &mt LEFT_SHIFT SLASH
-&lt 2 INT_MUHENKAN  &kp LS(F10)  &mt LEFT_WIN ESCAPE  &kp LEFT_ALT  &mt LCTRL DELETE  &mt LEFT_SHIFT SPACE      &lt 2 ENTER  &lt 4 BACKSPACE                                      &lt 6 INT_HENKAN
+&kp Q             &kp W        &kp E                &kp R         &kp T                                                    &kp Y            &kp U    &lt 0 I    &kp O           &kp P
+&kp A             &kp S        &lt 4 D              &lt 2 F       &kp G             &kp ESCAPE                &none        &kp H            &lt 2 J  &lt 4 K    &mt LEFT_ALT L  &mt LCTRL MINUS
+&mt LEFT_SHIFT Z  &kp X        &kp C                &kp V         &kp B             &none                     &none        &kp N            &kp M    &kp COMMA  &kp DOT         &mt LEFT_SHIFT SLASH
+&lt 2 LANGUAGE_2  &kp LS(F10)  &mt LEFT_WIN ESCAPE  &kp LEFT_ALT  &mt LCTRL DELETE  &mt LEFT_SHIFT SPACE      &lt 2 ENTER  &lt 4 BACKSPACE                                      &lt 6 LANGUAGE_1
             >;
 
-            sensor-bindings = <&encoder_msc_down_up>;
+            sensor-bindings = <&inc_dec_kp A B>;
         };
 
         DEFAULT_MAC {
