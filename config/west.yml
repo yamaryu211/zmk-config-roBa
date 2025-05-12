@@ -4,6 +4,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: yamaryu211
       url-base: https://github.com/yamaryu211
+    - name: caksoylar
+      url-base: https://github.com/caksoylar
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -11,6 +13,12 @@ manifest:
       import: app/west.yml
     - name: zmk-pmw3610-driver
       remote: yamaryu211
+      revision: main
+    - name: zmk-listeners
+      remote: ssbb
+      revision: v1
+    - name: zmk-rgbled-widget
+      remote: caksoylar
       revision: main
   self:
     path: config
