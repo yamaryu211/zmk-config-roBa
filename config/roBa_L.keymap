@@ -162,6 +162,7 @@
         };
 
         // リピート付きのSpace and Shift
+
         sands: space_and_shift {
             compatible = "zmk,behavior-hold-tap";
             label = "SPACE_AND_SHIFT";
@@ -179,10 +180,10 @@
 
         DEFAULT_WIN {
             bindings = <
-&kp Q             &kp W        &kp E                &kp R         &kp T                                                              &kp Y            &kp U    &lt 0 I    &kp O           &kp P
-&kp A             &kp S        &lt 4 D              &lt 2 F       &kp G             &none                     &kp ESCAPE             &kp H            &lt 2 J  &lt 4 K    &mt LEFT_ALT L  &mt LCTRL MINUS
-&mt LEFT_SHIFT Z  &kp X        &kp C                &kp V         &kp B             &kp LEFT_PARENTHESIS      &kp RIGHT_PARENTHESIS  &kp N            &kp M    &kp COMMA  &kp DOT         &mt LEFT_SHIFT SLASH
-&lt 2 LANGUAGE_2  &kp LS(F10)  &mt LEFT_WIN ESCAPE  &kp LEFT_ALT  &mt LCTRL DELETE  &mt LEFT_SHIFT SPACE      &lt 2 ENTER            &lt 4 BACKSPACE                                      &lt 6 LANGUAGE_1
+&kp Q             &kp W        &kp E                &kp R         &kp T                                                                 &kp Y            &kp U    &lt 0 I    &kp O           &kp P
+&kp A             &kp S        &lt 4 D              &lt 2 F       &kp G             &none                        &kp ESCAPE             &kp H            &lt 2 J  &lt 4 K    &mt LEFT_ALT L  &mt LCTRL MINUS
+&mt LEFT_SHIFT Z  &kp X        &kp C                &kp V         &kp B             &kp LEFT_PARENTHESIS         &kp RIGHT_PARENTHESIS  &kp N            &kp M    &kp COMMA  &kp DOT         &mt LEFT_SHIFT SLASH
+&lt 2 LANGUAGE_2  &kp LS(F10)  &mt LEFT_WIN ESCAPE  &kp LEFT_ALT  &mt LCTRL DELETE  &sands LEFT_SHIFT SPACE      &lt 2 ENTER            &lt 4 BACKSPACE                                      &lt 6 LANGUAGE_1
             >;
 
             sensor-bindings = <&encoder_msc_down_up>;
@@ -190,10 +191,10 @@
 
         DEFAULT_MAC {
             bindings = <
-&kp Q               &kp W        &kp E                    &kp R         &kp T                                                                     &kp Y            &kp U    &lt 0 I    &kp O           &kp P
-&kp A               &kp S        &lt 0 D                  &lt 0 F       &kp G                    &none                     &kp ESCAPE             &kp H            &lt 0 J  &lt 0 K    &mt LEFT_ALT L  &mt LEFT_COMMAND MINUS
-&mt LEFT_SHIFT Z    &kp X        &kp C                    &kp V         &kp B                    &kp LEFT_PARENTHESIS      &kp RIGHT_PARENTHESIS  &kp N            &kp M    &kp COMMA  &kp DOT         &mt LEFT_SHIFT SLASH
-&lt 0 INT_MUHENKAN  &kp LS(F10)  &mt LEFT_CONTROL ESCAPE  &kp LEFT_ALT  &mt LEFT_COMMAND DELETE  &mt LEFT_SHIFT SPACE      &lt 0 ENTER            &lt 0 BACKSPACE                                      &lt 0 INT_HENKAN
+&kp Q               &kp W        &kp E                    &kp R         &kp T                                                                        &kp Y            &kp U    &lt 0 I    &kp O           &kp P
+&kp A               &kp S        &lt 0 D                  &lt 0 F       &kp G                    &none                        &kp ESCAPE             &kp H            &lt 0 J  &lt 0 K    &mt LEFT_ALT L  &mt LEFT_COMMAND MINUS
+&mt LEFT_SHIFT Z    &kp X        &kp C                    &kp V         &kp B                    &kp LEFT_PARENTHESIS         &kp RIGHT_PARENTHESIS  &kp N            &kp M    &kp COMMA  &kp DOT         &mt LEFT_SHIFT SLASH
+&lt 0 INT_MUHENKAN  &kp LS(F10)  &mt LEFT_CONTROL ESCAPE  &kp LEFT_ALT  &mt LEFT_COMMAND DELETE  &sands LEFT_SHIFT SPACE      &lt 0 ENTER            &lt 0 BACKSPACE                                      &lt 0 INT_HENKAN
             >;
 
             sensor-bindings = <&encoder_msc_down_up>;
@@ -276,10 +277,10 @@
 
         KBD_SETTING {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                              &bt BT_CLR  &trans    &trans     &trans       &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &bt BT_CLR_ALL  &bt0_win    &bt1_mac  &bt2_iPad  &bt3_iPhone  &bt BT_SEL 4
-&trans  &trans  &trans  &trans  &trans  &trans      &bootloader     &trans      &trans    &trans     &trans       &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans          &trans                                        &trans
+&trans  &trans  &trans  &trans  &trans                           &trans    &trans    &trans     &trans       &bt BT_CLR_ALL
+&trans  &trans  &trans  &trans  &trans  &trans      &bootloader  &bt0_win  &bt1_mac  &bt2_iPad  &bt3_iPhone  &bt BT_SEL 4
+&trans  &trans  &trans  &trans  &trans  &trans      &trans       &trans    &trans    &trans     &trans       &bt BT_CLR
+&trans  &trans  &trans  &trans  &trans  &trans      &trans       &trans                                      &trans
             >;
         };
     };
