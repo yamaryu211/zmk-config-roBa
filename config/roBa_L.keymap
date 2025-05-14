@@ -56,11 +56,6 @@
             bindings = <&mkp MB3>;
             key-positions = <18 20>;
         };
-
-        caps_word {
-            bindings = <&caps_word>;
-            key-positions = <30 31>;
-        };
     };
 
     macros {
