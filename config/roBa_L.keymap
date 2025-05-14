@@ -160,6 +160,18 @@
             display-name = "Toggle Layer Off";
             toggle-mode = "off";
         };
+
+        // リピート付きのSpace and Shift
+        sands: space_and_shift {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SPACE_AND_SHIFT";
+            #binding-cells = <2>;
+            flavor = "tap-unless-interrupted";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <125>;
+            global-quick-tap;
+            bindings = <&kp>, <&kp>;
+        };
     };
 
     keymap {
