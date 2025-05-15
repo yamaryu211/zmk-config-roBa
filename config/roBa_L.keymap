@@ -168,7 +168,7 @@
             label = "SPACE_AND_SHIFT";
             #binding-cells = <2>;
             flavor = "tap-unless-interrupted";
-            tapping-term-ms = <180>;
+            tapping-term-ms = <220>;
             quick-tap-ms = <125>;
             global-quick-tap;
             bindings = <&kp>, <&kp>;
@@ -179,7 +179,7 @@
             label = "MT_AND_KP";
             #binding-cells = <2>;
             flavor = "tap-unless-interrupted";
-            tapping-term-ms = <180>;
+            tapping-term-ms = <220>;
             quick-tap-ms = <125>;
             global-quick-tap;
             bindings = <&mt>, <&kp>;
@@ -190,7 +190,7 @@
             label = "LT_AND_KP";
             #binding-cells = <2>;
             flavor = "tap-unless-interrupted";
-            tapping-term-ms = <180>;
+            tapping-term-ms = <220>;
             quick-tap-ms = <125>;
             global-quick-tap;
             bindings = <&lt>, <&kp>;
