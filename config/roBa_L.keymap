@@ -139,8 +139,8 @@
         // ロータリーエンコーダーでスクロールする設定
         // スクロール方向を逆にしたい場合は <&msc SCRL_DOWN> と <&msc SCRL_UP> を入れ替え
         // 使い方: 設定したいレイヤーに sensor-bindings = <&encoder_msc_down_up>; を追記
-
         // mac用
+
         encoder_msc_down_up: encoder_msc_down_up {
             compatible = "zmk,behavior-sensor-rotate";
             label = "ENCODER_MSC_DOWN_UP";
@@ -149,7 +149,9 @@
 
             tap-ms = <20>;
         };
+
         // windows用
+
         encoder_msc_up_down: encoder_msc_up_down {
             compatible = "zmk,behavior-sensor-rotate";
             label = "ENCODER_MSC_UP_DOWN";
@@ -158,7 +160,6 @@
 
             tap-ms = <20>;
         };
-
 
         // 接続先に応じてデフォルトレイヤーを変更するための動作
         // zmk studioで接続先ごとにマクロ設定する。
@@ -224,7 +225,7 @@
 &lt 2 LANGUAGE_2  &kp LS(F10)  &mt LEFT_WIN ESCAPE  &kp LEFT_ALT  &mt LCTRL DELETE  &mt LEFT_SHIFT SPACE      &lt 2 ENTER            &lt 4 BACKSPACE                                      &lt 6 LANGUAGE_1
             >;
 
-            sensor-bindings = <&encoder_msc_down_up>;
+            sensor-bindings = <&encoder_msc_up_down>;
         };
 
         DEFAULT_MAC {
