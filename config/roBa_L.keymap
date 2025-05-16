@@ -63,6 +63,11 @@
             bindings = <&mkp MB3>;
             key-positions = <18 20>;
         };
+
+        backspace {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <8 9>;
+        };
     };
 
     macros {
