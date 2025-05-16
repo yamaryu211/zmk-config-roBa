@@ -2,8 +2,8 @@
 
 #include "boards/shields/roBa/roBa_R.overlay"
 &trackball {
-    automouse-layer = <AML>;
-    scroll-layers = <FUNC_SCROLL_MAC FUNC_SCROLL_WIN>;
+    // automouse-layer = <AML>;
+    // scroll-layers = <FUNC_SCROLL_MAC FUNC_SCROLL_WIN>;
     // snipe-layers = <3>;
     // スクロールレイヤー
     /*
