@@ -26,11 +26,19 @@
         device = <&trackball>;
 
         // Macの場合
-        scroller {
-            layers = <FUNC_SCROLL_MAC FUNC_SCROLL_WIN>;
+        scroller_mac {
+            layers = <FUNC_SCROLL_MAC>;
             input-processors =
                 <&zip_xy_scaler 1 5>,
                 <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
+                <&zip_xy_to_scroll_mapper>;
+        };
+
+        // Windowsの場合
+        scroller_win {
+            layers = <FUNC_SCROLL_WIN>;
+            input-processors =
+                <&zip_xy_scaler 1 5>,
                 <&zip_xy_to_scroll_mapper>;
         };
     };
