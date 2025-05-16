@@ -230,7 +230,7 @@
         NUM_WIN {
             bindings = <
 &kp KP_DIVIDE  &kp N7  &kp N8            &kp N9            &kp KP_MULTIPLY                                            &kp ESCAPE  &none          &none        &none      &kp LA(PRINTSCREEN)
-&kp KP_MINUS   &kp N4  &kp N5            &kp N6            &kp KP_PLUS           &trans             &kp ESCAPE        &kp LEFT    &kp DOWN       &kp UP       &kp RIGHT  &trans
+&kp KP_MINUS   &kp N4  &kp N5            &kp N6            &kp KP_PLUS           &kp PERIOD         &kp ESCAPE        &kp LEFT    &kp DOWN       &kp UP       &kp RIGHT  &trans
 &kp N0         &kp N1  &kp N2            &kp N3            &kp KP_EQUAL          &kp LESS_THAN      &kp GREATER_THAN  &kp HOME    &kp PAGE_DOWN  &kp PAGE_UP  &kp END    &trans
 &mo 8          &trans  &kp LS(LEFT_WIN)  &kp LS(LEFT_ALT)  &kp LS(LEFT_CONTROL)  &trans             &trans            &trans                                             &mo 9
             >;
@@ -240,9 +240,9 @@
 
         NUM_MAC {
             bindings = <
-&kp KP_DIVIDE  &kp KP_NUMBER_7         &kp KP_NUMBER_8       &kp KP_NUMBER_9   &kp KP_MULTIPLY                                        &kp ESCAPE    &none         &none       &none          &kp LS(LG(NUMBER_4))
-&kp KP_MINUS   &kp KP_NUMBER_4         &kp KP_NUMBER_5       &kp KP_NUMBER_6   &kp KP_PLUS       &trans             &kp ESCAPE        &kp LEFT      &kp DOWN      &kp UP      &kp RIGHT      &trans
-&kp KP_N0      &kp KP_NUMBER_1         &kp KP_NUMBER_2       &kp KP_NUMBER_3   &kp KP_EQUAL      &kp LESS_THAN      &kp GREATER_THAN  &kp LG(LEFT)  &kp LG(DOWN)  &kp LG(UP)  &kp LG(RIGHT)  &trans
+&kp KP_DIVIDE  &kp N7                  &kp N8                &kp N9            &kp KP_MULTIPLY                                        &kp ESCAPE    &none         &none       &none          &kp LS(LG(NUMBER_4))
+&kp KP_MINUS   &kp N4                  &kp N5                &kp N6            &kp KP_PLUS       &kp PERIOD         &kp ESCAPE        &kp LEFT      &kp DOWN      &kp UP      &kp RIGHT      &trans
+&kp N0         &kp N1                  &kp N2                &kp N3            &kp KP_EQUAL      &kp LESS_THAN      &kp GREATER_THAN  &kp LG(LEFT)  &kp LG(DOWN)  &kp LG(UP)  &kp LG(RIGHT)  &trans
 &mo 8          &kp LC(LG(LEFT_SHIFT))  &kp LS(LEFT_CONTROL)  &kp LS(LEFT_ALT)  &kp LS(LEFT_GUI)  &trans             &trans            &trans                                                 &mo 9
             >;
 
