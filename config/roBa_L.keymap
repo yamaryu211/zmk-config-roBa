@@ -257,7 +257,7 @@
 &trans       &trans             &kp LS(LEFT_GUI)  &kp LS(LEFT_ALT)  &kp LS(LCTRL)     &trans              &trans           &trans                                                                &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
+            sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
         };
 
         SYMBOL_MAC {
@@ -279,7 +279,7 @@
 &trans   &trans      &trans  &trans  &trans  &trans                &trans             &trans                                                           &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_BRIGHTNESS_INC C_BRIGHTNESS_DEC>;
+            sensor-bindings = <&inc_dec_kp C_BRIGHTNESS_DEC C_BRIGHTNESS_INC>;
         };
 
         FUNC_SCROLL_MAC {
