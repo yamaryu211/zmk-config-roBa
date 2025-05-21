@@ -140,7 +140,6 @@
         // スクロール方向を逆にしたい場合は <&msc SCRL_DOWN> と <&msc SCRL_UP> を入れ替え
         // 使い方: 設定したいレイヤーに sensor-bindings = <&encoder_msc_down_up>; を追記
         // mac用
-
         encoder_msc_down_up: encoder_msc_down_up {
             compatible = "zmk,behavior-sensor-rotate";
             label = "ENCODER_MSC_DOWN_UP";
@@ -151,7 +150,6 @@
         };
 
         // windows用
-
         encoder_msc_up_down: encoder_msc_up_down {
             compatible = "zmk,behavior-sensor-rotate";
             label = "ENCODER_MSC_UP_DOWN";
@@ -161,9 +159,17 @@
             tap-ms = <20>;
         };
 
+        // Ctrl+スクロール (Windows用)
+        encoder_msc_ctrl_up_down: encoder_msc_ctrl_up_down {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "ENCODER_MSC_CTRL_UP_DOWN";
+            #sensor-binding-cells = <0>;
+            bindings = <&kp LCTRL &msc SCRL_UP>, <&kp LCTRL &msc SCRL_DOWN>;
+        }
+        
+
         // 接続先に応じてデフォルトレイヤーを変更するための動作
         // zmk studioで接続先ごとにマクロ設定する。
-
         tog_on: toggle_layer_on_only {
             compatible = "zmk,behavior-toggle-layer";
             #binding-cells = <1>;
