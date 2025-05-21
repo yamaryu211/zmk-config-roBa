@@ -170,9 +170,9 @@
             bindings = <&sk LCTRL &msc SCRL_UP>, <&sk LCTRL &msc SCRL_DOWN>;
         };
 
-
         // 接続先に応じてデフォルトレイヤーを変更するための動作
         // zmk studioで接続先ごとにマクロ設定する。
+
         tog_on: toggle_layer_on_only {
             compatible = "zmk,behavior-toggle-layer";
             #binding-cells = <1>;
@@ -187,8 +187,8 @@
             toggle-mode = "off";
         };
 
-
         // リピート付きのSpace and Shift
+
         sands: space_and_shift {
             compatible = "zmk,behavior-hold-tap";
             label = "SPACE_AND_SHIFT";
@@ -300,7 +300,7 @@
 &trans   &trans      &trans  &trans  &trans  &trans                &trans             &trans                                                           &trans
             >;
 
-            sensor-bindings = <&encoder_msc_ctrl_up_down>;
+            sensor-bindings = <&inc_dec_kp LC(MINUS) LC(PLUS)>;
         };
 
         FUNC_SCROLL_MAC {
