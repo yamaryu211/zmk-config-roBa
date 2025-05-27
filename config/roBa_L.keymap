@@ -126,17 +126,32 @@
         };
 
         // AML起動中にスクロールレイヤに入るためのマクロ(zaruSaruさん実装)
+
         to_scroll_layer_win: to_scroll_layer_win {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to FUNC_SCROLL_WIN>, <&macro_press &mo FUNC_SCROLL_WIN>, <&macro_pause_for_release>, <&macro_release &mo FUNC_SCROLL_WIN>;
+            bindings =
+                <&to FUNC_SCROLL_WIN>,
+                <&macro_press>,
+                <&mo FUNC_SCROLL_WIN>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&mo FUNC_SCROLL_WIN>;
+
             label = "TO_SCROLL_LAYER_WIN";
         };
 
         to_scroll_layer_mac: to_scroll_layer_mac {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to FUNC_SCROLL_MAC>, <&macro_press &mo FUNC_SCROLL_MAC>, <&macro_pause_for_release>, <&macro_release &mo FUNC_SCROLL_MAC>;
+            bindings =
+                <&to FUNC_SCROLL_MAC>,
+                <&macro_press>,
+                <&mo FUNC_SCROLL_MAC>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&mo FUNC_SCROLL_MAC>;
+
             label = "TO_SCROLL_LAYER_MAC";
         };
     };
@@ -332,9 +347,9 @@
         AML {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB2  &mkp MB3  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB2  &mkp MB3  &to_scroll_layer_mac
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                &to_scroll_layer_win
             >;
         };
 
