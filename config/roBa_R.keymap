@@ -38,6 +38,6 @@
     };
 };
 
-&mkp_input_listener {
-    input-processors = <&zip_temp_layer AML 180>;
-};
+// &mkp_input_listener {
+//     input-processors = <&zip_temp_layer AML 180>;
+// };

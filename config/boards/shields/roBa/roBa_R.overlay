@@ -29,7 +29,7 @@
         scroller_mac {
             layers = <FUNC_SCROLL_MAC>;
             input-processors =
-                <&zip_xy_scaler 1 5>,
+                <&zip_xy_scaler 1 8>,
                 <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
                 <&zip_xy_to_scroll_mapper>;
         };
@@ -38,7 +38,7 @@
         scroller_win {
             layers = <FUNC_SCROLL_WIN>;
             input-processors =
-                <&zip_xy_scaler 1 5>,
+                <&zip_xy_scaler 1 8>,
                 <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
                 <&zip_xy_to_scroll_mapper>;
         };
