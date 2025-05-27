@@ -2,7 +2,7 @@
 
 #include "boards/shields/roBa/roBa_R.overlay"
 &trackball {
-    automouse-layer = <AML>;
+    automouse-layer = <AML_WIN AML_MAC>;
     // scroll-layers = <FUNC_SCROLL_MAC FUNC_SCROLL_WIN>;
     // snipe-layers = <3>;
     // スクロールレイヤー
@@ -39,5 +39,5 @@
 };
 
 &mkp_input_listener {
-    input-processors = <&zip_temp_layer AML 180>;
+    input-processors = <&zip_temp_layer AML_WIN 180>, <&zip_temp_layer AML_MAC 180>;
 };
