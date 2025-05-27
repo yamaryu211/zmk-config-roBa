@@ -11,9 +11,8 @@
 #define SYMBOL_MAC 5
 #define FUNC_SCROLL_WIN 6
 #define FUNC_SCROLL_MAC 7
-#define AML_WIN 8
-#define AML_MAC 9
-#define KBD_SETTING 10
+#define AML 8
+#define KBD_SETTING 9
 
 // ロータリーエンコーダー: スクロール量変更の定義を追記
 
@@ -132,12 +131,12 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&to FUNC_SCROLL_WIN>,
+                <&to 6>,
                 <&macro_press>,
-                <&mo FUNC_SCROLL_WIN>,
+                <&mo 6>,
                 <&macro_pause_for_release>,
                 <&macro_release>,
-                <&mo FUNC_SCROLL_WIN>;
+                <&mo 6>;
 
             label = "TO_SCROLL_LAYER_WIN";
         };
@@ -146,12 +145,12 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&to FUNC_SCROLL_MAC>,
+                <&to 7>,
                 <&macro_press>,
-                <&mo FUNC_SCROLL_MAC>,
+                <&mo 7>,
                 <&macro_pause_for_release>,
                 <&macro_release>,
-                <&mo FUNC_SCROLL_MAC>;
+                <&mo 7>;
 
             label = "TO_SCROLL_LAYER_MAC";
         };
