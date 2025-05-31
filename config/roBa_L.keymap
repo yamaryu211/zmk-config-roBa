@@ -16,7 +16,7 @@
 
 // ロータリーエンコーダー: スクロール量変更の定義を追記
 
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 80
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 120
 
 &mt {
     flavor = "balanced";
@@ -81,7 +81,7 @@
         bt0_win: bt0 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&tog_off 1>, <&macro_wait_time 200>, <&bt BT_SEL 0>;
+            bindings = <&tog_off 1>, <&macro_wait_time 200>, <&bt BT_SEL 0>, <&bt BT_DISC 1>, <&bt BT_DISC 2>, <&bt BT_DISC 3>, <&bt BT_DISC 4>;
 
             label = "BT0";
         };
@@ -93,6 +93,10 @@
                 <&tog_off 1>,
                 <&macro_wait_time 200>,
                 <&bt BT_SEL 1>,
+                <&bt BT_DISC 0>,
+                <&bt BT_DISC 2>,
+                <&bt BT_DISC 3>,
+                <&bt BT_DISC 4>,
                 <&macro_wait_time 500>,
                 <&tog_on 1>;
 
@@ -106,6 +110,10 @@
                 <&tog_off 1>,
                 <&macro_wait_time 200>,
                 <&bt BT_SEL 2>,
+                <&bt BT_DISC 0>,
+                <&bt BT_DISC 1>,
+                <&bt BT_DISC 3>,
+                <&bt BT_DISC 4>,
                 <&macro_wait_time 500>,
                 <&tog_on 1>;
 
@@ -119,6 +127,10 @@
                 <&tog_off 1>,
                 <&macro_wait_time 200>,
                 <&bt BT_SEL 3>,
+                <&bt BT_DISC 0>,
+                <&bt BT_DISC 1>,
+                <&bt BT_DISC 2>,
+                <&bt BT_DISC 4>,
                 <&macro_wait_time 500>,
                 <&tog_on 1>;
 
