@@ -20,3 +20,9 @@ config ZMK_SPLIT
     default y
 
 endif
+
+config MOD_SCROLL_MODE
+    bool "Enable modified scroll mode"
+    default n
+    help
+      Enable modified scroll mode for trackball scroll
