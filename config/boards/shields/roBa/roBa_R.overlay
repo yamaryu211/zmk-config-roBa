@@ -2,8 +2,8 @@
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 
-#define SYMBOL_MAC 4
-#define SYMBOL_WIN 5
+#define SYMBOL_WIN 4
+#define SYMBOL_MAC 5
 #define FUNC_SCROLL_WIN 6
 #define FUNC_SCROLL_MAC 7
 
