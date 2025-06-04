@@ -39,7 +39,14 @@
         // };
 
         // Windowsの場合
-
+        // scroller_win {
+        //     layers = <FUNC_SCROLL_WIN>;
+        //     input-processors =
+        //         <&zip_xy_scaler 1 8>,
+        //         <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
+        //         <&zip_xy_to_scroll_mapper>;
+        //     status = "disabled";
+        // };
 
         // 縦横分離のスクロール挙動
         // Mac
