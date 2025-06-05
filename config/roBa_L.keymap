@@ -173,6 +173,7 @@
         // スクロール方向を逆にしたい場合は <&msc SCRL_DOWN> と <&msc SCRL_UP> を入れ替え
         // 使い方: 設定したいレイヤーに sensor-bindings = <&encoder_msc_down_up>; を追記
         // mac用
+
         encoder_msc_down_up: encoder_msc_down_up {
             compatible = "zmk,behavior-sensor-rotate";
             label = "ENCODER_MSC_DOWN_UP";
@@ -181,8 +182,10 @@
 
             tap-ms = <20>;
         };
+
         //
         // windows用
+
         encoder_msc_up_down: encoder_msc_up_down {
             compatible = "zmk,behavior-sensor-rotate";
             label = "ENCODER_MSC_UP_DOWN";
@@ -193,6 +196,7 @@
         };
 
         // Ctrl+スクロール (Windows用)
+
         encoder_msc_ctrl_up_down: encoder_msc_ctrl_up_down {
             compatible = "zmk,behavior-sensor-rotate";
             label = "ENCODER_MSC_CTRL_UP_DOWN";
@@ -202,6 +206,7 @@
 
         // 接続先に応じてデフォルトレイヤーを変更するための動作
         // zmk studioで接続先ごとにマクロ設定する。
+
         tog_on: toggle_layer_on_only {
             compatible = "zmk,behavior-toggle-layer";
             #binding-cells = <1>;
@@ -217,6 +222,7 @@
         };
 
         // リピート付きのSpace and Shift
+
         sands: space_and_shift {
             compatible = "zmk,behavior-hold-tap";
             label = "SPACE_AND_SHIFT";
@@ -255,10 +261,12 @@
         // Shift: Shift+←/→
         // Alt: Win+↑/↓
         // Ctrl: Win+←/→
+
         shift_p: shift_p {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp 0>, <&kp LG(LEFT)>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
             keep-mods = <(MOD_LSFT)>;
         };
@@ -267,6 +275,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&shift_p>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -274,6 +283,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp 0>, <&kp LG(UP)>;
+
             mods = <(MOD_LALT|MOD_RALT)>;
         };
 
@@ -281,6 +291,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp 0>, <&kp LG(LEFT)>;
+
             mods = <(MOD_LGUI|MOD_RGUI)>;
         };
 
@@ -288,13 +299,15 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&alt_p>, <&win_p>;
+
             mods = <(MOD_LGUI|MOD_RGUI)>;
         };
-        
+
         mod_morph_encoder_p: mod_morph_encoder_p {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&shift_default_p>, <&alt_win_p>;
+
             mods = <(MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI)>;
         };
 
@@ -302,14 +315,16 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp 0>, <&kp LG(RIGHT)>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
             keep-mods = <(MOD_LSFT)>;
         };
-        
+
         shift_default_n: shift_default_n {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&shift_n>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -317,6 +332,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp 0>, <&kp LG(DOWN)>;
+
             mods = <(MOD_LALT|MOD_RALT)>;
         };
 
@@ -324,6 +340,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp 0>, <&kp LG(RIGHT)>;
+
             mods = <(MOD_LGUI|MOD_RGUI)>;
         };
 
@@ -331,6 +348,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&alt_n>, <&win_n>;
+
             mods = <(MOD_LGUI|MOD_RGUI)>;
         };
 
@@ -338,6 +356,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&shift_default_n>, <&alt_win_n>;
+
             mods = <(MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI)>;
         };
 
@@ -345,6 +364,7 @@
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&mod_morph_encoder_n>, <&mod_morph_encoder_p>;
+
             tap-ms = <10>;
         };
     };
@@ -360,7 +380,7 @@
 &lt 2 LANGUAGE_2  &kp LS(F10)  &mt LEFT_WIN ESCAPE  &kp LEFT_ALT  &mt LCTRL DELETE  &mt LEFT_SHIFT SPACE      &lt 2 ENTER            &lt 4 BACKSPACE                                      &lt 6 LANGUAGE_1
             >;
 
-            sensor-bindings = <&encoder_msc_up_down>;
+            sensor-bindings = <&mod_morph_encoder>;
         };
 
         DEFAULT_MAC {
@@ -382,7 +402,7 @@
 &mo 9          &trans  &kp LS(LEFT_WIN)  &kp LS(LEFT_ALT)  &kp LS(LEFT_CONTROL)  &trans             &trans            &trans                                             &mo 9
             >;
 
-            sensor-bindings = <&inc_dec_kp LEFT_ARROW RIGHT>;
+            sensor-bindings = <&mod_morph_encoder>;
         };
 
         NUM_MAC {
@@ -404,7 +424,7 @@
 &trans       &trans             &kp LS(LEFT_GUI)  &kp LS(LEFT_ALT)  &kp LS(LCTRL)     &trans              &trans           &trans                                                                &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
+            sensor-bindings = <&mod_morph_encoder>;
         };
 
         SYMBOL_MAC {
@@ -426,7 +446,7 @@
 &trans   &trans      &trans  &trans  &trans  &trans                &trans             &trans                                                           &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(MINUS) LC(PLUS)>;
+            sensor-bindings = <&mod_morph_encoder>;
         };
 
         FUNC_SCROLL_MAC {
