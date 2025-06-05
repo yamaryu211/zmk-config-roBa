@@ -173,7 +173,6 @@
         // スクロール方向を逆にしたい場合は <&msc SCRL_DOWN> と <&msc SCRL_UP> を入れ替え
         // 使い方: 設定したいレイヤーに sensor-bindings = <&encoder_msc_down_up>; を追記
         // mac用
-
         encoder_msc_down_up: encoder_msc_down_up {
             compatible = "zmk,behavior-sensor-rotate";
             label = "ENCODER_MSC_DOWN_UP";
@@ -182,9 +181,8 @@
 
             tap-ms = <20>;
         };
-
+        //
         // windows用
-
         encoder_msc_up_down: encoder_msc_up_down {
             compatible = "zmk,behavior-sensor-rotate";
             label = "ENCODER_MSC_UP_DOWN";
@@ -195,7 +193,6 @@
         };
 
         // Ctrl+スクロール (Windows用)
-
         encoder_msc_ctrl_up_down: encoder_msc_ctrl_up_down {
             compatible = "zmk,behavior-sensor-rotate";
             label = "ENCODER_MSC_CTRL_UP_DOWN";
@@ -205,7 +202,6 @@
 
         // 接続先に応じてデフォルトレイヤーを変更するための動作
         // zmk studioで接続先ごとにマクロ設定する。
-
         tog_on: toggle_layer_on_only {
             compatible = "zmk,behavior-toggle-layer";
             #binding-cells = <1>;
@@ -221,7 +217,6 @@
         };
 
         // リピート付きのSpace and Shift
-
         sands: space_and_shift {
             compatible = "zmk,behavior-hold-tap";
             label = "SPACE_AND_SHIFT";
@@ -253,6 +248,104 @@
             quick-tap-ms = <125>;
             global-quick-tap;
             bindings = <&lt>, <&kp>;
+        };
+
+        // mod morphを使用したエンコーダーの挙動制御
+        // デフォルト: スクロール
+        // Shift: Shift+←/→
+        // Alt: Win+↑/↓
+        // Ctrl: Win+←/→
+        shift_p: shift_p {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp 0>, <&kp LG(LEFT)>;
+            mods = <(MOD_LSHIFT|MOD_RSHIFT)>;
+            keep-mods = <(MOD_LSHIFT)>;
+        };
+
+        shift_default_p: shift_default_p {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&msc SCRL_DOWN>, <&shift_p>;
+            mods = <(MOD_LSHIFT|MOD_RSHIFT)>;
+        };
+
+        alt_p: alt_p {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp 0>, <&kp LG(UP)>;
+            mods = <(MOD_LALT|MOD_RALT)>;
+        };
+
+        win_p: win_p {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp 0>, <&kp LG(LEFT)>;
+            mods = <(MOD_LGUI|MOD_RGUI)>;
+        };
+
+        alt_win_p: alt_win_p {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&alt_p>, <&win_p>;
+            mods = <(MOD_LGUI|MOD_RGUI)>;
+        };
+        
+        mod_morph_encoder_p: mod_morph_encoder_p {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&shift_default_p>, <&alt_win_p>;
+            mods = <(MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI)>;
+        };
+
+        shift_n: shift_n {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp 0>, <&kp LG(RIGHT)>;
+            mods = <(MOD_LSHIFT|MOD_RSHIFT)>;
+            keep-mods = <(MOD_LSHIFT)>;
+        };
+        
+        shift_default_n: shift_default_n {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&msc SCRL_UP>, <&shift_n>;
+            mods = <(MOD_LSHIFT|MOD_RSHIFT)>;
+        };
+
+        alt_n: alt_n {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp 0>, <&kp LG(DOWN)>;
+            mods = <(MOD_LALT|MOD_RALT)>;
+        };
+
+        win_n: win_n {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp 0>, <&kp LG(RIGHT)>;
+            mods = <(MOD_LGUI|MOD_RGUI)>;
+        };
+
+        alt_win_n: alt_win_n {
+            ccompatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&alt_n>, <&win_n>;
+            mods = <(MOD_LGUI|MOD_RGUI)>;
+        };
+
+        mod_morph_encoder_n: mod_morph_encoder_n {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&shift_default_n>, <&alt_win_n>;
+            mods = <(MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI)>;
+        };
+
+        mod_morph_encoder: mod_morph_encoder {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&mod_morph_encoder_n>, <&mod_morph_encoder_p>;
+            tap-ms = <10>;
         };
     };
 
