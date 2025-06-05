@@ -274,7 +274,7 @@
         shift_default_p: shift_default_p {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&encoder_msc_up_down>, <&shift_p>;
+            bindings = <&msc SCRL_DOWN>, <&shift_p>;
 
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
@@ -323,7 +323,7 @@
         shift_default_n: shift_default_n {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&encoder_msc_up_down>, <&shift_n>;
+            bindings = <&msc SCRL_UP>, <&shift_n>;
 
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
@@ -365,7 +365,7 @@
             #sensor-binding-cells = <0>;
             bindings = <&mod_morph_encoder_n>, <&mod_morph_encoder_p>;
 
-            tap-ms = <10>;
+            tap-ms = <20>;
         };
     };
 
