@@ -328,7 +328,7 @@
         };
 
         alt_win_n: alt_win_n {
-            ccompatible = "zmk,behavior-mod-morph";
+            compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&alt_n>, <&win_n>;
             mods = <(MOD_LGUI|MOD_RGUI)>;
