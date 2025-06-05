@@ -259,15 +259,15 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp 0>, <&kp LG(LEFT)>;
-            mods = <(MOD_LSHIFT|MOD_RSHIFT)>;
-            keep-mods = <(MOD_LSHIFT)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LSFT)>;
         };
 
         shift_default_p: shift_default_p {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&shift_p>;
-            mods = <(MOD_LSHIFT|MOD_RSHIFT)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         alt_p: alt_p {
@@ -302,15 +302,15 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp 0>, <&kp LG(RIGHT)>;
-            mods = <(MOD_LSHIFT|MOD_RSHIFT)>;
-            keep-mods = <(MOD_LSHIFT)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LSFT)>;
         };
         
         shift_default_n: shift_default_n {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&shift_n>;
-            mods = <(MOD_LSHIFT|MOD_RSHIFT)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         alt_n: alt_n {
