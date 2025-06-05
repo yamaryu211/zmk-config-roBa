@@ -183,6 +183,7 @@
             tap-ms = <20>;
         };
 
+        //
         // windows用
 
         encoder_msc_up_down: encoder_msc_up_down {
@@ -254,6 +255,118 @@
             global-quick-tap;
             bindings = <&lt>, <&kp>;
         };
+
+        // mod morphを使用したエンコーダーの挙動制御
+        // デフォルト: スクロール
+        // Shift: Shift+←/→
+        // Alt: Win+↑/↓
+        // Ctrl: Win+←/→
+
+        shift_p: shift_p {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp 0>, <&kp LG(LEFT)>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LSFT)>;
+        };
+
+        shift_default_p: shift_default_p {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&msc SCRL_DOWN>, <&shift_p>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        alt_p: alt_p {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp 0>, <&kp LG(UP)>;
+
+            mods = <(MOD_LALT|MOD_RALT)>;
+        };
+
+        win_p: win_p {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp 0>, <&kp LG(LEFT)>;
+
+            mods = <(MOD_LGUI|MOD_RGUI)>;
+        };
+
+        alt_win_p: alt_win_p {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&alt_p>, <&win_p>;
+
+            mods = <(MOD_LGUI|MOD_RGUI)>;
+        };
+
+        mod_morph_encoder_p: mod_morph_encoder_p {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&shift_default_p>, <&alt_win_p>;
+
+            mods = <(MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI)>;
+        };
+
+        shift_n: shift_n {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp 0>, <&kp LG(RIGHT)>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LSFT)>;
+        };
+
+        shift_default_n: shift_default_n {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&msc SCRL_UP>, <&shift_n>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        alt_n: alt_n {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp 0>, <&kp LG(DOWN)>;
+
+            mods = <(MOD_LALT|MOD_RALT)>;
+        };
+
+        win_n: win_n {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp 0>, <&kp LG(RIGHT)>;
+
+            mods = <(MOD_LGUI|MOD_RGUI)>;
+        };
+
+        alt_win_n: alt_win_n {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&alt_n>, <&win_n>;
+
+            mods = <(MOD_LGUI|MOD_RGUI)>;
+        };
+
+        mod_morph_encoder_n: mod_morph_encoder_n {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&shift_default_n>, <&alt_win_n>;
+
+            mods = <(MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI)>;
+        };
+
+        mod_morph_encoder: mod_morph_encoder {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&mod_morph_encoder_n>, <&mod_morph_encoder_p>;
+
+            tap-ms = <20>;
+        };
     };
 
     keymap {
@@ -267,7 +380,7 @@
 &lt 2 LANGUAGE_2  &kp LS(F10)  &mt LEFT_WIN ESCAPE  &kp LEFT_ALT  &mt LCTRL DELETE  &mt LEFT_SHIFT SPACE      &lt 2 ENTER            &lt 4 BACKSPACE                                      &lt 6 LANGUAGE_1
             >;
 
-            sensor-bindings = <&encoder_msc_up_down>;
+            sensor-bindings = <&mod_morph_encoder>;
         };
 
         DEFAULT_MAC {
@@ -289,7 +402,7 @@
 &mo 9          &trans  &kp LS(LEFT_WIN)  &kp LS(LEFT_ALT)  &kp LS(LEFT_CONTROL)  &trans             &trans            &trans                                             &mo 9
             >;
 
-            sensor-bindings = <&inc_dec_kp LEFT_ARROW RIGHT>;
+            sensor-bindings = <&mod_morph_encoder>;
         };
 
         NUM_MAC {
@@ -311,7 +424,7 @@
 &trans       &trans             &kp LS(LEFT_GUI)  &kp LS(LEFT_ALT)  &kp LS(LCTRL)     &trans              &trans           &trans                                                                &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
+            sensor-bindings = <&mod_morph_encoder>;
         };
 
         SYMBOL_MAC {
@@ -333,7 +446,7 @@
 &trans   &trans      &trans  &trans  &trans  &trans                &trans             &trans                                                           &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(MINUS) LC(PLUS)>;
+            sensor-bindings = <&mod_morph_encoder>;
         };
 
         FUNC_SCROLL_MAC {
