@@ -446,15 +446,6 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        gui_n: gui_n {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp 0>, <&kp LG(PLUS)>;
-
-            mods = <(MOD_LGUI|MOD_RGUI)>;
-            keep-mods = <(MOD_LGUI)>;
-        };
-
         ctrl_n: ctrl_n {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
