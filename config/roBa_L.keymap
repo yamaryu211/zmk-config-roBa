@@ -68,6 +68,11 @@
             bindings = <&kp BACKSPACE>;
             key-positions = <8 9>;
         };
+
+        Globe {
+            bindings = <&kp RIGHT_ALT>;
+            key-positions = <34 42>;
+        };
     };
 
     macros {
