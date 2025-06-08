@@ -380,7 +380,7 @@
         // Shift: Shift+←/→
         // Alt: Win+↑/↓
         // Ctrl: Win+←/→
-        // positive: 手前
+        // positive: 奥
 
         gui_p: gui_p {
             compatible = "zmk,behavior-mod-morph";
@@ -405,7 +405,7 @@
             bindings = <&kp 0>, <&kp LG(LEFT)>;
 
             mods = <(MOD_LCTL|MOD_RCTL)>;
-            keep-mods = <(MOD_LALT)>;
+            keep-mods = <(MOD_LALT|MOD_LCTL)>;
         };
 
         opt_p: opt_p {
@@ -414,7 +414,7 @@
             bindings = <&kp 0>, <&kp LG(UP)>;
 
             mods = <(MOD_LALT|MOD_RALT)>;
-            keep-mods = <(MOD_LALT)>;
+            keep-mods = <(MOD_LALT|MOD_LCTL)>;
         };
 
         opt_ctrl_p: opt_ctrl_p {
@@ -433,7 +433,7 @@
             mods = <(MOD_LALT|MOD_RALT|MOD_LCTL|MOD_RCTL)>;
         };
 
-        // negative: 奥
+        // negative: 手前
 
         gui_n: gui_n {
             compatible = "zmk,behavior-mod-morph";
@@ -458,7 +458,7 @@
             bindings = <&kp 0>, <&kp LG(RIGHT)>;
 
             mods = <(MOD_LCTL|MOD_RCTL)>;
-            keep-mods = <(MOD_LALT)>;
+            keep-mods = <(MOD_LALT|MOD_LCTL)>;
         };
 
         opt_n: opt_n {
@@ -467,7 +467,7 @@
             bindings = <&kp 0>, <&kp LG(DOWN)>;
 
             mods = <(MOD_LALT|MOD_RALT)>;
-            keep-mods = <(MOD_LALT)>;
+            keep-mods = <(MOD_LALT|MOD_LCTL)>;
         };
 
         opt_ctrl_n: opt_ctrl_n {
@@ -489,7 +489,7 @@
         mod_morph_encoder_mac: mod_morph_encoder_mac {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
-            bindings = <&mod_morph_encoder_mac_n>, <&mod_morph_encoder_mac_p>;
+            bindings = <&mod_morph_encoder_mac_p>, <&mod_morph_encoder_mac_n>;
 
             tap-ms = <20>;
         };
