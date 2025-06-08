@@ -257,6 +257,7 @@
         };
 
         // mod morphを使用したエンコーダーの挙動制御
+        // Windows用
         // デフォルト: スクロール
         // Shift: Shift+←/→
         // Alt: Win+↑/↓
@@ -367,6 +368,143 @@
 
             tap-ms = <20>;
         };
+
+        // Mac用
+        // デフォルト: スクロール
+        // GUI: command + +/-
+        // Shift: Shift+←/→
+        // Alt: Win+↑/↓
+        // Ctrl: Win+←/→
+
+        // positive: 手前
+        gui_p: gui_p {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp 0>, <&kp LG(MINUS)>;
+
+            mods = <(MOD_LGUI|MOD_RGUI)>;
+            keep-mods = <(MOD_LGUI)>;
+        };
+
+        gui_default_p: gui_default_p {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&msc SCRL_DOWN>, <&gui_p>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        gui_p: gui_p {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp 0>, <&kp LG(MINUS)>;
+
+            mods = <(MOD_LGUI|MOD_RGUI)>;
+            keep-mods = <(MOD_LGUI)>;
+        };
+
+        ctrl_p: ctrl_p {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp 0>, <&kp LG(LEFT)>;
+
+            mods = <(MOD_LCTRL|MOD_RCTRL)>;
+            keep-mods = <(MOD_LALT)>;
+        };
+
+        opt_p: opt_p {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp 0>, <&kp LG(UP)>;
+
+            mods = <(MOD_LALT|MOD_RALT)>;
+            keep-mods = <(MOD_LALT)>;
+        };
+
+        opt_ctrl_p: opt_ctrl_p {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&ctrl_p>, <&opt_p>;
+
+            mods = <(MOD_LALT|MOD_RALT)>;
+        };
+
+        mod_morph_encoder_mac_p: mod_morph_encoder_mac_p {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&gui_default_p>, <&opt_ctrl_p>;
+
+            mods = <(MOD_LALT|MOD_RALT|MOD_LCTRL|MOD_RCTRL)>;
+        };
+
+        // negative: 奥
+        gui_n: gui_n {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp 0>, <&kp LG(PLUS)>;
+
+            mods = <(MOD_LGUI|MOD_RGUI)>;
+            keep-mods = <(MOD_LGUI)>;
+        };
+
+        gui_default_n: gui_default_n {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&msc SCRL_UP>, <&gui_n>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        gui_n: gui_n {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp 0>, <&kp LG(PLUS)>;
+
+            mods = <(MOD_LGUI|MOD_RGUI)>;
+            keep-mods = <(MOD_LGUI)>;
+        };
+
+        ctrl_n: ctrl_n {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp 0>, <&kp LG(RIGHT)>;
+
+            mods = <(MOD_LCTRL|MOD_RCTRL)>;
+            keep-mods = <(MOD_LALT)>;
+        };
+
+        opt_n: opt_n {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp 0>, <&kp LG(DOWN)>;
+
+            mods = <(MOD_LALT|MOD_RALT)>;
+            keep-mods = <(MOD_LALT)>;
+        };
+
+        opt_ctrl_n: opt_ctrl_n {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&ctrl_n>, <&opt_n>;
+
+            mods = <(MOD_LALT|MOD_RALT)>;
+        };
+
+        mod_morph_encoder_mac_n: mod_morph_encoder_mac_n {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&gui_default_n>, <&opt_ctrl_n>;
+
+            mods = <(MOD_LALT|MOD_RALT|MOD_LCTRL|MOD_RCTRL)>;
+        };
+
+        mod_morph_encoder_mac: mod_morph_encoder_mac{
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&mod_morph_encoder_mac_n>, <&mod_morph_encoder_mac_p>;
+
+            tap-ms = <20>;
+        }
     };
 
     keymap {
