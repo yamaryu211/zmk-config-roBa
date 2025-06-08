@@ -398,7 +398,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp 0>, <&kp LG(LEFT)>;
-
             mods = <(MOD_LCTRL|MOD_RCTRL)>;
             keep-mods = <(MOD_LALT)>;
         };
