@@ -485,7 +485,7 @@
             bindings = <&mod_morph_encoder_mac_n>, <&mod_morph_encoder_mac_p>;
 
             tap-ms = <20>;
-        }
+        };
     };
 
     keymap {
