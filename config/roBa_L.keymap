@@ -402,19 +402,19 @@
         ctrl_p: ctrl_p {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp 0>, <&kp LG(LEFT)>;
+            bindings = <&kp 0>, <&kp LA(LC(LG(LEFT)))>;
 
             mods = <(MOD_LCTL|MOD_RCTL)>;
-            keep-mods = <(MOD_LALT|MOD_LCTL)>;
+            // keep-mods = <(MOD_LALT|MOD_LCTL)>;
         };
 
         opt_p: opt_p {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp 0>, <&kp LG(UP)>;
+            bindings = <&kp 0>, <&kp LA(LC(LG(UP)))>;
 
             mods = <(MOD_LALT|MOD_RALT)>;
-            keep-mods = <(MOD_LALT|MOD_LCTL)>;
+            // keep-mods = <(MOD_LALT|MOD_LCTL)>;
         };
 
         opt_ctrl_p: opt_ctrl_p {
@@ -455,19 +455,19 @@
         ctrl_n: ctrl_n {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp 0>, <&kp LG(RIGHT)>;
+            bindings = <&kp 0>, <&kp LA(LC(LG(RIGHT)))>;
 
             mods = <(MOD_LCTL|MOD_RCTL)>;
-            keep-mods = <(MOD_LALT|MOD_LCTL)>;
+            // keep-mods = <(MOD_LALT|MOD_LCTL)>;
         };
 
         opt_n: opt_n {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp 0>, <&kp LG(DOWN)>;
+            bindings = <&kp 0>, <&kp LA(LC(LG(DOWN)))>;
 
             mods = <(MOD_LALT|MOD_RALT)>;
-            keep-mods = <(MOD_LALT|MOD_LCTL)>;
+            // keep-mods = <(MOD_LALT|MOD_LCTL)>;
         };
 
         opt_ctrl_n: opt_ctrl_n {
