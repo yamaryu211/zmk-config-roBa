@@ -396,7 +396,7 @@
             #binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&gui_p>;
 
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+            mods = <(MOD_LGUI|MOD_RGUI)>;
         };
 
         ctrl_p: ctrl_p {
@@ -438,10 +438,10 @@
         gui_n: gui_n {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp 0>, <&kp LG(PLUS)>;
+            bindings = <&kp 0>, <&kp LS(EQUAL)>;
 
             mods = <(MOD_LGUI|MOD_RGUI)>;
-            // keep-mods = <(MOD_LGUI)>;
+            keep-mods = <(MOD_LGUI)>;
         };
 
         gui_default_n: gui_default_n {
@@ -449,7 +449,7 @@
             #binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&gui_n>;
 
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+            mods = <(MOD_LGUI|MOD_RGUI)>;
         };
 
         ctrl_n: ctrl_n {
