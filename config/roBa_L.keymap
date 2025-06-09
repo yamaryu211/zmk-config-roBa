@@ -388,7 +388,7 @@
             bindings = <&kp 0>, <&kp LG(MINUS)>;
 
             mods = <(MOD_LGUI|MOD_RGUI)>;
-            keep-mods = <(MOD_LGUI)>;
+            // keep-mods = <(MOD_LGUI)>;
         };
 
         gui_default_p: gui_default_p {
@@ -441,7 +441,7 @@
             bindings = <&kp 0>, <&kp LG(PLUS)>;
 
             mods = <(MOD_LGUI|MOD_RGUI)>;
-            keep-mods = <(MOD_LGUI)>;
+            // keep-mods = <(MOD_LGUI)>;
         };
 
         gui_default_n: gui_default_n {
