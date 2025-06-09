@@ -438,10 +438,10 @@
         gui_n: gui_n {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp 0>, <&kp LS(EQUAL)>;
+            bindings = <&kp 0>, <&kp LG(MINUS)>;
 
             mods = <(MOD_LGUI|MOD_RGUI)>;
-            keep-mods = <(MOD_LGUI)>;
+            // keep-mods = <(MOD_LGUI)>;
         };
 
         gui_default_n: gui_default_n {
