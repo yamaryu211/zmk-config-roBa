@@ -16,7 +16,7 @@
 
 // ロータリーエンコーダー: スクロール量変更の定義を追記
 
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 120
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 240
 
 &mt {
     flavor = "balanced";
@@ -385,7 +385,7 @@
         gui_p: gui_p {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp 0>, <&kp LG(MINUS)>;
+            bindings = <&kp 0>, <&kp LG(PLUS)>;
 
             mods = <(MOD_LGUI|MOD_RGUI)>;
             // keep-mods = <(MOD_LGUI)>;
@@ -402,7 +402,7 @@
         ctrl_p: ctrl_p {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp 0>, <&kp LA(LC(LG(LEFT)))>;
+            bindings = <&kp 0>, <&kp LA(LC(LG(RIGHT)))>;
 
             mods = <(MOD_LCTL|MOD_RCTL)>;
             // keep-mods = <(MOD_LALT|MOD_LCTL)>;
@@ -411,7 +411,7 @@
         opt_p: opt_p {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp 0>, <&kp LA(LC(LG(UP)))>;
+            bindings = <&kp 0>, <&kp LA(LC(LG(DOWN)))>;
 
             mods = <(MOD_LALT|MOD_RALT)>;
             // keep-mods = <(MOD_LALT|MOD_LCTL)>;
@@ -455,7 +455,7 @@
         ctrl_n: ctrl_n {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp 0>, <&kp LA(LC(LG(RIGHT)))>;
+            bindings = <&kp 0>, <&kp LA(LC(LG(LEFT)))>;
 
             mods = <(MOD_LCTL|MOD_RCTL)>;
             // keep-mods = <(MOD_LALT|MOD_LCTL)>;
@@ -464,7 +464,7 @@
         opt_n: opt_n {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp 0>, <&kp LA(LC(LG(DOWN)))>;
+            bindings = <&kp 0>, <&kp LA(LC(LG(UP)))>;
 
             mods = <(MOD_LALT|MOD_RALT)>;
             // keep-mods = <(MOD_LALT|MOD_LCTL)>;
