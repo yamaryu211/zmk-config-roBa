@@ -18,6 +18,24 @@
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 240
 
+//マウスカーソルの挙動設定
+
+&mmv {
+    delay-ms = <20>;
+    trigger-period-ms = <5>;
+    time-to-max-speed-ms = <100>;
+    // acceleration-exponent = <2>;
+};
+
+//マウススクロールの挙動設定
+
+&msc {
+    delay-ms = <3>;
+    trigger-period-ms = <3>;
+    time-to-max-speed-ms = <100>;
+    // acceleration-exponent = <0>;
+};
+
 &mt {
     flavor = "balanced";
     tapping-term-ms = <180>;
