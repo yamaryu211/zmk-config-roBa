@@ -16,7 +16,7 @@
 
 // ロータリーエンコーダー: スクロール量変更の定義を追記
 
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 120
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 240
 
 &mt {
     flavor = "balanced";
@@ -67,6 +67,11 @@
         backspace {
             bindings = <&kp BACKSPACE>;
             key-positions = <8 9>;
+        };
+
+        Globe {
+            bindings = <&kp RIGHT_ALT>;
+            key-positions = <34 42>;
         };
     };
 
@@ -257,6 +262,7 @@
         };
 
         // mod morphを使用したエンコーダーの挙動制御
+        // Windows用
         // デフォルト: スクロール
         // Shift: Shift+←/→
         // Alt: Win+↑/↓
@@ -367,6 +373,126 @@
 
             tap-ms = <20>;
         };
+
+        // Mac用
+        // デフォルト: スクロール
+        // GUI: command + +/-
+        // Shift: Shift+←/→
+        // Alt: Win+↑/↓
+        // Ctrl: Win+←/→
+        // positive: 奥
+
+        gui_p: gui_p {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp 0>, <&kp LG(PLUS)>;
+
+            mods = <(MOD_LGUI|MOD_RGUI)>;
+            // keep-mods = <(MOD_LGUI)>;
+        };
+
+        gui_default_p: gui_default_p {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&msc SCRL_DOWN>, <&gui_p>;
+
+            mods = <(MOD_LGUI|MOD_RGUI)>;
+        };
+
+        ctrl_p: ctrl_p {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp 0>, <&kp LA(LC(LG(RIGHT)))>;
+
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+            // keep-mods = <(MOD_LALT|MOD_LCTL)>;
+        };
+
+        opt_p: opt_p {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp 0>, <&kp LA(LC(LG(DOWN)))>;
+
+            mods = <(MOD_LALT|MOD_RALT)>;
+            // keep-mods = <(MOD_LALT|MOD_LCTL)>;
+        };
+
+        opt_ctrl_p: opt_ctrl_p {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&ctrl_p>, <&opt_p>;
+
+            mods = <(MOD_LALT|MOD_RALT)>;
+        };
+
+        mod_morph_encoder_mac_p: mod_morph_encoder_mac_p {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&gui_default_p>, <&opt_ctrl_p>;
+
+            mods = <(MOD_LALT|MOD_RALT|MOD_LCTL|MOD_RCTL)>;
+        };
+
+        // negative: 手前
+
+        gui_n: gui_n {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp 0>, <&kp LG(MINUS)>;
+
+            mods = <(MOD_LGUI|MOD_RGUI)>;
+            // keep-mods = <(MOD_LGUI)>;
+        };
+
+        gui_default_n: gui_default_n {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&msc SCRL_UP>, <&gui_n>;
+
+            mods = <(MOD_LGUI|MOD_RGUI)>;
+        };
+
+        ctrl_n: ctrl_n {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp 0>, <&kp LA(LC(LG(LEFT)))>;
+
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+            // keep-mods = <(MOD_LALT|MOD_LCTL)>;
+        };
+
+        opt_n: opt_n {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp 0>, <&kp LA(LC(LG(UP)))>;
+
+            mods = <(MOD_LALT|MOD_RALT)>;
+            // keep-mods = <(MOD_LALT|MOD_LCTL)>;
+        };
+
+        opt_ctrl_n: opt_ctrl_n {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&ctrl_n>, <&opt_n>;
+
+            mods = <(MOD_LALT|MOD_RALT)>;
+        };
+
+        mod_morph_encoder_mac_n: mod_morph_encoder_mac_n {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&gui_default_n>, <&opt_ctrl_n>;
+
+            mods = <(MOD_LALT|MOD_RALT|MOD_LCTL|MOD_RCTL)>;
+        };
+
+        mod_morph_encoder_mac: mod_morph_encoder_mac {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&mod_morph_encoder_mac_p>, <&mod_morph_encoder_mac_n>;
+
+            tap-ms = <20>;
+        };
     };
 
     keymap {
@@ -391,7 +517,7 @@
 &lt 3 LANGUAGE_2  &kp LC(LEFT_COMMAND)  &mt LEFT_CONTROL ESCAPE  &kp LEFT_ALT  &mt LEFT_COMMAND DELETE  &mt LEFT_SHIFT SPACE      &lt 3 ENTER            &lt 5 BACKSPACE                                      &lt 7 LANGUAGE_1
             >;
 
-            sensor-bindings = <&encoder_msc_down_up>;
+            sensor-bindings = <&mod_morph_encoder_mac>;
         };
 
         NUM_WIN {
