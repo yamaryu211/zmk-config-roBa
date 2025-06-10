@@ -23,8 +23,8 @@
 &mmv {
     delay-ms = <20>;
     trigger-period-ms = <5>;
-    time-to-max-speed-ms = <100>;
-    // acceleration-exponent = <2>;
+    time-to-max-speed-ms = <200>;
+    acceleration-exponent = <1.7>;
 };
 
 //マウススクロールの挙動設定
@@ -32,8 +32,8 @@
 &msc {
     delay-ms = <3>;
     trigger-period-ms = <3>;
-    time-to-max-speed-ms = <100>;
-    // acceleration-exponent = <0>;
+    time-to-max-speed-ms = <200>;
+    acceleration-exponent = <1.5>;
 };
 
 &mt {
