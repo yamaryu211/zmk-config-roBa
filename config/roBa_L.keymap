@@ -403,18 +403,18 @@
         gui_p: gui_p {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp 0>, <&kp LG(PLUS)>;
+            bindings = <&kp BACKSPACE>, <&kp LG(PLUS)>;
 
             mods = <(MOD_LGUI|MOD_RGUI)>;
             // keep-mods = <(MOD_LGUI)>;
         };
 
-        gui_default_p: gui_default_p {
+        sftgui_default_p: sftgui_default_p {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&gui_p>;
 
-            mods = <(MOD_LGUI|MOD_RGUI)>;
+            mods = <(MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
         };
 
         ctrl_p: ctrl_p {
@@ -446,9 +446,9 @@
         mod_morph_encoder_mac_p: mod_morph_encoder_mac_p {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&gui_default_p>, <&opt_ctrl_p>;
+            bindings = <&sftgui_default_p>, <&opt_ctrl_p>;
 
-            mods = <(MOD_LALT|MOD_RALT|MOD_LCTL|MOD_RCTL)>;
+            mods = <(MOD_LALT|MOD_RALT|MOD_LCTL|MOD_RCTL|MOD_LSFT|MOD_RSFT)>;
         };
 
         // negative: 手前
@@ -456,18 +456,18 @@
         gui_n: gui_n {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp 0>, <&kp LG(MINUS)>;
+            bindings = <&kp DELETE>, <&kp LG(MINUS)>;
 
             mods = <(MOD_LGUI|MOD_RGUI)>;
             // keep-mods = <(MOD_LGUI)>;
         };
 
-        gui_default_n: gui_default_n {
+        sftgui_default_n: sftgui_default_n {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&gui_n>;
 
-            mods = <(MOD_LGUI|MOD_RGUI)>;
+            mods = <(MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
         };
 
         ctrl_n: ctrl_n {
@@ -499,9 +499,9 @@
         mod_morph_encoder_mac_n: mod_morph_encoder_mac_n {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&gui_default_n>, <&opt_ctrl_n>;
+            bindings = <&sftgui_default_n>, <&opt_ctrl_n>;
 
-            mods = <(MOD_LALT|MOD_RALT|MOD_LCTL|MOD_RCTL)>;
+            mods = <(MOD_LALT|MOD_RALT|MOD_LCTL|MOD_RCTL|MOD_LSFT|MOD_RSFT)>;
         };
 
         mod_morph_encoder_mac: mod_morph_encoder_mac {
