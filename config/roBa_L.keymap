@@ -403,7 +403,7 @@
         gui_p: gui_p {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp BACKSPACE>, <&kp LG(PLUS)>;
+            bindings = <&kp DELETE>, <&kp LG(PLUS)>;
 
             mods = <(MOD_LGUI|MOD_RGUI)>;
             // keep-mods = <(MOD_LGUI)>;
@@ -456,7 +456,7 @@
         gui_n: gui_n {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp DELETE>, <&kp LG(MINUS)>;
+            bindings = <&kp BACKSPACE>, <&kp LG(MINUS)>;
 
             mods = <(MOD_LGUI|MOD_RGUI)>;
             // keep-mods = <(MOD_LGUI)>;
