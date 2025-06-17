@@ -552,6 +552,69 @@
 
             tap-ms = <20>;
         };
+
+        td_LT6_Lang1_and_MO4: td_LT6_Lang1_and_MO4 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_LT6_LANG1_AND_MO4";
+            #binding-cells = <0>;
+            bindings = <&lt 6 LANGUAGE_1>, <&mo 4>;
+
+            tapping-term-ms = <240>;
+        };
+
+        td_mt_left_ctrl: td_mt_left_ctrl {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_MT_LEFT_CTRL";
+            #binding-cells = <0>;
+            bindings =
+                <&mt_exit_AML_on_tap LCTRL X>,
+                <&mt_exit_AML_on_tap LS(LCTRL) X>;
+        };
+
+        td_mt_right_ctrl: td_mt_right_ctrl {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_MT_RIGHT_CTRL";
+            #binding-cells = <0>;
+            bindings =
+                <&mt_exit_AML_on_tap LCTRL PERIOD>,
+                <&mt_exit_AML_on_tap LS(LCTRL) PERIOD>;
+        };
+
+        td_mt_left_alt: td_mt_left_alt {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_MT_LEFT_ALT";
+            #binding-cells = <0>;
+            bindings =
+                <&mt_exit_AML_on_tap LEFT_ALT C>,
+                <&mt_exit_AML_on_tap LS(LALT) C>;
+        };
+
+        td_mt_right_alt: td_mt_right_alt {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_MT_RIGHT_ALT";
+            #binding-cells = <0>;
+            bindings =
+                <&mt_exit_AML_on_tap LEFT_ALT COMMA>,
+                <&mt_exit_AML_on_tap LS(LALT) COMMA>;
+        };
+
+        td_mt_left_win: td_mt_left_win {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_MT_LEFT_WIN";
+            #binding-cells = <0>;
+            bindings =
+                <&mt_exit_AML_on_tap LEFT_WIN V>,
+                <&mt_exit_AML_on_tap LS(LEFT_WIN) V>;
+        };
+
+        td_mt_right_win: td_mt_right_win {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_MT_RIGHT_WIN";
+            #binding-cells = <0>;
+            bindings =
+                <&mt_exit_AML_on_tap LEFT_WIN M>,
+                <&mt_exit_AML_on_tap LS(LEFT_WIN) M>;
+        };
     };
 
     keymap {
