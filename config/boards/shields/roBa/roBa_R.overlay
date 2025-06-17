@@ -32,8 +32,11 @@
         excluded-positions = <
             18 // J
             19 // K
-            21 // ;
-            34 // Ctrl
+            20 // L
+            32 // Ctrl/Command + .
+            33 // Shift + /
+            38 // Ctrl/Command + Del
+            39 // Shift + Space
         >;
         // キー入力から200ms間はAMLを発動しない
         require-prior-idle-ms = <200>;
