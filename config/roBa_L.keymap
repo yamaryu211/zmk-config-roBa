@@ -559,7 +559,7 @@
             #binding-cells = <0>;
             bindings = <&lt 6 LANGUAGE_1>, <&mo 4>;
 
-            tapping-term-ms = <240>;
+            tapping-term-ms = <180>;
         };
 
         td_mt_left_ctrl: td_mt_left_ctrl {
