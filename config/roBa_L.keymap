@@ -561,7 +561,7 @@
             #binding-cells = <0>;
             bindings = <&lt 6 LANGUAGE_1>, <&mo 4>;
 
-            tapping-term-ms = <180>;
+            tapping-term-ms = <240>;
         };
 
         td_mt_left_ctrl: td_mt_left_ctrl {
@@ -627,7 +627,7 @@
 &kp Q                             &kp W                        &kp E                           &kp R                           &kp T                                                                                              &kp Y            &kp U                           &lt 0 I                             &kp O                             &kp P
 &kp A                             &kp S                        &kp D                           &kp F                           &kp G                             &kp LC(N0)                                &kp ESCAPE             &kp H            &kp J                           &kp K                               &kp L                             &kp MINUS
 &mt_exit_AML_on_tap LEFT_SHIFT Z  &mt_exit_AML_on_tap LCTRL X  &mt_exit_AML_on_tap LEFT_ALT C  &mt_exit_AML_on_tap LEFT_WIN V  &kp B                             &kp LEFT_PARENTHESIS                      &kp RIGHT_PARENTHESIS  &kp N            &mt_exit_AML_on_tap LEFT_WIN M  &mt_exit_AML_on_tap LEFT_ALT COMMA  &mt_exit_AML_on_tap LCTRL PERIOD  &mt_exit_AML_on_tap LEFT_SHIFT SLASH
-&lt 2 LANGUAGE_2                  &kp LS(F10)                  &mt LEFT_WIN TAB                &kp LEFT_ALT                    &mt_exit_AML_on_tap LCTRL DELETE  &mt_exit_AML_on_tap LEFT_SHIFT SPACE      &lt 2 ENTER            &lt 4 BACKSPACE                                                                                                        &lt 6 LANG1
+&lt 2 LANGUAGE_2                  &kp LS(F10)                  &mt LEFT_WIN TAB                &kp LEFT_ALT                    &mt_exit_AML_on_tap LCTRL DELETE  &mt_exit_AML_on_tap LEFT_SHIFT SPACE      &lt 2 ENTER            &lt 4 BACKSPACE                                                                                                        &td_LT6_Lang1_and_MO4
             >;
 
             sensor-bindings = <&mod_morph_encoder>;
