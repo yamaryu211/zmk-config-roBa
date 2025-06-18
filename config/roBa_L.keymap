@@ -42,12 +42,14 @@
     flavor = "balanced";
     tapping-term-ms = <180>;
     quick-tap-ms = <180>;
+    hold-while-undecided;
 };
 
 &lt {
     flavor = "balanced";
     tapping-term-ms = <180>;
     quick-tap-ms = <180>;
+    hold-while-undecided;
 };
 
 / {
