@@ -24,6 +24,7 @@
     delay-ms = <20>;
     trigger-period-ms = <5>;
     time-to-max-speed-ms = <200>;
+
     // acceleration-exponent = <0>;
 };
 
@@ -33,6 +34,7 @@
     delay-ms = <3>;
     trigger-period-ms = <3>;
     time-to-max-speed-ms = <200>;
+
     // acceleration-exponent = <0>;
 };
 
@@ -40,12 +42,14 @@
     flavor = "balanced";
     tapping-term-ms = <180>;
     quick-tap-ms = <180>;
+    hold-while-undecided;
 };
 
 &lt {
     flavor = "balanced";
     tapping-term-ms = <180>;
     quick-tap-ms = <180>;
+    hold-while-undecided;
 };
 
 / {
@@ -180,6 +184,26 @@
 
             label = "TO_SCROLL_LAYER_MAC";
         };
+
+        // タップ時のみAML解除するための設定
+
+        exit_AML: exit_AML {
+            compatible = "zmk,behavior-macro";
+            wait-ms = <0>;
+            tap-ms = <0>;
+            #binding-cells = <0>;
+            bindings = <&tog_off AML>;
+            label = "exit_AML";
+        };
+
+        kp_exit_AML: kp_exit_AML {
+            compatible = "zmk,behavior-macro-one-param";
+            wait-ms = <0>;
+            tap-ms = <0>;
+            #binding-cells = <1>;
+            bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &exit_AML>;
+            label = "KP_exit_AML";
+        };
     };
 
     behaviors {
@@ -190,6 +214,19 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
+        };
+
+        // タップ時のみAML解除するための設定
+
+        mt_exit_AML_on_tap: mt_exit_AML_on_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MT_exit_AML_ON_TAP";
+            bindings = <&kp>, <&kp_exit_AML>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "balanced";
+            quick-tap-ms = <200>;
         };
 
         // ロータリーエンコーダーでスクロールする設定
@@ -406,6 +443,7 @@
             bindings = <&kp DELETE>, <&kp LG(PLUS)>;
 
             mods = <(MOD_LGUI|MOD_RGUI)>;
+
             // keep-mods = <(MOD_LGUI)>;
         };
 
@@ -423,6 +461,7 @@
             bindings = <&kp 0>, <&kp LA(LC(LG(RIGHT)))>;
 
             mods = <(MOD_LCTL|MOD_RCTL)>;
+
             // keep-mods = <(MOD_LALT|MOD_LCTL)>;
         };
 
@@ -432,6 +471,7 @@
             bindings = <&kp 0>, <&kp LA(LC(LG(DOWN)))>;
 
             mods = <(MOD_LALT|MOD_RALT)>;
+
             // keep-mods = <(MOD_LALT|MOD_LCTL)>;
         };
 
@@ -459,6 +499,7 @@
             bindings = <&kp BACKSPACE>, <&kp LG(MINUS)>;
 
             mods = <(MOD_LGUI|MOD_RGUI)>;
+
             // keep-mods = <(MOD_LGUI)>;
         };
 
@@ -476,6 +517,7 @@
             bindings = <&kp 0>, <&kp LA(LC(LG(LEFT)))>;
 
             mods = <(MOD_LCTL|MOD_RCTL)>;
+
             // keep-mods = <(MOD_LALT|MOD_LCTL)>;
         };
 
@@ -485,6 +527,7 @@
             bindings = <&kp 0>, <&kp LA(LC(LG(UP)))>;
 
             mods = <(MOD_LALT|MOD_RALT)>;
+
             // keep-mods = <(MOD_LALT|MOD_LCTL)>;
         };
 
@@ -511,6 +554,69 @@
 
             tap-ms = <20>;
         };
+
+        td_LT6_Lang1_and_MO4: td_LT6_Lang1_and_MO4 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_LT6_LANG1_AND_MO4";
+            #binding-cells = <0>;
+            bindings = <&lt 6 LANGUAGE_1>, <&mo 4>;
+
+            tapping-term-ms = <240>;
+        };
+
+        td_mt_left_ctrl: td_mt_left_ctrl {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_MT_LEFT_CTRL";
+            #binding-cells = <0>;
+            bindings =
+                <&mt_exit_AML_on_tap LCTRL X>,
+                <&mt_exit_AML_on_tap LS(LCTRL) X>;
+        };
+
+        td_mt_right_ctrl: td_mt_right_ctrl {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_MT_RIGHT_CTRL";
+            #binding-cells = <0>;
+            bindings =
+                <&mt_exit_AML_on_tap LCTRL PERIOD>,
+                <&mt_exit_AML_on_tap LS(LCTRL) PERIOD>;
+        };
+
+        td_mt_left_alt: td_mt_left_alt {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_MT_LEFT_ALT";
+            #binding-cells = <0>;
+            bindings =
+                <&mt_exit_AML_on_tap LEFT_ALT C>,
+                <&mt_exit_AML_on_tap LS(LALT) C>;
+        };
+
+        td_mt_right_alt: td_mt_right_alt {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_MT_RIGHT_ALT";
+            #binding-cells = <0>;
+            bindings =
+                <&mt_exit_AML_on_tap LEFT_ALT COMMA>,
+                <&mt_exit_AML_on_tap LS(LALT) COMMA>;
+        };
+
+        td_mt_left_win: td_mt_left_win {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_MT_LEFT_WIN";
+            #binding-cells = <0>;
+            bindings =
+                <&mt_exit_AML_on_tap LEFT_WIN V>,
+                <&mt_exit_AML_on_tap LS(LEFT_WIN) V>;
+        };
+
+        td_mt_right_win: td_mt_right_win {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_MT_RIGHT_WIN";
+            #binding-cells = <0>;
+            bindings =
+                <&mt_exit_AML_on_tap LEFT_WIN M>,
+                <&mt_exit_AML_on_tap LS(LEFT_WIN) M>;
+        };
     };
 
     keymap {
@@ -518,10 +624,10 @@
 
         DEFAULT_WIN {
             bindings = <
-&kp Q             &kp W        &kp E                &kp R         &kp T                                                              &kp Y            &kp U    &lt 0 I    &kp O           &kp P
-&kp A             &kp S        &lt 4 D              &lt 2 F       &kp G             &kp LC(N0)                &kp ESCAPE             &kp H            &lt 2 J  &lt 4 K    &mt LEFT_ALT L  &mt LCTRL MINUS
-&mt LEFT_SHIFT Z  &kp X        &kp C                &kp V         &kp B             &kp LEFT_PARENTHESIS      &kp RIGHT_PARENTHESIS  &kp N            &kp M    &kp COMMA  &kp DOT         &mt LEFT_SHIFT SLASH
-&lt 2 LANGUAGE_2  &kp LS(F10)  &mt LEFT_WIN ESCAPE  &kp LEFT_ALT  &mt LCTRL DELETE  &mt LEFT_SHIFT SPACE      &lt 2 ENTER            &lt 4 BACKSPACE                                      &lt 6 LANGUAGE_1
+&kp Q                             &kp W                        &kp E                           &kp R                           &kp T                                                                                              &kp Y            &kp U                           &lt 0 I                             &kp O                             &kp P
+&kp A                             &kp S                        &kp D                           &kp F                           &kp G                             &kp LC(N0)                                &kp ESCAPE             &kp H            &kp J                           &kp K                               &kp L                             &kp MINUS
+&mt_exit_AML_on_tap LEFT_SHIFT Z  &mt_exit_AML_on_tap LCTRL X  &mt_exit_AML_on_tap LEFT_ALT C  &mt_exit_AML_on_tap LEFT_WIN V  &kp B                             &kp LEFT_PARENTHESIS                      &kp RIGHT_PARENTHESIS  &kp N            &mt_exit_AML_on_tap LEFT_WIN M  &mt_exit_AML_on_tap LEFT_ALT COMMA  &mt_exit_AML_on_tap LCTRL PERIOD  &mt_exit_AML_on_tap LEFT_SHIFT SLASH
+&lt 2 LANGUAGE_2                  &kp LS(F10)                  &mt LEFT_WIN TAB                &kp LEFT_ALT                    &mt_exit_AML_on_tap LCTRL DELETE  &mt_exit_AML_on_tap LEFT_SHIFT SPACE      &lt 2 ENTER            &lt 4 BACKSPACE                                                                                                        &lt 6 LANGUAGE_1
             >;
 
             sensor-bindings = <&mod_morph_encoder>;
@@ -529,10 +635,10 @@
 
         DEFAULT_MAC {
             bindings = <
-&kp Q             &kp W                 &kp E                    &kp R         &kp T                                                                     &kp Y            &kp U    &lt 0 I    &kp O           &kp P
-&kp A             &kp S                 &lt 5 D                  &lt 3 F       &kp G                    &kp LG(KP_NUMBER_0)       &kp ESCAPE             &kp H            &lt 3 J  &lt 5 K    &mt LEFT_ALT L  &mt LEFT_COMMAND MINUS
-&mt LEFT_SHIFT Z  &kp X                 &kp C                    &kp V         &kp B                    &kp LEFT_PARENTHESIS      &kp RIGHT_PARENTHESIS  &kp N            &kp M    &kp COMMA  &kp DOT         &mt LEFT_SHIFT SLASH
-&lt 3 LANGUAGE_2  &kp LC(LEFT_COMMAND)  &mt LEFT_CONTROL ESCAPE  &kp LEFT_ALT  &mt LEFT_COMMAND DELETE  &mt LEFT_SHIFT SPACE      &lt 3 ENTER            &lt 5 BACKSPACE                                      &lt 7 LANGUAGE_1
+&kp Q                             &kp W                           &kp E                           &kp R                               &kp T                                                                                                     &kp Y            &kp U                               &lt 0 I                             &kp O                             &kp P
+&kp A                             &kp S                           &kp D                           &kp F                               &kp G                                    &kp LG(KP_NUMBER_0)                       &kp ESCAPE             &kp H            &kp J                               &kp K                               &kp L                             &kp MINUS
+&mt_exit_AML_on_tap LEFT_SHIFT Z  &mt_exit_AML_on_tap LEFT_GUI X  &mt_exit_AML_on_tap LEFT_ALT C  &mt_exit_AML_on_tap LEFT_CONTROL V  &kp B                                    &kp LEFT_PARENTHESIS                      &kp RIGHT_PARENTHESIS  &kp N            &mt_exit_AML_on_tap LEFT_CONTROL M  &mt_exit_AML_on_tap LEFT_ALT COMMA  &mt_exit_AML_on_tap LEFT_GUI DOT  &mt_exit_AML_on_tap LEFT_SHIFT SLASH
+&lt 3 LANGUAGE_2                  &kp LC(LEFT_COMMAND)            &mt LEFT_CONTROL ESCAPE         &kp LEFT_ALT                        &mt_exit_AML_on_tap LEFT_COMMAND DELETE  &mt_exit_AML_on_tap LEFT_SHIFT SPACE      &lt 3 ENTER            &lt 5 BACKSPACE                                                                                                            &lt 7 LANGUAGE_1
             >;
 
             sensor-bindings = <&mod_morph_encoder_mac>;
@@ -584,7 +690,7 @@
 
         FUNC_SCROLL_WIN {
             bindings = <
-&kp F12  &kp F7      &kp F8  &kp F9  &trans                                           &none         &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)  &none          &kp LS(LG(S))
+&kp F12  &kp F7      &kp F8  &kp F9  &trans                                           &none         &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)  &trans         &kp LS(LG(S))
 &kp F11  &kp F4      &kp F5  &kp F6  &trans  &trans                &kp ESCAPE         &kp LA(LEFT)  &kp LS(LC(TAB))  &kp LC(TAB)        &kp LA(RIGHT)  &trans
 &kp F10  &kp LC(F1)  &kp F2  &kp F3  &trans  &kp LEFT_BRACKET      &kp RIGHT_BRACKET  &trans        &trans           &trans             &trans         &trans
 &trans   &trans      &trans  &trans  &trans  &trans                &trans             &trans                                                           &trans
@@ -607,9 +713,9 @@
         AML {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB2  &mkp MB3  &to_scroll_layer_mac
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB2  &mkp MB3  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                &to_scroll_layer_win
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                &trans
             >;
         };
 
