@@ -15,7 +15,7 @@
 #define KBD_SETTING 9
 
 // ロータリーエンコーダー: スクロール量変更の定義を追記
-
+#undef ZMK_POINTING_DEFAULT_SCRL_VAL  // 定義を削除
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 120
 
 //マウスカーソルの挙動設定
