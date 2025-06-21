@@ -15,6 +15,7 @@
 #define KBD_SETTING 9
 
 // ロータリーエンコーダー: スクロール量変更の定義を追記
+
 #undef ZMK_POINTING_DEFAULT_SCRL_VAL  // 定義を削除
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 120
 
@@ -71,19 +72,9 @@
             key-positions = <0 1>;
         };
 
-        left_click {
-            bindings = <&mkp MB1>;
-            key-positions = <18 19>;
-        };
-
-        right_click {
-            bindings = <&mkp MB2>;
-            key-positions = <19 20>;
-        };
-
         middle_click {
-            bindings = <&mkp MB3>;
-            key-positions = <18 20>;
+            bindings = <&mkp MCLK>;
+            key-positions = <18 19>;
         };
 
         backspace {
