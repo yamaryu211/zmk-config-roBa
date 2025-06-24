@@ -1,6 +1,6 @@
 layout: {zmk_keyboard: roBa}
 layers:
-  '0':
+  DEFAULT_WIN:
   - Q
   - W
   - E
@@ -8,7 +8,7 @@ layers:
   - T
   - Y
   - U
-  - {t: I, h: '0'}
+  - {t: I, h: DEFAULT_WIN}
   - O
   - P
   - A
@@ -35,16 +35,16 @@ layers:
   - {t: '&kp_exit_AML COMMA', h: LEFT ALT}
   - {t: '&kp_exit_AML PERIOD', h: LCTRL}
   - {t: '&kp_exit_AML SLASH', h: LEFT SHIFT}
-  - {t: LANGUAGE 2, h: '2'}
+  - {t: LANGUAGE 2, h: NUM_WIN}
   - Sft+F10
   - {t: TAB, h: LEFT WIN}
   - LEFT ALT
   - {t: '&kp_exit_AML DELETE', h: LCTRL}
   - {t: '&kp_exit_AML SPACE', h: LEFT SHIFT}
-  - {t: ENTER, h: '2'}
-  - {t: BACKSPACE, h: '4'}
-  - {t: LANGUAGE 1, h: '6'}
-  '1':
+  - {t: ENTER, h: NUM_WIN}
+  - {t: BACKSPACE, h: SYMBOL_WIN}
+  - {t: LANGUAGE 1, h: FUNC_SCROLL_WIN}
+  DEFAULT_MAC:
   - Q
   - W
   - E
@@ -52,7 +52,7 @@ layers:
   - T
   - Y
   - U
-  - {t: I, h: '0'}
+  - {t: I, h: DEFAULT_WIN}
   - O
   - P
   - A
@@ -79,16 +79,16 @@ layers:
   - {t: '&kp_exit_AML COMMA', h: LEFT ALT}
   - {t: '&kp_exit_AML DOT', h: LEFT GUI}
   - {t: '&kp_exit_AML SLASH', h: LEFT SHIFT}
-  - {t: LANGUAGE 2, h: '3'}
+  - {t: LANGUAGE 2, h: NUM_MAC}
   - Ctl+LEFT COMMAND
   - {t: ESCAPE, h: LEFT CONTROL}
   - LEFT ALT
   - {t: '&kp_exit_AML DELETE', h: LEFT COMMAND}
   - {t: '&kp_exit_AML SPACE', h: LEFT SHIFT}
-  - {t: ENTER, h: '3'}
-  - {t: BACKSPACE, h: '5'}
-  - {t: LANGUAGE 1, h: '7'}
-  '2':
+  - {t: ENTER, h: NUM_MAC}
+  - {t: BACKSPACE, h: SYMBOL_MAC}
+  - {t: LANGUAGE 1, h: FUNC_SCROLL_MAC}
+  NUM_WIN:
   - KP DIVIDE
   - '7'
   - '8'
@@ -123,7 +123,7 @@ layers:
   - PAGE UP
   - END
   - {t: ▽, type: trans}
-  - {t: '9', type: held}
+  - {t: KBD_SETTING, type: held}
   - {t: ▽, type: trans}
   - Sft+LEFT WIN
   - Sft+LEFT ALT
@@ -131,8 +131,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '9'
-  '3':
+  - KBD_SETTING
+  NUM_MAC:
   - KP DIVIDE
   - '7'
   - '8'
@@ -167,7 +167,7 @@ layers:
   - Gui+UP
   - Gui+RIGHT
   - {t: ▽, type: trans}
-  - {t: '9', type: held}
+  - {t: KBD_SETTING, type: held}
   - Ctl+Gui+LEFT SHIFT
   - Sft+LEFT CONTROL
   - Sft+LEFT ALT
@@ -175,8 +175,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '9'
-  '4':
+  - KBD_SETTING
+  SYMBOL_WIN:
   - ''''
   - '"'
   - '!'
@@ -220,7 +220,7 @@ layers:
   - {t: ▽, type: trans}
   - {type: held}
   - {t: ▽, type: trans}
-  '5':
+  SYMBOL_MAC:
   - ''''
   - '"'
   - '!'
@@ -264,7 +264,7 @@ layers:
   - {t: ▽, type: trans}
   - {type: held}
   - {t: ▽, type: trans}
-  '6':
+  FUNC_SCROLL_WIN:
   - F12
   - F7
   - F8
@@ -308,7 +308,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {type: held}
-  '7':
+  FUNC_SCROLL_MAC:
   - F12
   - F7
   - F8
@@ -352,7 +352,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {type: held}
-  '8':
+  AML:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -396,7 +396,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  '9':
+  KBD_SETTING:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
