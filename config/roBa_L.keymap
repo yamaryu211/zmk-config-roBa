@@ -16,6 +16,7 @@
 
 // ロータリーエンコーダー: スクロール量変更の定義を追記
 
+#undef ZMK_POINTING_DEFAULT_SCRL_VAL  // 定義を削除
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 120
 
 //マウスカーソルの挙動設定
@@ -71,19 +72,9 @@
             key-positions = <0 1>;
         };
 
-        left_click {
-            bindings = <&mkp MB1>;
-            key-positions = <18 19>;
-        };
-
-        right_click {
-            bindings = <&mkp MB2>;
-            key-positions = <19 20>;
-        };
-
         middle_click {
-            bindings = <&mkp MB3>;
-            key-positions = <18 20>;
+            bindings = <&mkp MCLK>;
+            key-positions = <18 19>;
         };
 
         backspace {
@@ -712,10 +703,10 @@
 
         AML {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB2  &mkp MB3  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB2  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans    &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                              &trans
             >;
         };
 
