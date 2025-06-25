@@ -1,9 +1,9 @@
+#include <dt-bindings/zmk/input_transform.h>
+#include <input/processors.dtsi>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
-#include <dt-bindings/zmk/input_transform.h>
-#include <input/processors.dtsi>
 
 #define DEFAULT_WIN 0
 #define DEFAULT_MAC 1
@@ -23,10 +23,15 @@
 
 / {
     // excluded-positionsの設定
-    /omit-if-no-ref/ zip_temp_layer: zip_temp_layer {
+
+    /omit-if-no-ref/
+
+    zip_temp_layer: zip_temp_layer {
         compatible = "zmk,input-processor-temp-layer";
         #input-processor-cells = <2>;
+
         // 以下で指定したキー以外を押すとAML解除
+
         excluded-positions = <
             18 // J
             19 // K
@@ -36,7 +41,9 @@
             38 // Ctrl/Command + Del
             39 // Shift + Space
         >;
+
         // キー入力から200ms間はAMLを発動しない
+
         require-prior-idle-ms = <200>;
     };
 
@@ -44,11 +51,14 @@
         status = "okay";
         compatible = "zmk,input-listener";
         device = <&trackball>;
+
         // AML設定
+
         input-processors = <&zip_temp_layer AML 30000>;
 
         // 通常のスクロール挙動
         // Macの場合
+
         scroller_mac {
             layers = <FUNC_SCROLL_MAC>;
             input-processors =
@@ -58,6 +68,7 @@
         };
 
         // Windowsの場合
+
         scroller_win {
             layers = <FUNC_SCROLL_WIN>;
             input-processors =
@@ -76,7 +87,6 @@
         //         <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
         //         <&zip_xy_to_scroll_mapper>;
         // };
-
         // scroller_mac_horizontal {
         //     layers = <SYMBOL_MAC>;
         //     input-processors =
@@ -84,7 +94,6 @@
         //         <&zip_y_scaler 0 1>,
         //         <&zip_xy_to_scroll_mapper>;
         // };
-
         // // Windows
         // scroller_win_vertical {
         //     layers = <FUNC_SCROLL_WIN>;
@@ -93,7 +102,6 @@
         //         <&zip_x_scaler 0 1>,
         //         <&zip_xy_to_scroll_mapper>;
         // };
-
         // scroller_win_horizontal {
         //     layers = <SYMBOL_WIN>;
         //     input-processors =
@@ -126,6 +134,7 @@
 };
 
 // トラックボール設定
+
 &trackball {
     // automouse-layer = <AML>;
     // scroll-layers = <FUNC_SCROLL_MAC FUNC_SCROLL_WIN>;
@@ -137,6 +146,7 @@
     スクロール量が多すぎるor少なすぎる場合は、&zip_xy_scalerの部分をコメント解除して調整できる。
     <&zip_xy_scaler X Y> X: X軸（水平方向）のスケーリング係数, : Y軸（垂直方向）のスケーリング係数
     */
+
     arrows {
         layers = <NUM_MAC NUM_WIN>;
         bindings =
@@ -153,22 +163,20 @@
     volume {
         layers = <KBD_SETTING>;
         bindings =
-                <&kp C_VOLUME_UP>,
-                <&kp C_VOLUME_DOWN>,
-                <&kp C_BRIGHTNESS_INC>,
-                <&kp C_BRIGHTNESS_DEC>;
+            <&kp C_VOLUME_UP>,
+            <&kp C_VOLUME_DOWN>,
+            <&kp C_BRIGHTNESS_INC>,
+            <&kp C_BRIGHTNESS_DEC>;
 
         wait-ms = <5>;
         tap-ms = <5>;
     };
 };
 
-
 // Inpur-ProcessorによるAMK設定
 // クリック後、250ms後にAMK解除
-&mkp_input_listener {
-    input-processors = <&zip_temp_layer AML 250>;
-};
+
+&mkp_input_listener { input-processors = <&zip_temp_layer AML 250>; };
 
 &mt {
     flavor = "balanced";
@@ -346,9 +354,10 @@
             bindings = <&kp>, <&kp_exit_AML>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <180>;
             flavor = "balanced";
-            quick-tap-ms = <200>;
+            quick-tap-ms = <180>;
+            hold-while-undecided;
         };
 
         // ロータリーエンコーダーでスクロールする設定
