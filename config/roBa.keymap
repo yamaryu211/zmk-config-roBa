@@ -4,7 +4,6 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
-#include <xy_snap_input_processor.dtsi>
 
 #define DEFAULT_WIN 0
 #define DEFAULT_MAC 1
@@ -63,7 +62,6 @@
         scroller_mac {
             layers = <FUNC_SCROLL_MAC>;
             input-processors =
-                <&xy_snap_input_processor>,
                 <&zip_xy_scaler 1 8>,
                 <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
                 <&zip_xy_to_scroll_mapper>;
