@@ -357,7 +357,6 @@
             tapping-term-ms = <180>;
             flavor = "balanced";
             quick-tap-ms = <180>;
-            hold-while-undecided;
         };
 
         // ロータリーエンコーダーでスクロールする設定
