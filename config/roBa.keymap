@@ -62,6 +62,7 @@
         scroller_mac {
             layers = <FUNC_SCROLL_MAC>;
             input-processors =
+                <&xy_snap_input_processor>,
                 <&zip_xy_scaler 1 8>,
                 <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
                 <&zip_xy_to_scroll_mapper>;

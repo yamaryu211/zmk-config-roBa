@@ -17,5 +17,9 @@ manifest:
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: main
+    - name: zmk-xy-snap-module
+      remote: yamaryu211
+      revision: main
+      path: modules/zmk-xy-snap-module
   self:
     path: config
