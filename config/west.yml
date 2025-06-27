@@ -20,6 +20,6 @@ manifest:
     - name: zmk-xy-snap-module
       remote: yamaryu211
       revision: main
-      path: zmk-xy-snap-module
+      path: modules/zmk-xy-snap-module
   self:
     path: config
