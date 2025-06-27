@@ -112,7 +112,7 @@
         triggers-per-rotation = <10>;
     };
 
-    // 左側のビルド時のエラー防止
+    // trackball_listenerの設定
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         status = "disabled";

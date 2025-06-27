@@ -1,4 +1,5 @@
 #include "roBa.dtsi"
+#include "../modules/zmk-xy-snap-module/dts/xy_snap_input_processor.dtsi"
 
 
 &default_transform {
@@ -51,4 +52,9 @@
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
     };
+};
+
+&trackball_listener {
+    status = "okay";
+    input-processors = <&xy_snap_input_processor>;
 };
