@@ -27,9 +27,8 @@
         compatible = "zmk,xy-snap-input-processor";
         #input-processor-cells = <0>;
         idle-timeout-ms = <500>;
-        switch-threshold = <1000>;
-        allow-axis-switch;
-        track-remainders;
+        switch-ratio = <80>;
+        continue-timeout-ms = <1000>;
     };
 
     // excluded-positionsの設定

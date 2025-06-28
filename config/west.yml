@@ -19,6 +19,6 @@ manifest:
       revision: main
     - name: zmk-xy-snap-module
       remote: yamaryu211
-      revision: main
+      revision: feat/scroll-snap-mod-v1
   self:
     path: config
