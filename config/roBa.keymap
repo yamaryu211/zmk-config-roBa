@@ -22,6 +22,14 @@
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 120
 
 / {
+    // xy_snap_input_processorの定義を追加
+    xy_snap_input_processor: xy_snap_input_processor {
+        compatible = "zmk,xy-snap-input-processor";
+        #input-processor-cells = <0>;
+        idle-timeout-ms = <200>;
+        switch-threshold = <20>;
+        allow-axis-switch;
+    };
     // excluded-positionsの設定
 
     /omit-if-no-ref/
