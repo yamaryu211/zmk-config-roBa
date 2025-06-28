@@ -26,9 +26,9 @@
     xy_snap: xy_snap_input_processor {
         compatible = "zmk,xy-snap-input-processor";
         #input-processor-cells = <0>;
-        idle-timeout-ms = <200>;
-        switch-threshold = <20>;
-        // allow-axis-switch; 軸切り替え無効
+        idle-timeout-ms = <500>;
+        switch-threshold = <1000>;
+        allow-axis-switch; 軸切り替え設定
         track-remainders;
     };
 
