@@ -28,6 +28,8 @@
         #input-processor-cells = <0>;
         idle-timeout-ms = <500>;
         switch-threshold = <1000>;
+        min-move-threshold = <5>;
+        allow-axis-switch;
         track-remainders;
     };
 
