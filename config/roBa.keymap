@@ -23,7 +23,7 @@
 
 / {
     // xy_snap_input_processorの定義を追加
-    xy_snap_input_processor: xy_snap_input_processor {
+    xy_snap: xy_snap_input_processor {
         compatible = "zmk,xy-snap-input-processor";
         #input-processor-cells = <0>;
         idle-timeout-ms = <200>;
@@ -72,7 +72,7 @@
         scroller_mac {
             layers = <FUNC_SCROLL_MAC>;
             input-processors =
-                <&xy_snap_input_processor>,
+                <&xy_snap>,
                 <&zip_xy_scaler 1 8>,
                 <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
                 <&zip_xy_to_scroll_mapper>;
@@ -83,7 +83,7 @@
         scroller_win {
             layers = <FUNC_SCROLL_WIN>;
             input-processors =
-                <&xy_snap_input_processor>,
+                <&xy_snap>,
                 <&zip_xy_scaler 1 8>,
                 <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
                 <&zip_xy_to_scroll_mapper>;
