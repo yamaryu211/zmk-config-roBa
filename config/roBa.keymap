@@ -28,7 +28,7 @@
         #input-processor-cells = <0>;
         idle-timeout-ms = <500>;
         switch-threshold = <1000>;
-        allow-axis-switch; 軸切り替え設定
+        allow-axis-switch;
         track-remainders;
     };
 
