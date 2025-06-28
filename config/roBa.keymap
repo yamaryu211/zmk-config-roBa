@@ -29,7 +29,9 @@
         idle-timeout-ms = <200>;
         switch-threshold = <20>;
         allow-axis-switch;
+        track-remainders;
     };
+
     // excluded-positionsの設定
 
     /omit-if-no-ref/
