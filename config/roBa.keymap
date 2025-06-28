@@ -47,6 +47,8 @@
         require-prior-idle-ms = <200>;
     };
 
+    
+
     trackball_listener {
         status = "okay";
         compatible = "zmk,input-listener";
@@ -337,6 +339,12 @@
     };
 
     behaviors {
+        swapper: swapper {
+            compatible = "zmk,behavior-tri-state";
+            #binding-cells = <0>;
+            bindings = <&kp A>, <&kp B>, <&kt C>;
+        };
+        
         lt_to_layer_0: lt_to_layer_0 {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_TO_0";
