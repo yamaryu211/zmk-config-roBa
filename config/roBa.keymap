@@ -29,7 +29,6 @@
         idle-timeout-ms = <200>;
         switch-threshold = <20>;
         allow-axis-switch;
-        label = "XY_SNAP_INPUT_PROCESSOR";
     };
     // excluded-positionsの設定
 
