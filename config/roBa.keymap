@@ -48,14 +48,6 @@
         require-prior-idle-ms = <200>;
     };
 
-    xy_snap_input_processor: xy_snap_input_processor {
-        compatible = "zmk,xy-snap-input-processor";
-        #input-processor-cells = <0>;
-        idle-timeout-ms = <200>;
-        switch-threshold = <20>;
-        allow-axis-switch;
-    };
-
     trackball_listener {
         status = "okay";
         compatible = "zmk,input-listener";
