@@ -1,5 +1,4 @@
 #include "roBa.dtsi"
-#include "../modules/zmk-xy-snap-module/dts/xy_snap_input_processor.dtsi"
 
 
 &default_transform {
