@@ -483,7 +483,7 @@
         shift_default_p: shift_default_p {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&msc SCRL_DOWN>, <&shift_p>;
+            bindings = <&msc SCRL_RIGHT>, <&shift_p>;
 
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
@@ -532,7 +532,7 @@
         shift_default_n: shift_default_n {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&msc SCRL_UP>, <&shift_n>;
+            bindings = <&msc SCRL_LEFT>, <&shift_n>;
 
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
@@ -598,7 +598,7 @@
         sftgui_default_p: sftgui_default_p {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&msc SCRL_DOWN>, <&gui_p>;
+            bindings = <&msc SCRL_RIGHT>, <&gui_p>;
 
             mods = <(MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
         };
@@ -654,7 +654,7 @@
         sftgui_default_n: sftgui_default_n {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&msc SCRL_UP>, <&gui_n>;
+            bindings = <&msc SCRL_LEFT>, <&gui_n>;
 
             mods = <(MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
         };
