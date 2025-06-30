@@ -59,28 +59,28 @@
         // 通常のスクロール挙動
         // Macの場合
 
-        scroller_mac {
-            layers = <FUNC_SCROLL_MAC>;
-            input-processors =
-                <&zip_xy_scaler 1 8>,
-                <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-                <&zip_xy_to_scroll_mapper>;
-        };
+        // scroller_mac {
+        //     layers = <FUNC_SCROLL_MAC>;
+        //     input-processors =
+        //         <&zip_xy_scaler 1 8>,
+        //         <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
+        //         <&zip_xy_to_scroll_mapper>;
+        // };
 
         // Windowsの場合
 
-        scroller_win {
-            layers = <FUNC_SCROLL_WIN>;
-            input-processors =
-                <&zip_xy_scaler 1 8>,
-                <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
-                <&zip_xy_to_scroll_mapper>;
-        };
+        // scroller_win {
+        //     layers = <FUNC_SCROLL_WIN>;
+        //     input-processors =
+        //         <&zip_xy_scaler 1 8>,
+        //         <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
+        //         <&zip_xy_to_scroll_mapper>;
+        // };
 
         // 縦横分離のスクロール挙動
         // Mac
         scroller_mac_vertical {
-            layers = <NUM_MAC>;
+            layers = <FUNC_SCROLL_MAC>;
             input-processors =
                 <&zip_y_scaler 1 8>,
                 <&zip_x_scaler 0 1>,
@@ -96,7 +96,7 @@
         };
         // // Windows
         scroller_win_vertical {
-            layers = <NUM_WIN>;
+            layers = <FUNC_SCROLL_WIN>;
             input-processors =
                 <&zip_y_scaler 1 8>,
                 <&zip_x_scaler 0 1>,
@@ -147,18 +147,18 @@
     <&zip_xy_scaler X Y> X: X軸（水平方向）のスケーリング係数, : Y軸（垂直方向）のスケーリング係数
     */
 
-    // arrows {
-    //     layers = <NUM_MAC NUM_WIN>;
-    //     bindings =
-    //         <&kp RIGHT_ARROW>,
-    //         <&kp LEFT_ARROW>,
-    //         <&kp UP_ARROW>,
-    //         <&kp DOWN_ARROW>;
+    arrows {
+        layers = <NUM_MAC NUM_WIN>;
+        bindings =
+            <&kp RIGHT_ARROW>,
+            <&kp LEFT_ARROW>,
+            <&kp UP_ARROW>,
+            <&kp DOWN_ARROW>;
 
-    //     tick = <10>;
-    //     wait-ms = <5>;
-    //     tap-ms = <5>;
-    // };
+        tick = <10>;
+        wait-ms = <5>;
+        tap-ms = <5>;
+    };
 
     volume {
         layers = <KBD_SETTING>;
@@ -373,6 +373,15 @@
             tap-ms = <20>;
         };
 
+        encoder_msc_right_left: encoder_msc_right_left {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "ENCODER_MSC_RIGHT_LEFT";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_RIGHT>, <&msc SCRL_LEFT>;
+
+            tap-ms = <20>;
+        };
+
         //
         // windows用
 
@@ -385,6 +394,15 @@
             tap-ms = <20>;
         };
 
+        encoder_msc_left_right: encoder_msc_left_right {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "ENCODER_MSC_LEFT_RIGHT";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_LEFT>, <&msc SCRL_RIGHT>;
+
+            tap-ms = <20>;
+        };
+        
         // Ctrl+スクロール (Windows用)
 
         encoder_msc_ctrl_up_down: encoder_msc_ctrl_up_down {
