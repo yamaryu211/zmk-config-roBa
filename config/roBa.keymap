@@ -58,7 +58,6 @@
 
         // 通常のスクロール挙動
         // Macの場合
-
         // scroller_mac {
         //     layers = <FUNC_SCROLL_MAC>;
         //     input-processors =
@@ -66,9 +65,7 @@
         //         <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
         //         <&zip_xy_to_scroll_mapper>;
         // };
-
         // Windowsの場合
-
         // scroller_win {
         //     layers = <FUNC_SCROLL_WIN>;
         //     input-processors =
@@ -76,9 +73,9 @@
         //         <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
         //         <&zip_xy_to_scroll_mapper>;
         // };
-
         // 縦横分離のスクロール挙動
         // Mac
+
         scroller_mac_vertical {
             layers = <FUNC_SCROLL_MAC>;
             input-processors =
@@ -87,6 +84,7 @@
                 <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
                 <&zip_xy_to_scroll_mapper>;
         };
+
         scroller_mac_horizontal {
             layers = <SYMBOL_MAC>;
             input-processors =
@@ -94,7 +92,9 @@
                 <&zip_y_scaler 0 1>,
                 <&zip_xy_to_scroll_mapper>;
         };
+
         // // Windows
+
         scroller_win_vertical {
             layers = <FUNC_SCROLL_WIN>;
             input-processors =
@@ -102,6 +102,7 @@
                 <&zip_x_scaler 0 1>,
                 <&zip_xy_to_scroll_mapper>;
         };
+
         scroller_win_horizontal {
             layers = <SYMBOL_WIN>;
             input-processors =
@@ -119,7 +120,6 @@
     delay-ms = <20>;
     trigger-period-ms = <5>;
     time-to-max-speed-ms = <300>;
-
     acceleration-exponent = <2>;
 };
 
@@ -401,7 +401,7 @@
 
             tap-ms = <20>;
         };
-        
+
         // Ctrl+スクロール (Windows用)
 
         encoder_msc_ctrl_up_down: encoder_msc_ctrl_up_down {
@@ -774,7 +774,7 @@
 &kp Q                             &kp W                        &kp E                           &kp R                           &kp T                                                                                              &kp Y            &lt 2 U                         &lt 4 I                             &kp O                             &kp P
 &kp A                             &kp S                        &kp D                           &kp F                           &kp G                             &kp LC(N0)                                &kp ESCAPE             &kp H            &kp J                           &kp K                               &kp L                             &kp MINUS
 &mt_exit_AML_on_tap LEFT_SHIFT Z  &mt_exit_AML_on_tap LCTRL X  &mt_exit_AML_on_tap LEFT_ALT C  &mt_exit_AML_on_tap LEFT_WIN V  &kp B                             &kp LEFT_PARENTHESIS                      &kp RIGHT_PARENTHESIS  &kp N            &mt_exit_AML_on_tap LEFT_WIN M  &mt_exit_AML_on_tap LEFT_ALT COMMA  &mt_exit_AML_on_tap LCTRL PERIOD  &mt_exit_AML_on_tap LEFT_SHIFT SLASH
-&lt 2 LANGUAGE_2                  &kp LS(F10)                  &mt LEFT_WIN TAB                &kp LEFT_ALT                    &mt_exit_AML_on_tap LCTRL DELETE  &mt_exit_AML_on_tap LEFT_SHIFT SPACE      &lt 2 ENTER            &lt 4 BACKSPACE                                                                                                        &lt 6 LANGUAGE_1
+&lt 2 LANGUAGE_2                  &kp LS(F10)                  &mt LEFT_WIN TAB                &kp LEFT_ALT                    &mt_exit_AML_on_tap LCTRL DELETE  &mt_exit_AML_on_tap LEFT_SHIFT SPACE      &lt 4 ENTER            &lt 2 BACKSPACE                                                                                                        &lt 6 LANGUAGE_1
             >;
 
             sensor-bindings = <&mod_morph_encoder>;
@@ -785,7 +785,7 @@
 &kp Q                             &kp W                           &kp E                           &kp R                               &kp T                                                                                                     &kp Y            &lt 3 U                             &lt 5 I                             &kp O                             &kp P
 &kp A                             &kp S                           &kp D                           &kp F                               &kp G                                    &kp LG(KP_NUMBER_0)                       &kp ESCAPE             &kp H            &kp J                               &kp K                               &kp L                             &kp MINUS
 &mt_exit_AML_on_tap LEFT_SHIFT Z  &mt_exit_AML_on_tap LEFT_GUI X  &mt_exit_AML_on_tap LEFT_ALT C  &mt_exit_AML_on_tap LEFT_CONTROL V  &kp B                                    &kp LEFT_PARENTHESIS                      &kp RIGHT_PARENTHESIS  &kp N            &mt_exit_AML_on_tap LEFT_CONTROL M  &mt_exit_AML_on_tap LEFT_ALT COMMA  &mt_exit_AML_on_tap LEFT_GUI DOT  &mt_exit_AML_on_tap LEFT_SHIFT SLASH
-&lt 3 LANGUAGE_2                  &kp LC(LEFT_COMMAND)            &mt LEFT_CONTROL ESCAPE         &kp LEFT_ALT                        &mt_exit_AML_on_tap LEFT_COMMAND DELETE  &mt_exit_AML_on_tap LEFT_SHIFT SPACE      &lt 3 ENTER            &lt 5 BACKSPACE                                                                                                            &lt 7 LANGUAGE_1
+&lt 3 LANGUAGE_2                  &kp LC(LEFT_COMMAND)            &mt LEFT_CONTROL ESCAPE         &kp LEFT_ALT                        &mt_exit_AML_on_tap LEFT_COMMAND DELETE  &mt_exit_AML_on_tap LEFT_SHIFT SPACE      &lt 5 ENTER            &lt 3 BACKSPACE                                                                                                            &lt 7 LANGUAGE_1
             >;
 
             sensor-bindings = <&mod_morph_encoder_mac>;
