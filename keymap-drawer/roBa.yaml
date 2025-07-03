@@ -41,8 +41,8 @@ layers:
   - LEFT ALT
   - {t: '&kp_exit_AML DELETE', h: LCTRL}
   - {t: '&kp_exit_AML SPACE', h: LEFT SHIFT}
-  - {t: ENTER, h: SYMBOL_WIN}
-  - {t: BACKSPACE, h: NUM_WIN}
+  - {t: ENTER, h: NUM_WIN}
+  - {t: BACKSPACE, h: SYMBOL_WIN}
   - {t: LANGUAGE 1, h: FUNC_SCROLL_WIN}
   DEFAULT_MAC:
   - Q
@@ -85,8 +85,8 @@ layers:
   - LEFT ALT
   - {t: '&kp_exit_AML DELETE', h: LEFT COMMAND}
   - {t: '&kp_exit_AML SPACE', h: LEFT SHIFT}
-  - {t: ENTER, h: SYMBOL_MAC}
-  - {t: BACKSPACE, h: NUM_MAC}
+  - {t: ENTER, h: NUM_MAC}
+  - {t: BACKSPACE, h: SYMBOL_MAC}
   - {t: LANGUAGE 1, h: FUNC_SCROLL_MAC}
   NUM_WIN:
   - KP DIVIDE
