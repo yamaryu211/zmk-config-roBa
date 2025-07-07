@@ -7,8 +7,8 @@ layers:
   - R
   - T
   - Y
-  - U
-  - {t: I, h: DEFAULT_WIN}
+  - {t: U, h: NUM_WIN}
+  - {t: I, h: SYMBOL_WIN}
   - O
   - P
   - A
@@ -51,8 +51,8 @@ layers:
   - R
   - T
   - Y
-  - U
-  - {t: I, h: DEFAULT_WIN}
+  - {t: U, h: NUM_MAC}
+  - {t: I, h: SYMBOL_MAC}
   - O
   - P
   - A
@@ -95,7 +95,7 @@ layers:
   - '9'
   - KP MULTIPLY
   - ESCAPE
-  - ''
+  - {type: held}
   - ''
   - ''
   - Alt+PRINTSCREEN
@@ -123,7 +123,7 @@ layers:
   - PAGE UP
   - END
   - {t: ▽, type: trans}
-  - {t: KBD_SETTING, type: held}
+  - KBD_SETTING
   - {t: ▽, type: trans}
   - Sft+LEFT WIN
   - Sft+LEFT ALT
@@ -139,7 +139,7 @@ layers:
   - '9'
   - KP MULTIPLY
   - ESCAPE
-  - ''
+  - {type: held}
   - ''
   - ''
   - Sft+Gui+4
@@ -167,7 +167,7 @@ layers:
   - Gui+UP
   - Gui+RIGHT
   - {t: ▽, type: trans}
-  - {t: KBD_SETTING, type: held}
+  - KBD_SETTING
   - Ctl+Gui+LEFT SHIFT
   - Sft+LEFT CONTROL
   - Sft+LEFT ALT
@@ -184,7 +184,7 @@ layers:
   - '~'
   - \
   - '{'
-  - '}'
+  - {t: '}', type: held}
   - {t: ▽, type: trans}
   - '%'
   - '@'
@@ -218,7 +218,7 @@ layers:
   - Sft+LCTRL
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   SYMBOL_MAC:
   - ''''
@@ -228,7 +228,7 @@ layers:
   - '~'
   - \
   - '{'
-  - '}'
+  - {t: '}', type: held}
   - {t: ▽, type: trans}
   - '%'
   - '@'
@@ -262,7 +262,7 @@ layers:
   - Sft+LEFT GUI
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   FUNC_SCROLL_WIN:
   - F12
@@ -403,7 +403,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - BRIGHTNESS DEC
-  - BRIGHTNESS INC
+  - {t: BRIGHTNESS INC, type: held}
   - MUTE
   - VOLUME DOWN
   - VOLUME UP
@@ -425,7 +425,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - BT CLR ALL
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
