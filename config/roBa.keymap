@@ -55,6 +55,7 @@
     idle-timeout-ms = <300>;        // より長いタイムアウト
     switch-threshold = <50>;        // より高い切り替え閾値
     initial-threshold = <10>;       // 初期方向決定の閾値
+    track-remainders;
     // allow-axis-switch;           // 軸切り替えを無効化（コメントアウト）
     status = "okay";
     };
