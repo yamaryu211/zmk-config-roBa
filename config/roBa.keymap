@@ -100,7 +100,6 @@
             input-processors =
                 <&zip_x_scaler 1 16>,
                 <&zip_y_scaler 0 1>,
-                <&zip_xy_swap_mapper>,
                 <&zip_xy_to_scroll_mapper>;
         };
 
@@ -122,7 +121,6 @@
                 <&zip_x_scaler 1 8>,
                 <&zip_y_scaler 0 1>,
                 <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
-                <&zip_xy_swap_mapper>,
                 <&zip_xy_to_scroll_mapper>;
         };
     };
