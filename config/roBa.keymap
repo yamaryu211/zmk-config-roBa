@@ -203,6 +203,8 @@
     hold-while-undecided;
 };
 
+&sl { release-after-ms = <30000>; };
+
 / {
     combos {
         compatible = "zmk,combos";
