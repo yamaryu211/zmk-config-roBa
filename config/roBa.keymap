@@ -62,6 +62,7 @@
 
         // 自由スクロール
         // Macの場合
+
         scroller_mac {
             layers = <FUNC_SCROLL_MAC>;
             input-processors =
@@ -69,7 +70,9 @@
                 <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
                 <&zip_xy_to_scroll_mapper>;
         };
+
         // Windowsの場合
+
         scroller_win {
             layers = <FUNC_SCROLL_WIN>;
             input-processors =
@@ -78,9 +81,9 @@
                 <&zip_xy_to_scroll_mapper>;
         };
 
-
         // 縦横別のスクロール
         // Mac
+
         scroller_mac_vertical {
             layers = <SCROLL_VER_MAC>;
             input-processors =
@@ -89,7 +92,9 @@
                 <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
                 <&zip_xy_to_scroll_mapper>;
         };
+
         // 横スクロール（入力は縦方向）
+
         scroller_mac_horizontal {
             layers = <SCROLL_HOR_MAC>;
             input-processors =
@@ -100,6 +105,7 @@
         };
 
         // Windows
+
         scroller_win_vertical {
             layers = <SCROLL_VER_WIN>;
             input-processors =
@@ -107,7 +113,9 @@
                 <&zip_x_scaler 0 1>,
                 <&zip_xy_to_scroll_mapper>;
         };
+
         // 横スクロール（入力は縦方向）
+
         scroller_win_horizontal {
             layers = <SCROLL_HOR_WIN>;
             input-processors =
@@ -845,7 +853,7 @@
             bindings = <
 &kp F12  &kp F7      &kp F8  &kp F9  &trans                                           &none         &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)  &trans         &kp LS(LG(S))
 &kp F11  &kp F4      &kp F5  &kp F6  &trans  &trans                &kp ESCAPE         &kp LA(LEFT)  &kp LS(LC(TAB))  &kp LC(TAB)        &kp LA(RIGHT)  &trans
-&kp F10  &kp LC(F1)  &kp F2  &kp F3  &trans  &kp LEFT_BRACKET      &kp RIGHT_BRACKET  &trans        &trans           &trans             &trans         &trans
+&kp F10  &kp LC(F1)  &kp F2  &kp F3  &trans  &kp LEFT_BRACKET      &kp RIGHT_BRACKET  &trans        &mo 10           &mo 12             &trans         &trans
 &trans   &trans      &trans  &trans  &trans  &trans                &trans             &trans                                                           &trans
             >;
 
@@ -856,7 +864,7 @@
             bindings = <
 &kp F12  &kp F7      &kp F8  &kp F9  &trans                                           &none         &kp LG(PAGE_UP)  &kp LG(PAGE_DOWN)  &none          &kp LS(LG(NUMBER_4))
 &kp F11  &kp F4      &kp F5  &kp F6  &trans  &trans                &kp ESCAPE         &kp LG(LEFT)  &kp LS(LC(TAB))  &kp LC(TAB)        &kp LG(RIGHT)  &trans
-&kp F10  &kp LG(F1)  &kp F2  &kp F3  &trans  &kp LEFT_BRACKET      &kp RIGHT_BRACKET  &trans        &trans           &trans             &trans         &trans
+&kp F10  &kp LG(F1)  &kp F2  &kp F3  &trans  &kp LEFT_BRACKET      &kp RIGHT_BRACKET  &trans        &mo 11           &mo 13             &trans         &trans
 &trans   &trans      &trans  &trans  &trans  &trans                &trans             &trans                                                           &trans
             >;
 
