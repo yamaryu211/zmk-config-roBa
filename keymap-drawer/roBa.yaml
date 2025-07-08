@@ -7,8 +7,8 @@ layers:
   - R
   - T
   - Y
-  - {t: U, h: NUM_WIN}
-  - {t: I, h: SYMBOL_WIN}
+  - U
+  - I
   - O
   - P
   - A
@@ -19,8 +19,8 @@ layers:
   - Ctl+0
   - ESCAPE
   - H
-  - J
-  - K
+  - {t: J, h: SCROLL_VER_WIN}
+  - {t: K, h: SCROLL_HOR_WIN}
   - L
   - '-'
   - {t: '&kp_exit_AML Z', h: LEFT SHIFT}
@@ -51,8 +51,8 @@ layers:
   - R
   - T
   - Y
-  - {t: U, h: NUM_MAC}
-  - {t: I, h: SYMBOL_MAC}
+  - U
+  - I
   - O
   - P
   - A
@@ -95,7 +95,7 @@ layers:
   - '9'
   - KP MULTIPLY
   - ESCAPE
-  - {type: held}
+  - ''
   - ''
   - ''
   - Alt+PRINTSCREEN
@@ -123,7 +123,7 @@ layers:
   - PAGE UP
   - END
   - {t: ▽, type: trans}
-  - KBD_SETTING
+  - {t: KBD_SETTING, type: held}
   - {t: ▽, type: trans}
   - Sft+LEFT WIN
   - Sft+LEFT ALT
@@ -139,7 +139,7 @@ layers:
   - '9'
   - KP MULTIPLY
   - ESCAPE
-  - {type: held}
+  - ''
   - ''
   - ''
   - Sft+Gui+4
@@ -167,7 +167,7 @@ layers:
   - Gui+UP
   - Gui+RIGHT
   - {t: ▽, type: trans}
-  - KBD_SETTING
+  - {t: KBD_SETTING, type: held}
   - Ctl+Gui+LEFT SHIFT
   - Sft+LEFT CONTROL
   - Sft+LEFT ALT
@@ -184,7 +184,7 @@ layers:
   - '~'
   - \
   - '{'
-  - {t: '}', type: held}
+  - '}'
   - {t: ▽, type: trans}
   - '%'
   - '@'
@@ -218,7 +218,7 @@ layers:
   - Sft+LCTRL
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   SYMBOL_MAC:
   - ''''
@@ -228,7 +228,7 @@ layers:
   - '~'
   - \
   - '{'
-  - {t: '}', type: held}
+  - '}'
   - {t: ▽, type: trans}
   - '%'
   - '@'
@@ -262,7 +262,7 @@ layers:
   - Sft+LEFT GUI
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   FUNC_SCROLL_WIN:
   - F12
@@ -403,7 +403,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - BRIGHTNESS DEC
-  - {t: BRIGHTNESS INC, type: held}
+  - BRIGHTNESS INC
   - MUTE
   - VOLUME DOWN
   - VOLUME UP
@@ -459,18 +459,6 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -483,7 +471,19 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   SCROLL_VER_MAC:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -548,18 +548,6 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -571,7 +559,19 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   SCROLL_HOR_MAC:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
