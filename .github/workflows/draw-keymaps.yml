@@ -20,6 +20,6 @@ jobs:
       keymap_patterns: "config/*.keymap" # path to the keymaps to parse
       config_path: "keymap_drawer.config.yaml" # config file, ignored if not exists
       output_folder: "keymap-drawer" # path to save produced SVG and keymap YAML files
-      parse_args: "'roBa: -l DEFAULT_WIN DEFAULT_MAC NUM_WIN NUM_MAC SYMBOL_WIN SYMBOL_MAC FUNC_SCROLL_WIN FUNC_SCROLL_MAC AML KBD_SETTING SCROLL_VER_WIN SCROLL_HOR_WIN SCROLL_VER_MAC SCROLL_HOR_MAC'" # map of extra args to pass to `keymap parse`, e.g. "corne:'-l Def Lwr Rse' cradio:''"
+      parse_args: "'roBa: -l DEFAULT_WIN DEFAULT_MAC NUM_WIN NUM_MAC SYMBOL_WIN SYMBOL_MAC FUNC_SCROLL_WIN FUNC_SCROLL_MAC AML KBD_SETTING SCROLL_VER_WIN SCROLL_VER_MAC SCROLL_HOR_WIN SCROLL_HOR_MAC'" # map of extra args to pass to `keymap parse`, e.g. "corne:'-l Def Lwr Rse' cradio:''"
       draw_args: "'roBa: -j config/info.json'" # map of extra args to pass to `keymap draw`, e.g. "corne:'-k corne_rotated' cradio:'-k paroxysm'"
       destination: "both"
