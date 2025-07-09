@@ -7,9 +7,9 @@ layers:
   - R
   - T
   - Y
-  - {t: U, h: SCROLL_VER_WIN}
-  - {t: I, h: SCROLL_HOR_WIN}
-  - O
+  - U
+  - {t: I, h: SCROLL_VER_WIN}
+  - {t: O, h: SCROLL_HOR_WIN}
   - P
   - A
   - S
@@ -51,9 +51,9 @@ layers:
   - R
   - T
   - Y
-  - {t: U, h: SCROLL_VER_MAC}
-  - {t: I, h: SCROLL_HOR_MAC}
-  - O
+  - U
+  - {t: I, h: SCROLL_VER_MAC}
+  - {t: O, h: SCROLL_HOR_MAC}
   - P
   - A
   - S
@@ -447,8 +447,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
   - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -491,8 +491,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
   - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -536,8 +536,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
   - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -580,8 +580,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
   - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
