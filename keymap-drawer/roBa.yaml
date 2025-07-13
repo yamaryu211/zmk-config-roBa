@@ -419,7 +419,7 @@ layers:
   - '&bt2_iPad'
   - '&bt3_iPhone'
   - {t: BT, h: '4'}
-  - BT CLR ALL
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -437,7 +437,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - OUT TOG
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   SCROLL_VER_WIN:
