@@ -119,6 +119,7 @@
                 <&zip_xy_scaler 1 16>,
                 <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
                 <&zip_xy_to_scroll_mapper>;
+            process-next;
         };
 
         // Windowsの場合
@@ -129,6 +130,7 @@
                 <&zip_xy_scaler 1 12>,
                 <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
                 <&zip_xy_to_scroll_mapper>;
+            process-next;
         };
 
         // 縦横別のスクロール
@@ -141,6 +143,7 @@
                 <&zip_x_scaler 0 1>,
                 <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
                 <&zip_xy_to_scroll_mapper>;
+            process-next;
         };
 
         // 横スクロール
@@ -151,6 +154,7 @@
                 <&zip_x_scaler 1 16>,
                 <&zip_y_scaler 0 1>,
                 <&zip_xy_to_scroll_mapper>;
+            process-next;
         };
 
         // Windows
@@ -161,6 +165,7 @@
                 <&zip_y_scaler 1 12>,
                 <&zip_x_scaler 0 1>,
                 <&zip_xy_to_scroll_mapper>;
+            process-next;
         };
 
         // 横スクロール
@@ -172,6 +177,7 @@
                 <&zip_y_scaler 0 1>,
                 <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
                 <&zip_xy_to_scroll_mapper>;
+            process-next;
         };
     };
 };
