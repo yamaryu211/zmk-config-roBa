@@ -158,12 +158,12 @@
 
         gesture_win {
             layers = <GESTURE_WIN>;
-            input-processors = <&zip_mouse_gesture>;
+            input-processors = <&zip_xy_to_mouse_mapper>, <&zip_mouse_gesture>;
         };
 
         gesture_mac {
             layers = <GESTURE_MAC>;
-            input-processors = <&zip_mouse_gesture>;
+            input-processors = <&zip_xy_to_mouse_mapper>, <&zip_mouse_gesture>;
         };
     };
 };
@@ -994,13 +994,13 @@
         compatible = "zmk,conditional-layers";
 
         GESTURE_WIN {
-            if-layers = <10 12>;
-            then-layer = <14>;
+            if-layers = <SCROLL_VER_WIN SCROLL_HOR_WIN>;
+            then-layer = <GESTURE_WIN>;
         };
 
         GESTURE_MAC {
-            if-layers = <11 13>;
-            then-layer = <15>;
+            if-layers = <SCROLL_VER_MAC SCROLL_HOR_MAC>;
+            then-layer = <GESTURE_MAC>;
         };
     };
 };
