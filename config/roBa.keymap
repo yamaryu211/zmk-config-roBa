@@ -21,8 +21,6 @@
 #define SCROLL_VER_MAC 11
 #define SCROLL_HOR_WIN 12
 #define SCROLL_HOR_MAC 13
-#define GESTURE_WIN 14
-#define GESTURE_MAC 15
 
 // ロータリーエンコーダー: スクロール量変更の定義を追記
 
@@ -983,38 +981,6 @@
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
             >;
-        };
-
-        GESTURE_WIN {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
-            >;
-        };
-
-        GESTURE_MAC {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
-            >;
-        };
-    };
-
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        GESTURE_WIN {
-            if-layers = <SCROLL_VER_WIN SCROLL_HOR_WIN>;
-            then-layer = <GESTURE_WIN>;
-        };
-
-        GESTURE_MAC {
-            if-layers = <SCROLL_VER_MAC SCROLL_HOR_MAC>;
-            then-layer = <GESTURE_MAC>;
         };
     };
 };
