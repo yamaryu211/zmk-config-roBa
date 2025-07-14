@@ -104,7 +104,7 @@
         input-processors = <&zip_mouse_gesture>;
 
         // AML設定
-        auto_mouse_layer = {
+        auto_mouse_layer {
             layers = <DEFAULT_WIN DEFAULT_MAC AML>;
             input-processors = <&zip_temp_layer AML 30000>;
             process-next;
