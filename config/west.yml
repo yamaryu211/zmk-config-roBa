@@ -17,5 +17,8 @@ manifest:
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: main
+    - name: zmk-mouse-gesture
+      remote: yamaryu211
+      revision: v1
   self:
     path: config

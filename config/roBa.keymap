@@ -5,6 +5,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
+#include <mouse-gesture.dtsi>
 
 #define DEFAULT_WIN 0
 #define DEFAULT_MAC 1
@@ -20,11 +21,40 @@
 #define SCROLL_VER_MAC 11
 #define SCROLL_HOR_WIN 12
 #define SCROLL_HOR_MAC 13
+#define GESTURE_WIN 14
+#define GESTURE_MAC 15
 
 // ロータリーエンコーダー: スクロール量変更の定義を追記
 
 #undef ZMK_POINTING_DEFAULT_SCRL_VAL  // 定義を削除
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 60
+
+// マウスジェスチャーの設定
+&zip_mouse_gesture {
+    stroke-size = <300>; // Size of one stroke in a gesture. Note that larger stroke than this value is fine, as duplicate directions will be ignored.
+    enable-eager-mode; // Optional: Execute bindings immediately when gesture pattern is matched. When not specified, bindings are executed when gesture recognition becomes inactive.
+
+    history_back {
+        pattern = <GESTURE_RIGHT>;
+        bindings = <&kp LA(LEFT)>;
+    };
+
+    history_forward {
+        pattern = <GESTURE_LEFT>;
+        bindings = <&kp LA(RIGHT)>;
+    };
+
+    close_tab {
+        pattern = <GESTURE_DOWN GESTURE_RIGHT>;
+        bindings = <&kp LC(W)>;
+    };
+
+    new_tab {
+        pattern = <GESTURE_DOWN GESTURE_LEFT>;
+        bindings = <&kp LC(T)>;
+    };
+};
+
 
 / {
     // excluded-positionsの設定
@@ -124,6 +154,18 @@
                 <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
                 <&zip_xy_to_scroll_mapper>;
         };
+
+        // マウスジェスチャー
+
+        gesture_win {
+            layers = <GESTURE_WIN>;
+            input-processors = <&zip_mouse_gesture>;
+        };
+
+        gesture_mac {
+            layers = <GESTURE_MAC>;
+            input-processors = <&zip_mouse_gesture>;
+        };
     };
 };
 
@@ -151,13 +193,6 @@
     // automouse-layer = <AML>;
     // scroll-layers = <FUNC_SCROLL_MAC FUNC_SCROLL_WIN>;
     // snipe-layers = <3>;
-    // スクロールレイヤー
-    /*
-    roBa_R.overlayに以下を追記すると、レイヤー4ではカーソル移動がスクロールに変換される。 
-    自分の試したところ、y方向のスクロールが逆になったので&zip_xy_transformで反転させている。 
-    スクロール量が多すぎるor少なすぎる場合は、&zip_xy_scalerの部分をコメント解除して調整できる。
-    <&zip_xy_scaler X Y> X: X軸（水平方向）のスケーリング係数, : Y軸（垂直方向）のスケーリング係数
-    */
 
     arrows {
         layers = <NUM_MAC NUM_WIN>;
@@ -929,6 +964,24 @@
         };
 
         SCROLL_HOR_MAC {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+            >;
+        };
+
+        GESTURE_WIN {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+            >;
+        };
+
+        GESTURE_MAC {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
