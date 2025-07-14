@@ -1,11 +1,11 @@
 #include <dt-bindings/zmk/input_transform.h>
 #include <input/processors.dtsi>
+#include <mouse-gesture.dtsi>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
-#include <mouse-gesture.dtsi>
 
 #define DEFAULT_WIN 0
 #define DEFAULT_MAC 1
@@ -30,10 +30,10 @@
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 60
 
 // マウスジェスチャーの設定
+
 &zip_mouse_gesture {
     stroke-size = <300>; // Size of one stroke in a gesture. Note that larger stroke than this value is fine, as duplicate directions will be ignored.
     enable-eager-mode; // Optional: Execute bindings immediately when gesture pattern is matched. When not specified, bindings are executed when gesture recognition becomes inactive.
-
     history_back {
         pattern = <GESTURE_RIGHT>;
         bindings = <&kp LA(LEFT)>;
@@ -54,7 +54,6 @@
         bindings = <&kp LC(T)>;
     };
 };
-
 
 / {
     // excluded-positionsの設定
@@ -988,6 +987,20 @@
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
             >;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        GESTURE_WIN {
+            if-layers = <10 12>;
+            then-layer = <14>;
+        };
+
+        GESTURE_MAC {
+            if-layers = <11 13>;
+            then-layer = <15>;
         };
     };
 };
