@@ -53,6 +53,21 @@
         pattern = <GESTURE_DOWN GESTURE_LEFT>;
         bindings = <&kp LC(T)>;
     };
+
+    app_switcher {
+        pattern = <GESTURE_DOWN GESTURE_UP>;
+        bindings = <&kp LG(TAB)>;
+    };
+
+    virtual_desktop_prev {
+        pattern = <GESTURE_LEFT GESTURE_DOWN>;
+        bindings = <&kp LG(LC(LEFT))>;
+    };
+
+    virtual_desktop_next {
+        pattern = <GESTURE_RIGHT GESTURE_DOWN>;
+        bindings = <&kp LG(LC(RIGHT))>;
+    };
 };
 
 / {
@@ -86,20 +101,13 @@
         compatible = "zmk,input-listener";
         device = <&trackball>;
 
+        input-processors = <&zip_mouse_gesture>;
+
         // AML設定
-
-        input-processors = <&zip_temp_layer AML 30000>;
-
-        // マウスジェスチャー
-
-        gesture_win {
-            layers = <GESTURE_WIN>;
-            input-processors = <&zip_mouse_gesture>;
-        };
-
-        gesture_mac {
-            layers = <GESTURE_MAC>;
-            input-processors = <&zip_mouse_gesture>;
+        auto-mouse-layer = {
+            layers = <DEFAULT_WIN DEFAULT_MAC AML>;
+            input-processors = <&zip_temp_layer AML 30000>;
+            process-next;
         };
 
         // 自由スクロール
