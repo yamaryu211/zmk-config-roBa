@@ -158,12 +158,12 @@
 
         gesture_win {
             layers = <GESTURE_WIN>;
-            input-processors = <&zip_xy_to_mouse_mapper>, <&zip_mouse_gesture>;
+            input-processors = <&zip_mouse_gesture>;
         };
 
         gesture_mac {
             layers = <GESTURE_MAC>;
-            input-processors = <&zip_xy_to_mouse_mapper>, <&zip_mouse_gesture>;
+            input-processors = <&zip_mouse_gesture>;
         };
     };
 };
