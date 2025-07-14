@@ -90,6 +90,18 @@
 
         input-processors = <&zip_temp_layer AML 30000>;
 
+        // マウスジェスチャー
+
+        gesture_win {
+            layers = <GESTURE_WIN>;
+            input-processors = <&zip_mouse_gesture>;
+        };
+
+        gesture_mac {
+            layers = <GESTURE_MAC>;
+            input-processors = <&zip_mouse_gesture>;
+        };
+
         // 自由スクロール
         // Macの場合
 
@@ -152,18 +164,6 @@
                 <&zip_y_scaler 0 1>,
                 <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
                 <&zip_xy_to_scroll_mapper>;
-        };
-
-        // マウスジェスチャー
-
-        gesture_win {
-            layers = <GESTURE_WIN>;
-            input-processors = <&zip_mouse_gesture>;
-        };
-
-        gesture_mac {
-            layers = <GESTURE_MAC>;
-            input-processors = <&zip_mouse_gesture>;
         };
     };
 };
