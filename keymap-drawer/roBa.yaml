@@ -628,4 +628,4 @@ combos:
 - p: [8, 9]
   k: BACKSPACE
 - p: [34, 42]
-  k: RIGHT ALT
+  k: Gui+SPACE
