@@ -47,9 +47,9 @@
             39 // Shift + Space
         >;
 
-        // キー入力から200ms間はAMLを発動しない
+        // キー入力から300ms間はAMLを発動しない
 
-        require-prior-idle-ms = <200>;
+        require-prior-idle-ms = <300>;
     };
 
     trackball_listener {
