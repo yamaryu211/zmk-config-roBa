@@ -52,6 +52,12 @@
         require-prior-idle-ms = <300>;
     };
 
+    // Test trackball threshold processor with default settings
+    zip_trackball_threshold: zip_trackball_threshold {
+        compatible = "zmk,input-processor-trackball-threshold";
+        movement-threshold = <5>;
+    };
+
     trackball_listener {
         status = "okay";
         compatible = "zmk,input-listener";
@@ -59,7 +65,7 @@
 
         // AML設定
 
-        input-processors = <&zip_temp_layer AML 30000>;
+        input-processors = <&zip_trackball_threshold>, <&zip_temp_layer AML 30000>;
 
         // 自由スクロール
         // Macの場合
