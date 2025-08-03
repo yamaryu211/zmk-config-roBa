@@ -55,6 +55,7 @@
     // Test trackball threshold processor with default settings
     zip_trackball_threshold: zip_trackball_threshold {
         compatible = "zmk,input-processor-trackball-threshold";
+        #input-processor-cells = <0>;
         movement-threshold = <5>;
     };
 
