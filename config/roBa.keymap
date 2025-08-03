@@ -57,6 +57,7 @@
         compatible = "zmk,input-processor-trackball-threshold";
         #input-processor-cells = <0>;
         movement-threshold = <5>;
+        track-remainders;
     };
 
     trackball_listener {
