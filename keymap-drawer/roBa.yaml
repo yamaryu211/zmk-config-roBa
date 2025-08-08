@@ -17,24 +17,24 @@ layers:
   - F
   - G
   - Ctl+0
-  - /
+  - {t: ESC, s: '`'}
   - H
-  - J
-  - {t: K, h: SCROLL_VER_WIN}
-  - {t: L, h: SCROLL_HOR_WIN}
+  - {t: J, h: SCROLL_VER_WIN}
+  - {t: K, h: SCROLL_HOR_WIN}
+  - L
   - '-'
   - {t: Z, h: LEFT SHIFT}
   - {t: X, h: LCTRL}
   - {t: C, h: LEFT ALT}
   - {t: V, h: LEFT WIN}
   - B
-  - ','
-  - .
+  - (
+  - )
   - N
-  - M
-  - '&mkp MB1'
-  - '&mkp MB2'
-  - {t: ESC, s: '`'}
+  - {t: M, h: LEFT GUI}
+  - {t: ',', h: LEFT ALT}
+  - {t: ., h: LCTRL}
+  - {t: /, h: LEFT SHIFT}
   - {t: LANGUAGE 2, h: NUM_WIN}
   - Sft+F10
   - {t: TAB, h: LEFT WIN}
@@ -116,8 +116,8 @@ layers:
   - '2'
   - '3'
   - .
-  - (
-  - )
+  - <
+  - '>'
   - HOME
   - PAGE DOWN
   - PAGE UP
@@ -459,8 +459,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -548,8 +548,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
