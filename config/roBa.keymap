@@ -58,8 +58,7 @@
         device = <&trackball>;
 
         // AML設定
-
-        input-processors = <&zip_temp_layer AML 30000>;
+        // input-processors = <&zip_temp_layer AML 30000>;
 
         // 自由スクロール
         // Macの場合
