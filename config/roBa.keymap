@@ -808,10 +808,10 @@
 
         DEFAULT_MAC {
             bindings = <
-&kp Q                             &kp W                           &kp E                           &kp R                               &kp T                                                                                                     &kp Y            &kp U                               &kp I                               &kp O                             &kp P
-&kp A                             &kp S                           &kp D                           &kp F                               &kp G                                    &kp LG(KP_NUMBER_0)                       &kp ESCAPE             &kp H            &kp J                               &kp K                               &lt 11 L                          &lt 13 MINUS
-&mt_exit_AML_on_tap LEFT_SHIFT Z  &mt_exit_AML_on_tap LEFT_GUI X  &mt_exit_AML_on_tap LEFT_ALT C  &mt_exit_AML_on_tap LEFT_CONTROL V  &kp B                                    &kp LEFT_PARENTHESIS                      &kp RIGHT_PARENTHESIS  &kp N            &mt_exit_AML_on_tap LEFT_CONTROL M  &mt_exit_AML_on_tap LEFT_ALT COMMA  &mt_exit_AML_on_tap LEFT_GUI DOT  &mt_exit_AML_on_tap LEFT_SHIFT SLASH
-&lt 3 LANGUAGE_2                  &kp LC(LEFT_COMMAND)            &mt LEFT_CONTROL ESCAPE         &kp LEFT_ALT                        &mt_exit_AML_on_tap LEFT_COMMAND DELETE  &mt_exit_AML_on_tap LEFT_SHIFT SPACE      &lt 3 ENTER            &lt 5 BACKSPACE                                                                                                            &lt 7 LANGUAGE_1
+&kp Q             &kp W                 &kp E                    &kp R               &kp T                                                                                                     &kp Y            &kp U               &kp I               &kp O             &kp P
+&kp A             &kp S                 &kp D                    &kp F               &kp G                                    &kp LG(KP_NUMBER_0)                       &gresc                 &kp H            &lt 11 J            &lt 13 K            &kp L             &kp MINUS
+&mt LEFT_SHIFT Z  &mt LEFT_GUI X        &mt LEFT_ALT C           &mt LEFT_CONTROL V  &kp B                                    &kp LEFT_PARENTHESIS                      &kp RIGHT_PARENTHESIS  &kp N            &mt LEFT_CONTROL M  &mt LEFT_ALT COMMA  &mt LEFT_GUI DOT  &mt LEFT_SHIFT SLASH
+&lt 3 LANGUAGE_2  &kp LC(LEFT_COMMAND)  &mt LEFT_CONTROL ESCAPE  &kp LEFT_ALT        &mt_exit_AML_on_tap LEFT_COMMAND DELETE  &mt_exit_AML_on_tap LEFT_SHIFT SPACE      &lt 3 ENTER            &lt 5 BACKSPACE                                                            &lt 7 LANGUAGE_1
             >;
 
             sensor-bindings = <&mod_morph_encoder_mac>;
@@ -876,7 +876,7 @@
             bindings = <
 &kp F12  &kp F7      &kp F8  &kp F9  &trans                                           &none         &kp LG(PAGE_UP)  &kp LG(PAGE_DOWN)  &none          &kp LS(LG(NUMBER_4))
 &kp F11  &kp F4      &kp F5  &kp F6  &trans  &trans                &kp ESCAPE         &kp LG(LEFT)  &kp LS(LC(TAB))  &kp LC(TAB)        &kp LG(RIGHT)  &trans
-&kp F10  &kp LG(F1)  &kp F2  &kp F3  &trans  &kp LEFT_BRACKET      &kp RIGHT_BRACKET  &trans        &mo 11           &mo 13             &trans         &trans
+&kp F10  &kp LG(F1)  &kp F2  &kp F3  &trans  &kp LEFT_BRACKET      &kp RIGHT_BRACKET  &trans        &trans           &trans             &trans         &trans
 &trans   &trans      &trans  &trans  &trans  &trans                &trans             &trans                                                           &trans
             >;
 
