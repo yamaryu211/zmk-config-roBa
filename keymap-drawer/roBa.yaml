@@ -20,27 +20,27 @@ layers:
   - ESCAPE
   - H
   - J
-  - K
-  - {t: L, h: SCROLL_VER_WIN}
-  - {t: '-', h: SCROLL_HOR_WIN}
-  - {t: '&kp_exit_AML Z', h: LEFT SHIFT}
+  - {t: K, h: SCROLL_VER_WIN}
+  - {t: L, h: SCROLL_HOR_WIN}
+  - '-'
+  - {t: Z, h: LEFT SHIFT}
   - {t: '&kp_exit_AML X', h: LCTRL}
-  - {t: '&kp_exit_AML C', h: LEFT ALT}
-  - {t: '&kp_exit_AML V', h: LEFT WIN}
+  - {t: C, h: LEFT ALT}
+  - {t: V, h: LEFT WIN}
   - B
-  - (
-  - )
+  - ','
+  - .
   - N
-  - {t: '&kp_exit_AML M', h: LEFT WIN}
-  - {t: '&kp_exit_AML COMMA', h: LEFT ALT}
-  - {t: '&kp_exit_AML PERIOD', h: LCTRL}
-  - {t: '&kp_exit_AML SLASH', h: LEFT SHIFT}
+  - M
+  - '&mkp MB1'
+  - '&mkp MB2'
+  - /
   - {t: LANGUAGE 2, h: NUM_WIN}
   - Sft+F10
   - {t: TAB, h: LEFT WIN}
   - LEFT ALT
-  - {t: '&kp_exit_AML DELETE', h: LCTRL}
-  - {t: '&kp_exit_AML SPACE', h: LEFT SHIFT}
+  - {t: DELETE, h: LCTRL}
+  - {t: SPACE, h: LEFT SHIFT}
   - {t: ENTER, h: NUM_WIN}
   - {t: BACKSPACE, h: SYMBOL_WIN}
   - {t: LANGUAGE 1, h: FUNC_SCROLL_WIN}
@@ -116,8 +116,8 @@ layers:
   - '2'
   - '3'
   - .
-  - <
-  - '>'
+  - (
+  - )
   - HOME
   - PAGE DOWN
   - PAGE UP
@@ -295,8 +295,8 @@ layers:
   - '['
   - ']'
   - {t: ▽, type: trans}
-  - {t: SCROLL_VER_WIN, h: sticky}
-  - {t: SCROLL_HOR_WIN, h: sticky}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -460,8 +460,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -549,8 +549,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
