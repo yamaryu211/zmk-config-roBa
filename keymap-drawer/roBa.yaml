@@ -61,24 +61,24 @@ layers:
   - F
   - G
   - Gui+KP 0
-  - ESCAPE
+  - {t: ESC, s: '`'}
   - H
-  - J
-  - K
-  - {t: L, h: SCROLL_VER_MAC}
-  - {t: '-', h: SCROLL_HOR_MAC}
-  - {t: '&kp_exit_AML Z', h: LEFT SHIFT}
-  - {t: '&kp_exit_AML X', h: LEFT GUI}
-  - {t: '&kp_exit_AML C', h: LEFT ALT}
-  - {t: '&kp_exit_AML V', h: LEFT CONTROL}
+  - {t: J, h: SCROLL_VER_MAC}
+  - {t: K, h: SCROLL_HOR_MAC}
+  - L
+  - '-'
+  - {t: Z, h: LEFT SHIFT}
+  - {t: X, h: LEFT GUI}
+  - {t: C, h: LEFT ALT}
+  - {t: V, h: LEFT CONTROL}
   - B
   - (
   - )
   - N
-  - {t: '&kp_exit_AML M', h: LEFT CONTROL}
-  - {t: '&kp_exit_AML COMMA', h: LEFT ALT}
-  - {t: '&kp_exit_AML DOT', h: LEFT GUI}
-  - {t: '&kp_exit_AML SLASH', h: LEFT SHIFT}
+  - {t: M, h: LEFT CONTROL}
+  - {t: ',', h: LEFT ALT}
+  - {t: ., h: LEFT GUI}
+  - {t: /, h: LEFT SHIFT}
   - {t: LANGUAGE 2, h: NUM_MAC}
   - Ctl+LEFT COMMAND
   - {t: ESCAPE, h: LEFT CONTROL}
@@ -339,8 +339,8 @@ layers:
   - '['
   - ']'
   - {t: ▽, type: trans}
-  - SCROLL_VER_MAC
-  - SCROLL_HOR_MAC
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -503,9 +503,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -592,9 +592,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
