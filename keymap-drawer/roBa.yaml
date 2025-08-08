@@ -19,9 +19,9 @@ layers:
   - Ctl+0
   - ESCAPE
   - H
-  - J
-  - {t: K, h: SCROLL_VER_WIN}
-  - {t: L, h: SCROLL_HOR_WIN}
+  - {t: J, h: SCROLL_VER_WIN}
+  - {t: K, h: SCROLL_HOR_WIN}
+  - L
   - '-'
   - {t: Z, h: LEFT SHIFT}
   - {t: X, h: LCTRL}
@@ -459,8 +459,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -548,8 +548,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
