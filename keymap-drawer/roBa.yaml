@@ -24,7 +24,7 @@ layers:
   - {t: L, h: SCROLL_HOR_WIN}
   - '-'
   - {t: Z, h: LEFT SHIFT}
-  - {t: '&kp_exit_AML X', h: LCTRL}
+  - {t: X, h: LCTRL}
   - {t: C, h: LEFT ALT}
   - {t: V, h: LEFT WIN}
   - B
@@ -624,8 +624,12 @@ combos:
 - p: [0, 1]
   k: ESCAPE
 - p: [18, 19]
-  k: '&mkp MCLK'
+  k: '&mkp MB1'
 - p: [8, 9]
   k: BACKSPACE
 - p: [34, 42]
   k: Gui+SPACE
+- p: [19, 20]
+  k: '&mkp MB2'
+- p: [18, 20]
+  k: '&mkp MB3'
