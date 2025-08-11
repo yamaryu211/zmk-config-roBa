@@ -58,8 +58,9 @@
         device = <&trackball>;
 
         // AML設定
+        // トラボ操作が止まった800ms後にAMK解除
 
-        input-processors = <&zip_temp_layer AML 1200>;
+        input-processors = <&zip_temp_layer AML 800>;
 
         // 自由スクロール
         // Macの場合
