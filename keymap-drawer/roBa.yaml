@@ -19,10 +19,10 @@ layers:
   - Ctl+0
   - {t: ESC, s: '`'}
   - H
-  - {t: J, h: SCROLL_VER_WIN}
-  - {t: K, h: SCROLL_HOR_WIN}
-  - L
-  - '-'
+  - J
+  - K
+  - {t: L, h: SCROLL_VER_WIN}
+  - {t: '-', h: SCROLL_HOR_WIN}
   - {t: Z, h: LEFT SHIFT}
   - {t: X, h: LCTRL}
   - {t: C, h: LEFT ALT}
@@ -63,10 +63,10 @@ layers:
   - Gui+KP 0
   - {t: ESC, s: '`'}
   - H
-  - {t: J, h: SCROLL_VER_MAC}
-  - {t: K, h: SCROLL_HOR_MAC}
-  - L
-  - '-'
+  - J
+  - K
+  - {t: L, h: SCROLL_VER_MAC}
+  - {t: '-', h: SCROLL_HOR_MAC}
   - {t: Z, h: LEFT SHIFT}
   - {t: X, h: LEFT GUI}
   - {t: C, h: LEFT ALT}
@@ -459,9 +459,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {type: held}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -503,9 +503,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {type: held}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -548,9 +548,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {type: held}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -592,9 +592,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {type: held}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
