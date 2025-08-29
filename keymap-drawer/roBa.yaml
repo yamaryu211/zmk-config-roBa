@@ -96,7 +96,7 @@ layers:
   - KP MULTIPLY
   - ESCAPE
   - ''
-  - ''
+  - Gui+TAB
   - ''
   - Alt+PRINTSCREEN
   - KP MINUS
