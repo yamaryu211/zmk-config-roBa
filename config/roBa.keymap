@@ -136,9 +136,9 @@
     xy-threshold = <5 8>;
     require-n-samples = <10>;
     immediate-snap-threshold = <1500>;
-    lock-duration-ms = <200>;
+    lock-duration-ms = <300>;
     lock-for-next-n-events = <10>;
-    idle-reset-timeout-ms = <200>;
+    idle-reset-timeout-ms = <300>;
 };
 
 //マウスカーソルの挙動設定
