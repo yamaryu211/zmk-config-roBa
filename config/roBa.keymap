@@ -1,11 +1,11 @@
 #include <dt-bindings/zmk/input_transform.h>
 #include <input/processors.dtsi>
+#include <scroll-snap.dtsi>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
-#include <scroll-snap.dtsi>
 
 #define DEFAULT_WIN 0
 #define DEFAULT_MAC 1
@@ -129,11 +129,11 @@
 };
 
 // スクロールスナップの設定
+
 &zip_scroll_snap {
     x-threshold = <5 8>;
     y-threshold = <8 5>;
     xy-threshold = <5 8>;
-
     require-n-samples = <10>;
     immediate-snap-threshold = <1500>;
     lock-duration-ms = <200>;
@@ -153,7 +153,7 @@
 //マウススクロールの挙動設定
 
 &msc {
-    delay-ms = <3>;
+    delay-ms = <0>;
     trigger-period-ms = <3>;
     time-to-max-speed-ms = <200>;
     acceleration-exponent = <0>;
