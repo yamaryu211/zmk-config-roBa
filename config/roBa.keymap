@@ -5,6 +5,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
+#include <scroll-snap.dtsi>
 
 #define DEFAULT_WIN 0
 #define DEFAULT_MAC 1
@@ -67,7 +68,8 @@
             input-processors =
                 <&zip_xy_scaler 1 16>,
                 <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-                <&zip_xy_to_scroll_mapper>;
+                <&zip_xy_to_scroll_mapper>
+                <&zip_scroll_snap>;
         };
 
         // Windowsの場合
@@ -77,7 +79,8 @@
             input-processors =
                 <&zip_xy_scaler 1 2>,
                 <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
-                <&zip_xy_to_scroll_mapper>;
+                <&zip_xy_to_scroll_mapper>
+                <&zip_scroll_snap>;
         };
 
         // 縦横別のスクロール
@@ -123,6 +126,19 @@
                 <&zip_xy_to_scroll_mapper>;
         };
     };
+};
+
+// スクロールスナップの設定
+&zip_scroll_snap {
+    x-threshold = <5 8>;
+    y-threshold = <8 5>;
+    xy-threshold = <5 8>;
+
+    require-n-samples = <10>;
+    immediate-snap-threshold = <1500>;
+    lock-duration-ms = <200>;
+    lock-for-next-n-events = <10>;
+    idle-reset-timeout-ms = <200>;
 };
 
 //マウスカーソルの挙動設定
