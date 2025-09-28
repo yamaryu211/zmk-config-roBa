@@ -81,10 +81,10 @@ layers:
   - {t: /, h: LEFT SHIFT}
   - {t: LANGUAGE 2, h: NUM_MAC}
   - Ctl+LEFT COMMAND
-  - {t: ESCAPE, h: LEFT CONTROL}
+  - LEFT CONTROL
   - LEFT ALT
-  - {t: '&kp_exit_AML DELETE', h: LEFT COMMAND}
-  - {t: '&kp_exit_AML SPACE', h: LEFT SHIFT}
+  - {t: DELETE, h: LEFT COMMAND}
+  - {t: SPACE, h: LEFT SHIFT}
   - {t: ENTER, h: NUM_MAC}
   - {t: BACKSPACE, h: SYMBOL_MAC}
   - {t: LANGUAGE 1, h: FUNC_SCROLL_MAC}
