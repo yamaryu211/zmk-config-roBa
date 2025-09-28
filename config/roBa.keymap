@@ -822,10 +822,10 @@
 
         DEFAULT_MAC {
             bindings = <
-&kp Q             &kp W                 &kp E                    &kp R               &kp T                                                                                                     &kp Y            &kp U               &kp I               &kp O             &kp P
-&kp A             &kp S                 &kp D                    &kp F               &kp G                                    &kp LG(KP_NUMBER_0)                       &gresc                 &kp H            &kp J               &kp K               &lt 11 L          &lt 13 MINUS
-&mt LEFT_SHIFT Z  &mt LEFT_GUI X        &mt LEFT_ALT C           &mt LEFT_CONTROL V  &kp B                                    &kp LEFT_PARENTHESIS                      &kp RIGHT_PARENTHESIS  &kp N            &mt LEFT_CONTROL M  &mt LEFT_ALT COMMA  &mt LEFT_GUI DOT  &mt LEFT_SHIFT SLASH
-&lt 3 LANGUAGE_2  &kp LC(LEFT_COMMAND)  &mt LEFT_CONTROL ESCAPE  &kp LEFT_ALT        &mt_exit_AML_on_tap LEFT_COMMAND DELETE  &mt_exit_AML_on_tap LEFT_SHIFT SPACE      &lt 3 ENTER            &lt 5 BACKSPACE                                                            &lt 7 LANGUAGE_1
+&kp Q             &kp W                 &kp E             &kp R               &kp T                                                                     &kp Y            &kp U               &kp I               &kp O             &kp P
+&kp A             &kp S                 &kp D             &kp F               &kp G                    &kp LG(KP_NUMBER_0)       &gresc                 &kp H            &kp J               &kp K               &lt 11 L          &lt 13 MINUS
+&mt LEFT_SHIFT Z  &mt LEFT_GUI X        &mt LEFT_ALT C    &mt LEFT_CONTROL V  &kp B                    &kp LEFT_PARENTHESIS      &kp RIGHT_PARENTHESIS  &kp N            &mt LEFT_CONTROL M  &mt LEFT_ALT COMMA  &mt LEFT_GUI DOT  &mt LEFT_SHIFT SLASH
+&lt 3 LANGUAGE_2  &kp LC(LEFT_COMMAND)  &kp LEFT_CONTROL  &kp LEFT_ALT        &mt LEFT_COMMAND DELETE  &mt LEFT_SHIFT SPACE      &lt 3 ENTER            &lt 5 BACKSPACE                                                            &lt 7 LANGUAGE_1
             >;
 
             sensor-bindings = <&mod_morph_encoder_mac>;
