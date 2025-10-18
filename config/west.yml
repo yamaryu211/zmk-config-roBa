@@ -29,5 +29,8 @@ manifest:
     - name: zmk-input-processor-keybind
       remote: te9no
       revision: main
+    - name: zmk-mouse-gesture
+      remote: kot149
+      revision: v1
   self:
     path: config

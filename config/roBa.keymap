@@ -6,6 +6,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
+#include <mouse-gesture.dtsi>
 
 #define DEFAULT_WIN 0
 #define DEFAULT_MAC 1
@@ -21,6 +22,8 @@
 #define SCROLL_VER_MAC 11
 #define SCROLL_HOR_WIN 12
 #define SCROLL_HOR_MAC 13
+#define GESTURE_WIN 14
+#define GESTURE_MAC 15
 
 // ロータリーエンコーダー: スクロール量変更の定義を追記
 
@@ -172,6 +175,17 @@
             layers = <KBD_SETTING>;
             input-processors = <&zip_xy_scaler 0 1>;
         };
+
+        // マウスジェスチャーの設定
+        mouse_gesture {
+            layers = <GESTURE_WIN>;
+            input-processors = <&zip_mouse_gesture>;
+        };
+
+        mouse_gesture_mac {
+            layers = <GESTURE_MAC>;
+            input-processors = <&zip_mouse_gesture>;
+        };
     };
 };
 
@@ -186,6 +200,32 @@
     lock-duration-ms = <300>;
     lock-for-next-n-events = <10>;
     idle-reset-timeout-ms = <300>;
+};
+
+// マウスジェスチャーの設定
+&zip_mouse_gesture {
+    stroke-size = <300>; // Optional (default: 200)
+    enable-eager-mode; // Optional, but recommended
+
+    history_back {
+        pattern = <GESTURE_RIGHT>;
+        bindings = <&kp LA(LEFT)>;
+    };
+
+    history_forward {
+        pattern = <GESTURE_LEFT>;
+        bindings = <&kp LA(RIGHT)>;
+    };
+
+    close_tab {
+        pattern = <GESTURE_DOWN GESTURE_RIGHT>;
+        bindings = <&kp LC(W)>;
+    };
+
+    new_tab {
+        pattern = <GESTURE_DOWN GESTURE_LEFT>;
+        bindings = <&kp LC(T)>;
+    };
 };
 
 //マウスカーソルの挙動設定
@@ -962,6 +1002,24 @@
         };
 
         SCROLL_HOR_MAC {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+            >;
+        };
+
+        GESTURE_WIN {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+            >;
+        };
+
+        GESTURE_MAC {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
