@@ -54,7 +54,7 @@
     };
 
     // トラックボール入力をキー入力に変換
-    zip_keybind_keys: zip_keybind_keys {
+    zip_arrow_keys: zip_arrow_keys {
         compatible = "zmk,input-processor-keybind";
         #input-processor-cells = <0>;
         track_remainders;
@@ -65,11 +65,30 @@
         tick = <10>;
         wait-ms = <5>;
         tap-ms = <5>;
-        // mode = <1>
+        mode = <1>;
         // threshold = <10>
         // max_threshold = <200>
         // max_pending_activations = <10>
     };
+
+    // トラックボール入力を音量・輝度操作に変換
+    zip_volume_keys: zip_volume_keys {
+        compatible = "zmk,input-processor-keybind";
+        #input-processor-cells = <0>;
+        track_remainders;
+        bindings =  <&kp C_VOLUME_UP>,
+                    <&kp C_VOLUME_DOWN>,
+                    <&kp C_BRIGHTNESS_INC>,
+                    <&kp C_BRIGHTNESS_DEC>;
+        tick = <10>;
+        wait-ms = <5>;
+        tap-ms = <5>;
+        mode = <1>;
+        // threshold = <10>
+        // max_threshold = <200>
+        // max_pending_activations = <10>
+    };
+
 
     trackball_listener {
         status = "okay";
@@ -143,9 +162,15 @@
         };
 
         // トラックボール入力→キー入力
-        keybind_keys {
+        volume_keys {
             layers = <KBD_SETTING>;
-            input-processors = <&zip_keybind_keys>;
+            input-processors = <&zip_volume_keys>;
+            process-next;
+        };
+        // カーソルの動きをゼロにする
+        post_volume_keys {
+            layers = <KBD_SETTING>;
+            input-processors = <&zip_xy_scaler 0 1>;
         };
     };
 };
