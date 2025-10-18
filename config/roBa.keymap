@@ -204,8 +204,8 @@
 
 // マウスジェスチャーの設定
 &zip_mouse_gesture {
-    stroke-size = <300>; // Optional (default: 200)
-    enable-eager-mode; // Optional, but recommended
+    stroke-size = <150>;
+    enable-eager-mode;
 
     history_back {
         pattern = <GESTURE_RIGHT>;
@@ -226,6 +226,38 @@
         pattern = <GESTURE_DOWN GESTURE_LEFT>;
         bindings = <&kp LC(T)>;
     };
+
+    app_switcher {
+        pattern = <GESTURE_DOWN GESTURE_UP>;
+        bindings = <&kp LG(TAB)>;
+    };
+
+    virtual_desktop_prev {
+        pattern = <GESTURE_LEFT GESTURE_DOWN>;
+        bindings = <&kp LG(LC(LEFT))>;
+    };
+
+    virtual_desktop_next {
+        pattern = <GESTURE_RIGHT GESTURE_DOWN>;
+        bindings = <&kp LG(LC(RIGHT))>;
+    };
+
+    // left {
+    //     gesture = <GESTURE_LEFT>;
+    //     bindings = <&kp LEFT>;
+    // };
+    // right {
+    //     gesture = <GESTURE_RIGHT>;
+    //     bindings = <&kp RIGHT>;
+    // };
+    // up {
+    //     gesture = <GESTURE_UP>;
+    //     bindings = <&kp UP>;
+    // };
+    // down {
+    //     gesture = <GESTURE_DOWN>;
+    //     bindings = <&kp DOWN>;
+    // };
 };
 
 //マウスカーソルの挙動設定
