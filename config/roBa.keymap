@@ -186,13 +186,27 @@
 
         mouse_gesture {
             layers = <GESTURE_WIN>;
-            input-processors = <&zip_mouse_gesture>;
+            input-processors = <&zip_mouse_gesture_win>;
         };
 
         mouse_gesture_mac {
             layers = <GESTURE_MAC>;
-            input-processors = <&zip_mouse_gesture>;
+            input-processors = <&zip_mouse_gesture_win>;
         };
+    };
+
+    layer_listeners {
+        compatible = "zmk,layer-listeners";
+
+        gesture_win {
+            layers = <GESTURE_WIN>;
+            on-layer-selected = <&mouse_gesture_on &mouse_gesture_off>;
+        };
+
+        gesture_mac {
+            layers = <GESTURE_MAC>;
+            on-layer-selected = <&mouse_gesture_on &mouse_gesture_off>;
+        };        
     };
 };
 
@@ -211,7 +225,8 @@
 
 // マウスジェスチャーの設定
 
-&zip_mouse_gesture {
+&zip_mouse_gesture_win {
+    compatible = "zmk,mouse-gesture";
     stroke-size = <150>;
     enable-eager-mode;
 
