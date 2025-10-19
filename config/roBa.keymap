@@ -74,6 +74,66 @@
         // max_pending_activations = <10>
     };
 
+    // マウスジェスチャーの設定
+
+    zip_mouse_gesture_win: zip_mouse_gesture_win {
+        compatible = "zmk,mouse-gesture";
+        stroke-size = <150>;
+        enable-eager-mode;
+
+        history_back {
+            pattern = <GESTURE_RIGHT>;
+            bindings = <&kp LA(LEFT)>;
+        };
+
+        history_forward {
+            pattern = <GESTURE_LEFT>;
+            bindings = <&kp LA(RIGHT)>;
+        };
+
+        close_tab {
+            pattern = <GESTURE_DOWN GESTURE_RIGHT>;
+            bindings = <&kp LC(W)>;
+        };
+
+        new_tab {
+            pattern = <GESTURE_DOWN GESTURE_LEFT>;
+            bindings = <&kp LC(T)>;
+        };
+
+        app_switcher {
+            pattern = <GESTURE_DOWN GESTURE_UP>;
+            bindings = <&kp LG(TAB)>;
+        };
+
+        virtual_desktop_prev {
+            pattern = <GESTURE_LEFT GESTURE_DOWN>;
+            bindings = <&kp LG(LC(LEFT))>;
+        };
+
+        virtual_desktop_next {
+            pattern = <GESTURE_RIGHT GESTURE_DOWN>;
+            bindings = <&kp LG(LC(RIGHT))>;
+        };
+
+        // left {
+        //     gesture = <GESTURE_LEFT>;
+        //     bindings = <&kp LEFT>;
+        // };
+        // right {
+        //     gesture = <GESTURE_RIGHT>;
+        //     bindings = <&kp RIGHT>;
+        // };
+        // up {
+        //     gesture = <GESTURE_UP>;
+        //     bindings = <&kp UP>;
+        // };
+        // down {
+        //     gesture = <GESTURE_DOWN>;
+        //     bindings = <&kp DOWN>;
+        // };
+    };
+
     // トラックボール入力を音量・輝度操作に変換
 
     zip_volume_keys: zip_volume_keys {
@@ -223,65 +283,6 @@
     idle-reset-timeout-ms = <300>;
 };
 
-// マウスジェスチャーの設定
-
-zip_mouse_gesture_win: zip_mouse_gesture_win {
-    compatible = "zmk,mouse-gesture";
-    stroke-size = <150>;
-    enable-eager-mode;
-
-    history_back {
-        pattern = <GESTURE_RIGHT>;
-        bindings = <&kp LA(LEFT)>;
-    };
-
-    history_forward {
-        pattern = <GESTURE_LEFT>;
-        bindings = <&kp LA(RIGHT)>;
-    };
-
-    close_tab {
-        pattern = <GESTURE_DOWN GESTURE_RIGHT>;
-        bindings = <&kp LC(W)>;
-    };
-
-    new_tab {
-        pattern = <GESTURE_DOWN GESTURE_LEFT>;
-        bindings = <&kp LC(T)>;
-    };
-
-    app_switcher {
-        pattern = <GESTURE_DOWN GESTURE_UP>;
-        bindings = <&kp LG(TAB)>;
-    };
-
-    virtual_desktop_prev {
-        pattern = <GESTURE_LEFT GESTURE_DOWN>;
-        bindings = <&kp LG(LC(LEFT))>;
-    };
-
-    virtual_desktop_next {
-        pattern = <GESTURE_RIGHT GESTURE_DOWN>;
-        bindings = <&kp LG(LC(RIGHT))>;
-    };
-
-    // left {
-    //     gesture = <GESTURE_LEFT>;
-    //     bindings = <&kp LEFT>;
-    // };
-    // right {
-    //     gesture = <GESTURE_RIGHT>;
-    //     bindings = <&kp RIGHT>;
-    // };
-    // up {
-    //     gesture = <GESTURE_UP>;
-    //     bindings = <&kp UP>;
-    // };
-    // down {
-    //     gesture = <GESTURE_DOWN>;
-    //     bindings = <&kp DOWN>;
-    // };
-};
 
 //マウスカーソルの挙動設定
 
