@@ -225,7 +225,7 @@
 
 // マウスジェスチャーの設定
 
-&zip_mouse_gesture_win {
+zip_mouse_gesture_win: zip_mouse_gesture_win {
     compatible = "zmk,mouse-gesture";
     stroke-size = <150>;
     enable-eager-mode;
