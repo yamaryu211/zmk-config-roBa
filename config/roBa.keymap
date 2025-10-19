@@ -78,6 +78,7 @@
 
     zip_mouse_gesture_win: zip_mouse_gesture_win {
         compatible = "zmk,mouse-gesture";
+        #input-processor-cells = <0>;
         stroke-size = <150>;
         enable-eager-mode;
 
