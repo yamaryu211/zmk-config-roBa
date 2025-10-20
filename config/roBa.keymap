@@ -30,6 +30,115 @@
 #undef ZMK_POINTING_DEFAULT_SCRL_VAL  // 定義を削除
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 60
 
+// マウスジェスチャーの設定
+
+&zip_mouse_gesture {
+    compatible = "zmk,mouse-gesture";
+    stroke-size = <150>;
+    enable-eager-mode;
+
+    history_back {
+        pattern = <GESTURE_RIGHT>;
+        bindings = <&kp LA(LEFT)>;
+    };
+
+    history_forward {
+        pattern = <GESTURE_LEFT>;
+        bindings = <&kp LA(RIGHT)>;
+    };
+
+    close_tab {
+        pattern = <GESTURE_DOWN GESTURE_RIGHT>;
+        bindings = <&kp LC(W)>;
+    };
+
+    new_tab {
+        pattern = <GESTURE_DOWN GESTURE_LEFT>;
+        bindings = <&kp LC(T)>;
+    };
+
+    app_switcher {
+        pattern = <GESTURE_DOWN GESTURE_UP>;
+        bindings = <&kp LG(TAB)>;
+    };
+
+    virtual_desktop_prev {
+        pattern = <GESTURE_LEFT GESTURE_DOWN>;
+        bindings = <&kp LG(LC(LEFT))>;
+    };
+
+    virtual_desktop_next {
+        pattern = <GESTURE_RIGHT GESTURE_DOWN>;
+        bindings = <&kp LG(LC(RIGHT))>;
+    };
+
+    // left {
+    //     gesture = <GESTURE_LEFT>;
+    //     bindings = <&kp LEFT>;
+    // };
+    // right {
+    //     gesture = <GESTURE_RIGHT>;
+    //     bindings = <&kp RIGHT>;
+    // };
+    // up {
+    //     gesture = <GESTURE_UP>;
+    //     bindings = <&kp UP>;
+    // };
+    // down {
+    //     gesture = <GESTURE_DOWN>;
+    //     bindings = <&kp DOWN>;
+    // };
+};
+
+// スクロールスナップの設定
+
+&zip_scroll_snap {
+    x-threshold = <5 8>;
+    y-threshold = <8 5>;
+    xy-threshold = <5 8>;
+    require-n-samples = <4>;
+    immediate-snap-threshold = <800>;
+    lock-duration-ms = <300>;
+    lock-for-next-n-events = <10>;
+    idle-reset-timeout-ms = <300>;
+};
+
+
+//マウスカーソルの挙動設定
+
+&mmv {
+    delay-ms = <20>;
+    time-to-max-speed-ms = <300>;
+    acceleration-exponent = <2>;
+};
+
+//マウススクロールの挙動設定
+
+&msc {
+    delay-ms = <0>;
+    time-to-max-speed-ms = <500>;
+    acceleration-exponent = <2>;
+};
+
+// Inpur-ProcessorによるAMK設定
+// クリック後、250ms後にAMK解除
+
+&mkp_input_listener { input-processors = <&zip_temp_layer AML 250>; };
+
+&mt {
+    flavor = "balanced";
+    tapping-term-ms = <180>;
+    quick-tap-ms = <180>;
+};
+
+&lt {
+    flavor = "balanced";
+    tapping-term-ms = <180>;
+    quick-tap-ms = <180>;
+};
+
+&sl { release-after-ms = <30000>; };
+
 / {
     // excluded-positionsの設定
 
@@ -209,115 +318,6 @@
         };        
     };
 };
-
-// マウスジェスチャーの設定
-
-&zip_mouse_gesture {
-    compatible = "zmk,mouse-gesture";
-    stroke-size = <150>;
-    enable-eager-mode;
-
-    history_back {
-        pattern = <GESTURE_RIGHT>;
-        bindings = <&kp LA(LEFT)>;
-    };
-
-    history_forward {
-        pattern = <GESTURE_LEFT>;
-        bindings = <&kp LA(RIGHT)>;
-    };
-
-    close_tab {
-        pattern = <GESTURE_DOWN GESTURE_RIGHT>;
-        bindings = <&kp LC(W)>;
-    };
-
-    new_tab {
-        pattern = <GESTURE_DOWN GESTURE_LEFT>;
-        bindings = <&kp LC(T)>;
-    };
-
-    app_switcher {
-        pattern = <GESTURE_DOWN GESTURE_UP>;
-        bindings = <&kp LG(TAB)>;
-    };
-
-    virtual_desktop_prev {
-        pattern = <GESTURE_LEFT GESTURE_DOWN>;
-        bindings = <&kp LG(LC(LEFT))>;
-    };
-
-    virtual_desktop_next {
-        pattern = <GESTURE_RIGHT GESTURE_DOWN>;
-        bindings = <&kp LG(LC(RIGHT))>;
-    };
-
-    // left {
-    //     gesture = <GESTURE_LEFT>;
-    //     bindings = <&kp LEFT>;
-    // };
-    // right {
-    //     gesture = <GESTURE_RIGHT>;
-    //     bindings = <&kp RIGHT>;
-    // };
-    // up {
-    //     gesture = <GESTURE_UP>;
-    //     bindings = <&kp UP>;
-    // };
-    // down {
-    //     gesture = <GESTURE_DOWN>;
-    //     bindings = <&kp DOWN>;
-    // };
-};
-
-// スクロールスナップの設定
-
-&zip_scroll_snap {
-    x-threshold = <5 8>;
-    y-threshold = <8 5>;
-    xy-threshold = <5 8>;
-    require-n-samples = <4>;
-    immediate-snap-threshold = <800>;
-    lock-duration-ms = <300>;
-    lock-for-next-n-events = <10>;
-    idle-reset-timeout-ms = <300>;
-};
-
-
-//マウスカーソルの挙動設定
-
-&mmv {
-    delay-ms = <20>;
-    time-to-max-speed-ms = <300>;
-    acceleration-exponent = <2>;
-};
-
-//マウススクロールの挙動設定
-
-&msc {
-    delay-ms = <0>;
-    time-to-max-speed-ms = <500>;
-    acceleration-exponent = <2>;
-};
-
-// Inpur-ProcessorによるAMK設定
-// クリック後、250ms後にAMK解除
-
-&mkp_input_listener { input-processors = <&zip_temp_layer AML 250>; };
-
-&mt {
-    flavor = "balanced";
-    tapping-term-ms = <180>;
-    quick-tap-ms = <180>;
-};
-
-&lt {
-    flavor = "balanced";
-    tapping-term-ms = <180>;
-    quick-tap-ms = <180>;
-};
-
-&sl { release-after-ms = <30000>; };
 
 / {
     combos {
