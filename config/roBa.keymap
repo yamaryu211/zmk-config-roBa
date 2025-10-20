@@ -102,7 +102,6 @@
     idle-reset-timeout-ms = <300>;
 };
 
-
 //マウスカーソルの挙動設定
 
 &mmv {
@@ -314,7 +313,7 @@
         gesture_mac {
             layers = <GESTURE_MAC>;
             on-layer-selected = <&mouse_gesture_on &mouse_gesture_off>;
-        };        
+        };
     };
 };
 
@@ -360,11 +359,6 @@
         middle_click {
             bindings = <&mkp MB3>;
             key-positions = <18 20>;
-        };
-
-        equal {
-            bindings = <&kp EQUAL>;
-            key-positions = <20 21>;
         };
     };
 
