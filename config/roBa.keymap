@@ -76,7 +76,7 @@
 
     // マウスジェスチャーの設定
 
-    zip_mouse_gesture_win: zip_mouse_gesture_win {
+    zip_mouse_gesture: zip_mouse_gesture {
         compatible = "zmk,mouse-gesture";
         #input-processor-cells = <0>;
         stroke-size = <150>;
@@ -247,12 +247,12 @@
 
         mouse_gesture {
             layers = <GESTURE_WIN>;
-            input-processors = <&zip_mouse_gesture_win>;
+            input-processors = <&zip_mouse_gesture>;
         };
 
         mouse_gesture_mac {
             layers = <GESTURE_MAC>;
-            input-processors = <&zip_mouse_gesture_win>;
+            input-processors = <&zip_mouse_gesture>;
         };
     };
 
