@@ -32,5 +32,6 @@ manifest:
     - name: zmk-mouse-gesture
       remote: kot149
       revision: v1
+      path: modules/zmk-mouse-gesture
   self:
     path: config
