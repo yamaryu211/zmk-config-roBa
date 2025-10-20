@@ -33,7 +33,6 @@
 // マウスジェスチャーの設定
 
 &zip_mouse_gesture {
-    compatible = "zmk,mouse-gesture";
     stroke-size = <150>;
     enable-eager-mode;
 
