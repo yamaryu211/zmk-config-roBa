@@ -17,30 +17,30 @@ layers:
   - F
   - G
   - Ctl+0
-  - ESCAPE
+  - {t: ESC, s: '`'}
   - H
   - J
   - K
   - {t: L, h: SCROLL_VER_WIN}
   - {t: '-', h: SCROLL_HOR_WIN}
-  - {t: '&kp_exit_AML Z', h: LEFT SHIFT}
-  - {t: '&kp_exit_AML X', h: LCTRL}
-  - {t: '&kp_exit_AML C', h: LEFT ALT}
-  - {t: '&kp_exit_AML V', h: LEFT WIN}
+  - {t: Z, h: LEFT SHIFT}
+  - {t: X, h: LCTRL}
+  - {t: C, h: LEFT ALT}
+  - {t: V, h: LEFT WIN}
   - B
   - (
   - )
   - N
-  - {t: '&kp_exit_AML M', h: LEFT WIN}
-  - {t: '&kp_exit_AML COMMA', h: LEFT ALT}
-  - {t: '&kp_exit_AML PERIOD', h: LCTRL}
-  - {t: '&kp_exit_AML SLASH', h: LEFT SHIFT}
+  - {t: M, h: LEFT GUI}
+  - {t: ',', h: LEFT ALT}
+  - {t: ., h: LCTRL}
+  - {t: /, h: LEFT SHIFT}
   - {t: LANGUAGE 2, h: NUM_WIN}
   - Sft+F10
   - {t: TAB, h: LEFT WIN}
   - LEFT ALT
-  - {t: '&kp_exit_AML DELETE', h: LCTRL}
-  - {t: '&kp_exit_AML SPACE', h: LEFT SHIFT}
+  - {t: DELETE, h: LCTRL}
+  - {t: SPACE, h: LEFT SHIFT}
   - {t: ENTER, h: NUM_WIN}
   - {t: BACKSPACE, h: SYMBOL_WIN}
   - {t: LANGUAGE 1, h: FUNC_SCROLL_WIN}
@@ -61,30 +61,30 @@ layers:
   - F
   - G
   - Gui+KP 0
-  - ESCAPE
+  - {t: ESC, s: '`'}
   - H
   - J
   - K
   - {t: L, h: SCROLL_VER_MAC}
   - {t: '-', h: SCROLL_HOR_MAC}
-  - {t: '&kp_exit_AML Z', h: LEFT SHIFT}
-  - {t: '&kp_exit_AML X', h: LEFT GUI}
-  - {t: '&kp_exit_AML C', h: LEFT ALT}
-  - {t: '&kp_exit_AML V', h: LEFT CONTROL}
+  - {t: Z, h: LEFT SHIFT}
+  - {t: X, h: LEFT GUI}
+  - {t: C, h: LEFT ALT}
+  - {t: V, h: LEFT CONTROL}
   - B
   - (
   - )
   - N
-  - {t: '&kp_exit_AML M', h: LEFT CONTROL}
-  - {t: '&kp_exit_AML COMMA', h: LEFT ALT}
-  - {t: '&kp_exit_AML DOT', h: LEFT GUI}
-  - {t: '&kp_exit_AML SLASH', h: LEFT SHIFT}
+  - {t: M, h: LEFT CONTROL}
+  - {t: ',', h: LEFT ALT}
+  - {t: ., h: LEFT GUI}
+  - {t: /, h: LEFT SHIFT}
   - {t: LANGUAGE 2, h: NUM_MAC}
   - Ctl+LEFT COMMAND
-  - {t: ESCAPE, h: LEFT CONTROL}
+  - LEFT CONTROL
   - LEFT ALT
-  - {t: '&kp_exit_AML DELETE', h: LEFT COMMAND}
-  - {t: '&kp_exit_AML SPACE', h: LEFT SHIFT}
+  - {t: DELETE, h: LEFT COMMAND}
+  - {t: SPACE, h: LEFT SHIFT}
   - {t: ENTER, h: NUM_MAC}
   - {t: BACKSPACE, h: SYMBOL_MAC}
   - {t: LANGUAGE 1, h: FUNC_SCROLL_MAC}
@@ -96,7 +96,7 @@ layers:
   - KP MULTIPLY
   - ESCAPE
   - ''
-  - ''
+  - Gui+TAB
   - ''
   - Alt+PRINTSCREEN
   - KP MINUS
@@ -295,8 +295,8 @@ layers:
   - '['
   - ']'
   - {t: ▽, type: trans}
-  - {t: SCROLL_VER_WIN, h: sticky}
-  - {t: SCROLL_HOR_WIN, h: sticky}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -339,8 +339,8 @@ layers:
   - '['
   - ']'
   - {t: ▽, type: trans}
-  - SCROLL_VER_MAC
-  - SCROLL_HOR_MAC
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -616,6 +616,94 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  GESTURE_WIN:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  GESTURE_MAC:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
 combos:
 - p: [11, 12]
   k: TAB
@@ -624,8 +712,12 @@ combos:
 - p: [0, 1]
   k: ESCAPE
 - p: [18, 19]
-  k: '&mkp MCLK'
+  k: '&mkp MB1'
 - p: [8, 9]
   k: BACKSPACE
 - p: [34, 42]
   k: Gui+SPACE
+- p: [19, 20]
+  k: '&mkp MB2'
+- p: [18, 20]
+  k: '&mkp MB3'
