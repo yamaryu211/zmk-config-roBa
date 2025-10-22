@@ -21,11 +21,61 @@
 #define SCROLL_VER_MAC 11
 #define SCROLL_HOR_WIN 12
 #define SCROLL_HOR_MAC 13
+#define GESTURE_WIN 14
+#define GESTURE_MAC 15
 
 // ロータリーエンコーダー: スクロール量変更の定義を追記
 
 #undef ZMK_POINTING_DEFAULT_SCRL_VAL  // 定義を削除
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 60
+
+// スクロールスナップの設定
+
+&zip_scroll_snap {
+    x-threshold = <5 8>;
+    y-threshold = <8 5>;
+    xy-threshold = <5 8>;
+    require-n-samples = <4>;
+    immediate-snap-threshold = <800>;
+    lock-duration-ms = <300>;
+    lock-for-next-n-events = <10>;
+    idle-reset-timeout-ms = <300>;
+};
+
+//マウスカーソルの挙動設定
+
+&mmv {
+    delay-ms = <20>;
+    time-to-max-speed-ms = <300>;
+    acceleration-exponent = <2>;
+};
+
+//マウススクロールの挙動設定
+
+&msc {
+    delay-ms = <0>;
+    time-to-max-speed-ms = <500>;
+    acceleration-exponent = <2>;
+};
+
+// Inpur-ProcessorによるAMK設定
+// クリック後、250ms後にAMK解除
+
+&mkp_input_listener { input-processors = <&zip_temp_layer AML 250>; };
+
+&mt {
+    flavor = "balanced";
+    tapping-term-ms = <180>;
+    quick-tap-ms = <180>;
+};
+
+&lt {
+    flavor = "balanced";
+    tapping-term-ms = <180>;
+    quick-tap-ms = <180>;
+};
+
+&sl { release-after-ms = <30000>; };
 
 / {
     // excluded-positionsの設定
@@ -53,6 +103,46 @@
         require-prior-idle-ms = <300>;
     };
 
+    // トラックボール入力をキー入力に変換
+
+    zip_arrow_keys: zip_arrow_keys {
+        compatible = "zmk,input-processor-keybind";
+        #input-processor-cells = <0>;
+        track_remainders;
+        bindings = <&kp RIGHT>, <&kp LEFT>, <&kp UP>, <&kp DOWN>;
+
+        tick = <10>;
+        wait-ms = <5>;
+        tap-ms = <5>;
+        mode = <1>;
+
+        // threshold = <10>
+        // max_threshold = <200>
+        // max_pending_activations = <10>
+    };
+
+    // トラックボール入力を音量・輝度操作に変換
+
+    zip_volume_keys: zip_volume_keys {
+        compatible = "zmk,input-processor-keybind";
+        #input-processor-cells = <0>;
+        track_remainders;
+        bindings =
+            <&kp C_VOLUME_UP>,
+            <&kp C_VOLUME_DOWN>,
+            <&kp C_BRIGHTNESS_INC>,
+            <&kp C_BRIGHTNESS_DEC>;
+
+        tick = <10>;
+        wait-ms = <5>;
+        tap-ms = <5>;
+        mode = <1>;
+
+        // threshold = <10>
+        // max_threshold = <200>
+        // max_pending_activations = <10>
+    };
+
     trackball_listener {
         status = "okay";
         compatible = "zmk,input-listener";
@@ -76,7 +166,7 @@
         scroller_win {
             layers = <FUNC_SCROLL_WIN>;
             input-processors =
-                <&zip_xy_scaler 2 3>,
+                <&zip_xy_scaler 1 8>,
                 <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
                 <&zip_xy_to_scroll_mapper>;
         };
@@ -108,7 +198,7 @@
         scroller_win_vertical {
             layers = <SCROLL_VER_WIN>;
             input-processors =
-                <&zip_y_scaler 1 2>,
+                <&zip_y_scaler 1 8>,
                 <&zip_x_scaler 0 1>,
                 <&zip_xy_to_scroll_mapper>;
         };
@@ -118,90 +208,28 @@
         scroller_win_horizontal {
             layers = <SCROLL_HOR_WIN>;
             input-processors =
-                <&zip_x_scaler 1 2>,
+                <&zip_x_scaler 1 8>,
                 <&zip_y_scaler 0 1>,
                 <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
                 <&zip_xy_to_scroll_mapper>;
         };
+
+        // トラックボール入力→キー入力
+
+        volume_keys {
+            layers = <KBD_SETTING>;
+            input-processors = <&zip_volume_keys>;
+            process-next;
+        };
+
+        // カーソルの動きをゼロにする
+
+        post_volume_keys {
+            layers = <KBD_SETTING>;
+            input-processors = <&zip_xy_scaler 0 1>;
+        };
     };
 };
-
-// スクロールスナップの設定
-
-&zip_scroll_snap {
-    x-threshold = <5 8>;
-    y-threshold = <8 5>;
-    xy-threshold = <5 8>;
-    require-n-samples = <4>;
-    immediate-snap-threshold = <800>;
-    lock-duration-ms = <300>;
-    lock-for-next-n-events = <10>;
-    idle-reset-timeout-ms = <300>;
-};
-
-//マウスカーソルの挙動設定
-
-&mmv {
-    delay-ms = <20>;
-    time-to-max-speed-ms = <300>;
-    acceleration-exponent = <2>;
-};
-
-//マウススクロールの挙動設定
-
-&msc {
-    delay-ms = <0>;
-    time-to-max-speed-ms = <500>;
-    acceleration-exponent = <2>;
-};
-
-// トラックボール設定
-
-&trackball {
-    arrows {
-        layers = <NUM_MAC NUM_WIN>;
-        bindings =
-            <&kp RIGHT_ARROW>,
-            <&kp LEFT_ARROW>,
-            <&kp UP_ARROW>,
-            <&kp DOWN_ARROW>;
-
-        tick = <10>;
-        wait-ms = <5>;
-        tap-ms = <5>;
-    };
-
-    volume {
-        layers = <KBD_SETTING>;
-        bindings =
-            <&kp C_VOLUME_UP>,
-            <&kp C_VOLUME_DOWN>,
-            <&kp C_BRIGHTNESS_INC>,
-            <&kp C_BRIGHTNESS_DEC>;
-
-        wait-ms = <5>;
-        tap-ms = <5>;
-    };
-};
-
-// Inpur-ProcessorによるAMK設定
-// クリック後、250ms後にAMK解除
-
-&mkp_input_listener { input-processors = <&zip_temp_layer AML 250>; };
-
-&mt {
-    flavor = "balanced";
-    tapping-term-ms = <180>;
-    quick-tap-ms = <180>;
-};
-
-&lt {
-    flavor = "balanced";
-    tapping-term-ms = <180>;
-    quick-tap-ms = <180>;
-};
-
-&sl { release-after-ms = <30000>; };
 
 / {
     combos {
@@ -245,11 +273,6 @@
         middle_click {
             bindings = <&mkp MB3>;
             key-positions = <18 20>;
-        };
-
-        equal {
-            bindings = <&kp EQUAL>;
-            key-positions = <20 21>;
         };
     };
 
@@ -947,6 +970,38 @@
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
             >;
+        };
+
+        GESTURE_WIN {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+            >;
+        };
+
+        GESTURE_MAC {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+            >;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        Gesture_win {
+            if-layers = <10 12>;
+            then-layer = <14>;
+        };
+
+        Gesture_mac {
+            if-layers = <11 13>;
+            then-layer = <15>;
         };
     };
 };
