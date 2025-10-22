@@ -1,7 +1,6 @@
 #include <dt-bindings/zmk/input_transform.h>
 #include <input/processors.dtsi>
 #include <scroll-snap.dtsi>
-#include <mouse-gesture.dtsi>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
@@ -29,65 +28,6 @@
 
 #undef ZMK_POINTING_DEFAULT_SCRL_VAL  // 定義を削除
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 60
-
-// マウスジェスチャーの設定
-
-&zip_mouse_gesture {
-    stroke-size = <150>;
-    enable-eager-mode;
-
-    history_back {
-        pattern = <GESTURE_RIGHT>;
-        bindings = <&kp LA(LEFT)>;
-    };
-
-    history_forward {
-        pattern = <GESTURE_LEFT>;
-        bindings = <&kp LA(RIGHT)>;
-    };
-
-    close_tab {
-        pattern = <GESTURE_DOWN GESTURE_RIGHT>;
-        bindings = <&kp LC(W)>;
-    };
-
-    new_tab {
-        pattern = <GESTURE_DOWN GESTURE_LEFT>;
-        bindings = <&kp LC(T)>;
-    };
-
-    app_switcher {
-        pattern = <GESTURE_DOWN GESTURE_UP>;
-        bindings = <&kp LG(TAB)>;
-    };
-
-    virtual_desktop_prev {
-        pattern = <GESTURE_LEFT GESTURE_DOWN>;
-        bindings = <&kp LG(LC(LEFT))>;
-    };
-
-    virtual_desktop_next {
-        pattern = <GESTURE_RIGHT GESTURE_DOWN>;
-        bindings = <&kp LG(LC(RIGHT))>;
-    };
-
-    // left {
-    //     gesture = <GESTURE_LEFT>;
-    //     bindings = <&kp LEFT>;
-    // };
-    // right {
-    //     gesture = <GESTURE_RIGHT>;
-    //     bindings = <&kp RIGHT>;
-    // };
-    // up {
-    //     gesture = <GESTURE_UP>;
-    //     bindings = <&kp UP>;
-    // };
-    // down {
-    //     gesture = <GESTURE_DOWN>;
-    //     bindings = <&kp DOWN>;
-    // };
-};
 
 // スクロールスナップの設定
 
@@ -287,32 +227,6 @@
         post_volume_keys {
             layers = <KBD_SETTING>;
             input-processors = <&zip_xy_scaler 0 1>;
-        };
-
-        // マウスジェスチャーの設定
-
-        mouse_gesture {
-            layers = <GESTURE_WIN>;
-            input-processors = <&zip_mouse_gesture>;
-        };
-
-        mouse_gesture_mac {
-            layers = <GESTURE_MAC>;
-            input-processors = <&zip_mouse_gesture>;
-        };
-    };
-
-    layer_listeners {
-        compatible = "zmk,layer-listeners";
-
-        gesture_win {
-            layers = <GESTURE_WIN>;
-            on-layer-selected = <&mouse_gesture_on &mouse_gesture_off>;
-        };
-
-        gesture_mac {
-            layers = <GESTURE_MAC>;
-            on-layer-selected = <&mouse_gesture_on &mouse_gesture_off>;
         };
     };
 };

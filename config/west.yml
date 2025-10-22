@@ -6,8 +6,6 @@ manifest:
       url-base: https://github.com/yamaryu211
     - name: caksoylar
       url-base: https://github.com/caksoylar
-    - name: kot149
-      url-base: https://github.com/kot149
     - name: badjeff
       url-base: https://github.com/badjeff
     - name: te9no
@@ -29,9 +27,6 @@ manifest:
     - name: zmk-input-processor-keybind
       remote: te9no
       revision: main
-    - name: zmk-mouse-gesture
-      remote: kot149
-      revision: v1
-      path: modules/zmk-mouse-gesture
+
   self:
     path: config
