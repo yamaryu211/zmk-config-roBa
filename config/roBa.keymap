@@ -201,7 +201,7 @@
         scroller_win_vertical {
             layers = <SCROLL_VER_WIN>;
             input-processors =
-                <&zip_y_scaler 1 8>,
+                <&zip_y_scaler 1 12>,
                 <&zip_x_scaler 0 1>,
                 <&zip_xy_to_scroll_mapper>;
         };
@@ -211,7 +211,7 @@
         scroller_win_horizontal {
             layers = <SCROLL_HOR_WIN>;
             input-processors =
-                <&zip_x_scaler 1 8>,
+                <&zip_x_scaler 1 12>,
                 <&zip_y_scaler 0 1>,
                 <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
                 <&zip_xy_to_scroll_mapper>;
