@@ -219,6 +219,12 @@
 
         // トラックボール入力→キー入力
 
+        arrow_keys {
+            layers = <NUM_WIN NUM_MAC>;
+            input-processors = <&zip_arrow_keys>;
+            process-next;
+        };
+
         volume_keys {
             layers = <KBD_SETTING>;
             input-processors = <&zip_volume_keys>;
@@ -228,7 +234,7 @@
         // カーソルの動きをゼロにする
 
         post_volume_keys {
-            layers = <KBD_SETTING>;
+            layers = <NUM_WIN NUM_MAC KBD_SETTING>;
             input-processors = <&zip_xy_scaler 0 1>;
         };
     };
