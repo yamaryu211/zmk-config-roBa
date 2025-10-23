@@ -45,19 +45,19 @@
 
 //マウスカーソルの挙動設定
 
-// &mmv {
-//     delay-ms = <20>;
-//     time-to-max-speed-ms = <300>;
-//     acceleration-exponent = <2>;
-// };
+&mmv {
+    delay-ms = <20>;
+    time-to-max-speed-ms = <300>;
+    acceleration-exponent = <2>;
+};
 
 //マウススクロールの挙動設定
 
-// &msc {
-//     delay-ms = <0>;
-//     time-to-max-speed-ms = <500>;
-//     acceleration-exponent = <2>;
-// };
+&msc {
+    delay-ms = <0>;
+    time-to-max-speed-ms = <500>;
+    acceleration-exponent = <2>;
+};
 
 // Inpur-ProcessorによるAMK設定
 // クリック後、250ms後にAMK解除
