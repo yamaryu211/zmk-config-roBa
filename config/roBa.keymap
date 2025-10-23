@@ -1,5 +1,6 @@
 #include <dt-bindings/zmk/input_transform.h>
 #include <input/processors.dtsi>
+#include <input/processors/report_rate_limit.dtsi>
 #include <scroll-snap.dtsi>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -147,6 +148,8 @@
         status = "okay";
         compatible = "zmk,input-listener";
         device = <&trackball>;
+
+        input-processors =  <&zip_report_rate_limit 15>;
 
         // AML設定
         // input-processors = <&zip_temp_layer AML 30000>;
