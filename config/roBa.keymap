@@ -148,8 +148,7 @@
         status = "okay";
         compatible = "zmk,input-listener";
         device = <&trackball>;
-
-        input-processors =  <&zip_report_rate_limit 15>;
+        input-processors = <&zip_report_rate_limit 15>;
 
         // AML設定
         // input-processors = <&zip_temp_layer AML 30000>;
@@ -245,12 +244,12 @@
         compatible = "zmk,combos";
 
         tab {
-            bindings = <&kp TAB>;
+            bindings = <&kp LS(TAB)>;
             key-positions = <11 12>;
         };
 
         shift_tab {
-            bindings = <&kp LS(TAB)>;
+            bindings = <&kp TAB>;
             key-positions = <12 13>;
         };
 
@@ -262,11 +261,6 @@
         left_click {
             bindings = <&mkp MB1>;
             key-positions = <18 19>;
-        };
-
-        backspace {
-            bindings = <&kp BACKSPACE>;
-            key-positions = <8 9>;
         };
 
         Globe {
