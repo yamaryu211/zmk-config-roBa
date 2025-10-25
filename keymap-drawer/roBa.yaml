@@ -270,10 +270,10 @@ layers:
   - F8
   - F9
   - {t: ▽, type: trans}
-  - ''
+  - Ctl+T
   - Ctl+PAGE UP
   - Ctl+PAGE DOWN
-  - {t: ▽, type: trans}
+  - Ctl+W
   - Sft+Gui+S
   - F11
   - F4
@@ -314,10 +314,10 @@ layers:
   - F8
   - F9
   - {t: ▽, type: trans}
-  - ''
+  - Gui+T
   - Gui+PAGE UP
   - Gui+PAGE DOWN
-  - ''
+  - Gui+W
   - Sft+Gui+4
   - F11
   - F4
