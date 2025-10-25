@@ -282,10 +282,10 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - Alt+LEFT
+  - {t: ▽, type: trans}
   - Sft+Ctl+TAB
   - Ctl+TAB
-  - Alt+RIGHT
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - F10
   - Ctl+F1
@@ -295,8 +295,8 @@ layers:
   - '['
   - ']'
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - Alt+LEFT
+  - Alt+RIGHT
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -326,10 +326,10 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - Gui+LEFT
+  - {t: ▽, type: trans}
   - Sft+Ctl+TAB
   - Ctl+TAB
-  - Gui+RIGHT
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - F10
   - Gui+F1
@@ -339,8 +339,8 @@ layers:
   - '['
   - ']'
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - Gui+LEFT
+  - Gui+RIGHT
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
