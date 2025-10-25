@@ -706,15 +706,13 @@ layers:
   - {t: ▽, type: trans}
 combos:
 - p: [11, 12]
-  k: TAB
-- p: [12, 13]
   k: Sft+TAB
+- p: [12, 13]
+  k: TAB
 - p: [0, 1]
   k: ESCAPE
 - p: [18, 19]
   k: '&mkp MB1'
-- p: [8, 9]
-  k: BACKSPACE
 - p: [34, 42]
   k: Gui+SPACE
 - p: [19, 20]
