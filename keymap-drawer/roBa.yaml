@@ -105,7 +105,7 @@ layers:
   - '6'
   - KP PLUS
   - {t: ▽, type: trans}
-  - ESCAPE
+  - {t: ▽, type: trans}
   - LEFT
   - DOWN
   - UP
@@ -149,7 +149,7 @@ layers:
   - '6'
   - KP PLUS
   - {t: ▽, type: trans}
-  - ESCAPE
+  - {t: ▽, type: trans}
   - LEFT
   - DOWN
   - UP
@@ -193,7 +193,7 @@ layers:
   - <
   - '>'
   - {t: ▽, type: trans}
-  - ESCAPE
+  - {t: ▽, type: trans}
   - '#'
   - (
   - )
@@ -237,7 +237,7 @@ layers:
   - <
   - '>'
   - {t: ▽, type: trans}
-  - ESCAPE
+  - {t: ▽, type: trans}
   - '#'
   - (
   - )
@@ -281,7 +281,7 @@ layers:
   - F6
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - ESCAPE
+  - {t: ▽, type: trans}
   - Alt+LEFT
   - Sft+Ctl+TAB
   - Ctl+TAB
@@ -325,7 +325,7 @@ layers:
   - F6
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - ESCAPE
+  - {t: ▽, type: trans}
   - Gui+LEFT
   - Sft+Ctl+TAB
   - Ctl+TAB
