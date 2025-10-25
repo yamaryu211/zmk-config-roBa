@@ -901,10 +901,10 @@
 
         FUNC_SCROLL_WIN {
             bindings = <
-&kp F12  &kp F7      &kp F8  &kp F9  &trans                                           &none         &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)  &trans         &kp LS(LG(S))
-&kp F11  &kp F4      &kp F5  &kp F6  &trans  &trans                &trans             &kp LA(LEFT)  &kp LS(LC(TAB))  &kp LC(TAB)        &kp LA(RIGHT)  &trans
-&kp F10  &kp LC(F1)  &kp F2  &kp F3  &trans  &kp LEFT_BRACKET      &kp RIGHT_BRACKET  &trans        &trans           &trans             &trans         &trans
-&trans   &trans      &trans  &trans  &trans  &trans                &trans             &trans                                                           &trans
+&kp F12  &kp F7      &kp F8  &kp F9  &trans                                           &none   &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)  &trans  &kp LS(LG(S))
+&kp F11  &kp F4      &kp F5  &kp F6  &trans  &trans                &trans             &trans  &kp LS(LC(TAB))  &kp LC(TAB)        &trans  &trans
+&kp F10  &kp LC(F1)  &kp F2  &kp F3  &trans  &kp LEFT_BRACKET      &kp RIGHT_BRACKET  &trans  &kp LA(LEFT)     &kp LA(RIGHT)      &trans  &trans
+&trans   &trans      &trans  &trans  &trans  &trans                &trans             &trans                                              &trans
             >;
 
             sensor-bindings = <&mod_morph_encoder>;
@@ -912,10 +912,10 @@
 
         FUNC_SCROLL_MAC {
             bindings = <
-&kp F12  &kp F7      &kp F8  &kp F9  &trans                                           &none         &kp LG(PAGE_UP)  &kp LG(PAGE_DOWN)  &none          &kp LS(LG(NUMBER_4))
-&kp F11  &kp F4      &kp F5  &kp F6  &trans  &trans                &trans             &kp LG(LEFT)  &kp LS(LC(TAB))  &kp LC(TAB)        &kp LG(RIGHT)  &trans
-&kp F10  &kp LG(F1)  &kp F2  &kp F3  &trans  &kp LEFT_BRACKET      &kp RIGHT_BRACKET  &trans        &trans           &trans             &trans         &trans
-&trans   &trans      &trans  &trans  &trans  &trans                &trans             &trans                                                           &trans
+&kp F12  &kp F7      &kp F8  &kp F9  &trans                                           &none   &kp LG(PAGE_UP)  &kp LG(PAGE_DOWN)  &none   &kp LS(LG(NUMBER_4))
+&kp F11  &kp F4      &kp F5  &kp F6  &trans  &trans                &trans             &trans  &kp LS(LC(TAB))  &kp LC(TAB)        &trans  &trans
+&kp F10  &kp LG(F1)  &kp F2  &kp F3  &trans  &kp LEFT_BRACKET      &kp RIGHT_BRACKET  &trans  &kp LG(LEFT)     &kp LG(RIGHT)      &trans  &trans
+&trans   &trans      &trans  &trans  &trans  &trans                &trans             &trans                                              &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LG(PLUS) LG(MINUS)>;
