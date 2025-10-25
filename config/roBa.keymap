@@ -858,7 +858,7 @@
         NUM_WIN {
             bindings = <
 &kp KP_DIVIDE  &kp N7  &kp N8            &kp N9            &kp KP_MULTIPLY                                            &kp ESCAPE  &none          &kp LG(TAB)  &none      &kp LA(PRINTSCREEN)
-&kp KP_MINUS   &kp N4  &kp N5            &kp N6            &kp KP_PLUS           &trans             &kp ESCAPE        &kp LEFT    &kp DOWN       &kp UP       &kp RIGHT  &trans
+&kp KP_MINUS   &kp N4  &kp N5            &kp N6            &kp KP_PLUS           &trans             &trans            &kp LEFT    &kp DOWN       &kp UP       &kp RIGHT  &trans
 &kp N0         &kp N1  &kp N2            &kp N3            &kp PERIOD            &kp LESS_THAN      &kp GREATER_THAN  &kp HOME    &kp PAGE_DOWN  &kp PAGE_UP  &kp END    &trans
 &mo 9          &trans  &kp LS(LEFT_WIN)  &kp LS(LEFT_ALT)  &kp LS(LEFT_CONTROL)  &trans             &trans            &trans                                             &mo 9
             >;
@@ -869,7 +869,7 @@
         NUM_MAC {
             bindings = <
 &kp KP_DIVIDE  &kp N7                  &kp N8                &kp N9            &kp KP_MULTIPLY                                        &kp ESCAPE    &none         &none       &none          &kp LS(LG(NUMBER_4))
-&kp KP_MINUS   &kp N4                  &kp N5                &kp N6            &kp KP_PLUS       &trans             &kp ESCAPE        &kp LEFT      &kp DOWN      &kp UP      &kp RIGHT      &trans
+&kp KP_MINUS   &kp N4                  &kp N5                &kp N6            &kp KP_PLUS       &trans             &trans            &kp LEFT      &kp DOWN      &kp UP      &kp RIGHT      &trans
 &kp N0         &kp N1                  &kp N2                &kp N3            &kp PERIOD        &kp LESS_THAN      &kp GREATER_THAN  &kp LG(LEFT)  &kp LG(DOWN)  &kp LG(UP)  &kp LG(RIGHT)  &trans
 &mo 9          &kp LC(LG(LEFT_SHIFT))  &kp LS(LEFT_CONTROL)  &kp LS(LEFT_ALT)  &kp LS(LEFT_GUI)  &trans             &trans            &trans                                                 &mo 9
             >;
@@ -880,7 +880,7 @@
         SYMBOL_WIN {
             bindings = <
 &kp SQT      &kp DOUBLE_QUOTES  &kp EXCLAMATION   &kp QUESTION      &kp TILDE                                              &kp BACKSLASH  &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans    &kp PERCENT
-&kp AT_SIGN  &kp SEMICOLON      &kp DOLLAR        &kp LESS_THAN     &kp GREATER_THAN  &trans              &kp ESCAPE       &kp HASH       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PIPE  &kp EQUAL
+&kp AT_SIGN  &kp SEMICOLON      &kp DOLLAR        &kp LESS_THAN     &kp GREATER_THAN  &trans              &trans           &kp HASH       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PIPE  &kp EQUAL
 &trans       &kp ASTERISK       &kp COLON         &kp CARET         &kp GRAVE         &kp LEFT_BRACE      &kp RIGHT_BRACE  &kp AMPERSAND  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans    &kp SLASH
 &trans       &trans             &kp LS(LEFT_GUI)  &kp LS(LEFT_ALT)  &kp LS(LCTRL)     &trans              &trans           &trans                                                                &trans
             >;
@@ -891,7 +891,7 @@
         SYMBOL_MAC {
             bindings = <
 &kp SQT      &kp DOUBLE_QUOTES  &kp EXCLAMATION  &kp QUESTION      &kp TILDE                                              &kp BACKSLASH  &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans    &kp PERCENT
-&kp AT_SIGN  &kp SEMICOLON      &kp DOLLAR       &kp LESS_THAN     &kp GREATER_THAN  &trans              &kp ESCAPE       &kp HASH       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PIPE  &kp EQUAL
+&kp AT_SIGN  &kp SEMICOLON      &kp DOLLAR       &kp LESS_THAN     &kp GREATER_THAN  &trans              &trans           &kp HASH       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PIPE  &kp EQUAL
 &trans       &kp ASTERISK       &kp COLON        &kp CARET         &kp GRAVE         &kp LEFT_BRACE      &kp RIGHT_BRACE  &kp AMPERSAND  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans    &kp SLASH
 &trans       &trans             &kp LS(LCTRL)    &kp LS(LEFT_ALT)  &kp LS(LEFT_GUI)  &trans              &trans           &trans                                                                &trans
             >;
@@ -902,7 +902,7 @@
         FUNC_SCROLL_WIN {
             bindings = <
 &kp F12  &kp F7      &kp F8  &kp F9  &trans                                           &none         &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)  &trans         &kp LS(LG(S))
-&kp F11  &kp F4      &kp F5  &kp F6  &trans  &trans                &kp ESCAPE         &kp LA(LEFT)  &kp LS(LC(TAB))  &kp LC(TAB)        &kp LA(RIGHT)  &trans
+&kp F11  &kp F4      &kp F5  &kp F6  &trans  &trans                &trans             &kp LA(LEFT)  &kp LS(LC(TAB))  &kp LC(TAB)        &kp LA(RIGHT)  &trans
 &kp F10  &kp LC(F1)  &kp F2  &kp F3  &trans  &kp LEFT_BRACKET      &kp RIGHT_BRACKET  &trans        &trans           &trans             &trans         &trans
 &trans   &trans      &trans  &trans  &trans  &trans                &trans             &trans                                                           &trans
             >;
@@ -913,7 +913,7 @@
         FUNC_SCROLL_MAC {
             bindings = <
 &kp F12  &kp F7      &kp F8  &kp F9  &trans                                           &none         &kp LG(PAGE_UP)  &kp LG(PAGE_DOWN)  &none          &kp LS(LG(NUMBER_4))
-&kp F11  &kp F4      &kp F5  &kp F6  &trans  &trans                &kp ESCAPE         &kp LG(LEFT)  &kp LS(LC(TAB))  &kp LC(TAB)        &kp LG(RIGHT)  &trans
+&kp F11  &kp F4      &kp F5  &kp F6  &trans  &trans                &trans             &kp LG(LEFT)  &kp LS(LC(TAB))  &kp LC(TAB)        &kp LG(RIGHT)  &trans
 &kp F10  &kp LG(F1)  &kp F2  &kp F3  &trans  &kp LEFT_BRACKET      &kp RIGHT_BRACKET  &trans        &trans           &trans             &trans         &trans
 &trans   &trans      &trans  &trans  &trans  &trans                &trans             &trans                                                           &trans
             >;
