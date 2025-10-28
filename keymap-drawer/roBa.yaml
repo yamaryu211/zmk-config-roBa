@@ -706,9 +706,9 @@ layers:
   - {t: ▽, type: trans}
 combos:
 - p: [11, 12]
-  k: Sft+TAB
-- p: [12, 13]
   k: TAB
+- p: [12, 13]
+  k: Sft+TAB
 - p: [0, 1]
   k: ESCAPE
 - p: [18, 19]
