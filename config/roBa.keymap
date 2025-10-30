@@ -516,6 +516,23 @@
             bindings = <&lt>, <&kp>;
         };
 
+        // mod morphによるKey Overrideの再現
+        // Shift+, -> !
+        // shift+. -> ?
+        shift_comma: shift_comma {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA>, <&kp EXCLAMATION>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        shift_period: shift_period {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp PERIOD>, <&kp QUESTION>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
         // mod morphを使用したエンコーダーの挙動制御
         // Windows用
         // デフォルト: スクロール
