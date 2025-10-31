@@ -34,7 +34,7 @@ layers:
   - {t: M, h: LEFT GUI}
   - {t: ',', h: LEFT ALT, s: '!'}
   - {t: ., h: LCTRL, s: '?'}
-  - {t: /, h: LEFT SHIFT}
+  - {t: /, h: LEFT SHIFT, s: '*'}
   - {t: LANGUAGE 2, h: NUM_WIN}
   - Sft+F10
   - {t: TAB, h: LEFT WIN}
@@ -78,7 +78,7 @@ layers:
   - {t: M, h: LEFT CONTROL}
   - {t: ',', h: LEFT ALT, s: '!'}
   - {t: ., h: LEFT GUI, s: '?'}
-  - {t: /, h: LEFT SHIFT}
+  - {t: /, h: LEFT SHIFT, s: '*'}
   - {t: LANGUAGE 2, h: NUM_MAC}
   - Ctl+LEFT COMMAND
   - LEFT CONTROL
@@ -110,7 +110,7 @@ layers:
   - DOWN
   - UP
   - RIGHT
-  - {t: ▽, type: trans}
+  - Sft+=
   - '0'
   - '1'
   - '2'
@@ -154,7 +154,7 @@ layers:
   - DOWN
   - UP
   - RIGHT
-  - {t: ▽, type: trans}
+  - Sft+=
   - '0'
   - '1'
   - '2'
