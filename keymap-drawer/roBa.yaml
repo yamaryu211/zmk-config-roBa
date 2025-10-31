@@ -89,21 +89,21 @@ layers:
   - {t: BACKSPACE, h: SYMBOL_MAC}
   - {t: LANGUAGE 1, h: FUNC_SCROLL_MAC}
   NUM_WIN:
-  - KP DIVIDE
+  - ''
   - '7'
   - '8'
   - '9'
-  - KP MULTIPLY
-  - ESCAPE
+  - ''
+  - ''
   - ''
   - Gui+TAB
   - ''
   - Alt+PRINTSCREEN
-  - KP MINUS
+  - ''
   - '4'
   - '5'
   - '6'
-  - KP PLUS
+  - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - LEFT
@@ -115,7 +115,7 @@ layers:
   - '1'
   - '2'
   - '3'
-  - .
+  - ''
   - <
   - '>'
   - HOME
@@ -133,21 +133,21 @@ layers:
   - {t: ▽, type: trans}
   - KBD_SETTING
   NUM_MAC:
-  - KP DIVIDE
+  - ''
   - '7'
   - '8'
   - '9'
-  - KP MULTIPLY
-  - ESCAPE
+  - ''
+  - ''
   - ''
   - ''
   - ''
   - Sft+Gui+4
-  - KP MINUS
+  - ''
   - '4'
   - '5'
   - '6'
-  - KP PLUS
+  - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - LEFT
@@ -159,7 +159,7 @@ layers:
   - '1'
   - '2'
   - '3'
-  - .
+  - ''
   - <
   - '>'
   - Gui+LEFT
