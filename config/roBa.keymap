@@ -860,7 +860,7 @@
         shift_slash: shift_slash {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&mt LEFT_SHIFT SLASH>, <&kp ASTERISK>;
+            bindings = <&mt LEFT_SHIFT SLASH>, <&kp BACKSLASH>;
 
             mods = <(MOD_LSFT|MOD_RSFT)>;
             label = "SHIFT_SLASH";
