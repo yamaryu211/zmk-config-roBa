@@ -122,7 +122,7 @@ layers:
   - PAGE DOWN
   - PAGE UP
   - END
-  - {t: ▽, type: trans}
+  - '*'
   - {t: KBD_SETTING, type: held}
   - {t: ▽, type: trans}
   - Sft+LEFT WIN
@@ -166,7 +166,7 @@ layers:
   - Gui+DOWN
   - Gui+UP
   - Gui+RIGHT
-  - {t: ▽, type: trans}
+  - '*'
   - {t: KBD_SETTING, type: held}
   - Ctl+Gui+LEFT SHIFT
   - Sft+LEFT CONTROL
