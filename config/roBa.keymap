@@ -246,26 +246,31 @@
         tab {
             bindings = <&kp TAB>;
             key-positions = <11 12>;
+            timeout-ms = <80>;
         };
 
         shift_tab {
             bindings = <&kp LS(TAB)>;
             key-positions = <12 13>;
+            timeout-ms = <80>;
         };
 
         Esc {
             bindings = <&kp ESCAPE>;
             key-positions = <0 1>;
+            timeout-ms = <80>;
         };
 
         left_click {
             bindings = <&mkp MB1>;
             key-positions = <18 19>;
+            timeout-ms = <80>;
         };
 
         Globe {
             bindings = <&kp LG(SPACE)>;
             key-positions = <34 42>;
+            timeout-ms = <80>;
         };
 
         right_click {
@@ -277,6 +282,7 @@
         middle_click {
             bindings = <&mkp MB3>;
             key-positions = <18 20>;
+            timeout-ms = <80>;
         };
     };
 
