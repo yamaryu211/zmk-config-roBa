@@ -878,6 +878,8 @@
             label = "TD_0_WIN";
             #binding-cells = <0>;
             bindings = <&lt 10 MINUS>, <&lt 12 LS(EQUAL)>;
+
+            tapping-term-ms = <180>;
         };
 
         TD_0_mac: TD_0_mac {
@@ -886,16 +888,7 @@
             #binding-cells = <0>;
             bindings = <&lt 11 MINUS>, <&lt 13 LS(EQUAL)>;
 
-            tapping-term-ms = <150>;
-        };
-
-        new_behavior: new_behavior {
-            compatible = "zmk,behavior-tap-dance";
-            label = "NEW_BEHAVIOR";
-            #binding-cells = <0>;
-            bindings = <&lt 10 MINUS>, <&lt 12 LS(EQUAL)>;
-
-            tapping-term-ms = <150>;
+            tapping-term-ms = <180>;
         };
     };
 
