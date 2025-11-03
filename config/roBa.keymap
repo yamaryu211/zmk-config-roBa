@@ -885,6 +885,17 @@
             label = "TD_0_MAC";
             #binding-cells = <0>;
             bindings = <&lt 11 MINUS>, <&lt 13 LS(EQUAL)>;
+
+            tapping-term-ms = <150>;
+        };
+
+        new_behavior: new_behavior {
+            compatible = "zmk,behavior-tap-dance";
+            label = "NEW_BEHAVIOR";
+            #binding-cells = <0>;
+            bindings = <&lt 10 MINUS>, <&lt 12 LS(EQUAL)>;
+
+            tapping-term-ms = <150>;
         };
     };
 
