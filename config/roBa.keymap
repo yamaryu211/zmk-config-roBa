@@ -872,6 +872,20 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
             label = "SHIFT_SLASH";
         };
+
+        TD_0_win: TD_0_win {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_0_WIN";
+            #binding-cells = <0>;
+            bindings = <&lt 10 MINUS>, <&lt 12 LS(EQUAL)>;
+        };
+
+        TD_0_mac: TD_0_mac {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_0_MAC";
+            #binding-cells = <0>;
+            bindings = <&lt 11 MINUS>, <&lt 13 LS(EQUAL)>;
+        };
     };
 
     keymap {
@@ -880,7 +894,7 @@
         DEFAULT_WIN {
             bindings = <
 &kp Q             &kp W        &kp E             &kp R           &kp T                                                              &kp Y            &kp U           &kp I         &kp O              &kp P
-&kp A             &kp S        &kp D             &kp F           &kp G             &kp LC(N0)                &gresc                 &kp H            &kp J           &kp K         &lt 10 L           &lt 12 MINUS
+&kp A             &kp S        &kp D             &kp F           &kp G             &kp LC(N0)                &gresc                 &kp H            &kp J           &kp K         &kp L              &TD_0_win
 &mt LEFT_SHIFT Z  &mt LCTRL X  &mt LEFT_ALT C    &mt LEFT_WIN V  &kp B             &kp LEFT_PARENTHESIS      &kp RIGHT_PARENTHESIS  &kp N            &mt LEFT_GUI M  &shift_comma  &shift_period_win  &shift_slash
 &lt 2 LANGUAGE_2  &kp LS(F10)  &mt LEFT_WIN TAB  &kp LEFT_ALT    &mt LCTRL DELETE  &mt LEFT_SHIFT SPACE      &lt 2 ENTER            &lt 4 BACKSPACE                                                   &lt 6 LANGUAGE_1
             >;
@@ -891,7 +905,7 @@
         DEFAULT_MAC {
             bindings = <
 &kp Q             &kp W                 &kp E             &kp R               &kp T                                                                     &kp Y            &kp U               &kp I         &kp O              &kp P
-&kp A             &kp S                 &kp D             &kp F               &kp G                    &kp LG(KP_NUMBER_0)       &gresc                 &kp H            &kp J               &kp K         &lt 11 L           &lt 13 MINUS
+&kp A             &kp S                 &kp D             &kp F               &kp G                    &kp LG(KP_NUMBER_0)       &gresc                 &kp H            &kp J               &kp K         &kp L              &TD_0_mac
 &mt LEFT_SHIFT Z  &mt LEFT_GUI X        &mt LEFT_ALT C    &mt LEFT_CONTROL V  &kp B                    &kp LEFT_PARENTHESIS      &kp RIGHT_PARENTHESIS  &kp N            &mt LEFT_CONTROL M  &shift_comma  &shift_period_mac  &shift_slash
 &lt 3 LANGUAGE_2  &kp LC(LEFT_COMMAND)  &kp LEFT_CONTROL  &kp LEFT_ALT        &mt LEFT_COMMAND DELETE  &mt LEFT_SHIFT SPACE      &lt 3 ENTER            &lt 5 BACKSPACE                                                       &lt 7 LANGUAGE_1
             >;
