@@ -305,7 +305,8 @@ path.combo {
 </g>
 <g transform="translate(271, 231) rotate(9.0)" class="key keypos-38">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">LCTRL</text>
+<text x="0" y="0" class="key tap">DELETE</text>
+<text x="0" y="24" class="key hold">LCTRL</text>
 </g>
 <g transform="translate(333, 247) rotate(20.0)" class="key keypos-39">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -375,6 +376,10 @@ path.combo {
 <g class="combo combopos-7">
 <rect rx="6" ry="6" x="687" y="39" width="28" height="26" class="combo"/>
 <text x="701" y="52" class="combo tap">DELETE</text>
+</g>
+<g class="combo combopos-8">
+<rect rx="6" ry="6" x="687" y="95" width="28" height="26" class="combo"/>
+<text x="701" y="108" class="combo tap">ENTER</text>
 </g>
 </g>
 </g>
@@ -635,6 +640,10 @@ path.combo {
 <rect rx="6" ry="6" x="687" y="39" width="28" height="26" class="combo"/>
 <text x="701" y="52" class="combo tap">DELETE</text>
 </g>
+<g class="combo combopos-8">
+<rect rx="6" ry="6" x="687" y="95" width="28" height="26" class="combo"/>
+<text x="701" y="108" class="combo tap">ENTER</text>
+</g>
 </g>
 </g>
 <g transform="translate(30, 678)" class="layer-NUM_WIN">
@@ -809,9 +818,9 @@ path.combo {
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
 <text x="0" y="0" class="key trans tap">▽</text>
 </g>
-<g transform="translate(485, 230) rotate(-10.0)" class="key keypos-41">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">DELETE</text>
+<g transform="translate(485, 230) rotate(-10.0)" class="key trans keypos-41">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
 </g>
 <g transform="translate(729, 231)" class="key keypos-42">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -861,6 +870,10 @@ path.combo {
 <g class="combo combopos-7">
 <rect rx="6" ry="6" x="687" y="39" width="28" height="26" class="combo"/>
 <text x="701" y="52" class="combo tap">DELETE</text>
+</g>
+<g class="combo combopos-8">
+<rect rx="6" ry="6" x="687" y="95" width="28" height="26" class="combo"/>
+<text x="701" y="108" class="combo tap">ENTER</text>
 </g>
 </g>
 </g>
@@ -1092,6 +1105,10 @@ path.combo {
 <rect rx="6" ry="6" x="687" y="39" width="28" height="26" class="combo"/>
 <text x="701" y="52" class="combo tap">DELETE</text>
 </g>
+<g class="combo combopos-8">
+<rect rx="6" ry="6" x="687" y="95" width="28" height="26" class="combo"/>
+<text x="701" y="108" class="combo tap">ENTER</text>
+</g>
 </g>
 </g>
 <g transform="translate(30, 1355)" class="layer-SYMBOL_WIN">
@@ -1318,6 +1335,10 @@ path.combo {
 <rect rx="6" ry="6" x="687" y="39" width="28" height="26" class="combo"/>
 <text x="701" y="52" class="combo tap">DELETE</text>
 </g>
+<g class="combo combopos-8">
+<rect rx="6" ry="6" x="687" y="95" width="28" height="26" class="combo"/>
+<text x="701" y="108" class="combo tap">ENTER</text>
+</g>
 </g>
 </g>
 <g transform="translate(30, 1694)" class="layer-SYMBOL_MAC">
@@ -1543,6 +1564,10 @@ path.combo {
 <g class="combo combopos-7">
 <rect rx="6" ry="6" x="687" y="39" width="28" height="26" class="combo"/>
 <text x="701" y="52" class="combo tap">DELETE</text>
+</g>
+<g class="combo combopos-8">
+<rect rx="6" ry="6" x="687" y="95" width="28" height="26" class="combo"/>
+<text x="701" y="108" class="combo tap">ENTER</text>
 </g>
 </g>
 </g>
@@ -1776,6 +1801,10 @@ path.combo {
 <rect rx="6" ry="6" x="687" y="39" width="28" height="26" class="combo"/>
 <text x="701" y="52" class="combo tap">DELETE</text>
 </g>
+<g class="combo combopos-8">
+<rect rx="6" ry="6" x="687" y="95" width="28" height="26" class="combo"/>
+<text x="701" y="108" class="combo tap">ENTER</text>
+</g>
 </g>
 </g>
 <g transform="translate(30, 2372)" class="layer-FUNC_SCROLL_MAC">
@@ -2008,6 +2037,10 @@ path.combo {
 <rect rx="6" ry="6" x="687" y="39" width="28" height="26" class="combo"/>
 <text x="701" y="52" class="combo tap">DELETE</text>
 </g>
+<g class="combo combopos-8">
+<rect rx="6" ry="6" x="687" y="95" width="28" height="26" class="combo"/>
+<text x="701" y="108" class="combo tap">ENTER</text>
+</g>
 </g>
 </g>
 <g transform="translate(30, 2711)" class="layer-AML">
@@ -2232,6 +2265,10 @@ path.combo {
 <g class="combo combopos-7">
 <rect rx="6" ry="6" x="687" y="39" width="28" height="26" class="combo"/>
 <text x="701" y="52" class="combo tap">DELETE</text>
+</g>
+<g class="combo combopos-8">
+<rect rx="6" ry="6" x="687" y="95" width="28" height="26" class="combo"/>
+<text x="701" y="108" class="combo tap">ENTER</text>
 </g>
 </g>
 </g>
@@ -2468,6 +2505,10 @@ path.combo {
 <rect rx="6" ry="6" x="687" y="39" width="28" height="26" class="combo"/>
 <text x="701" y="52" class="combo tap">DELETE</text>
 </g>
+<g class="combo combopos-8">
+<rect rx="6" ry="6" x="687" y="95" width="28" height="26" class="combo"/>
+<text x="701" y="108" class="combo tap">ENTER</text>
+</g>
 </g>
 </g>
 <g transform="translate(30, 3388)" class="layer-SCROLL_VER_WIN">
@@ -2699,6 +2740,10 @@ path.combo {
 <rect rx="6" ry="6" x="687" y="39" width="28" height="26" class="combo"/>
 <text x="701" y="52" class="combo tap">DELETE</text>
 </g>
+<g class="combo combopos-8">
+<rect rx="6" ry="6" x="687" y="95" width="28" height="26" class="combo"/>
+<text x="701" y="108" class="combo tap">ENTER</text>
+</g>
 </g>
 </g>
 <g transform="translate(30, 3727)" class="layer-SCROLL_VER_MAC">
@@ -2928,6 +2973,10 @@ path.combo {
 <g class="combo combopos-7">
 <rect rx="6" ry="6" x="687" y="39" width="28" height="26" class="combo"/>
 <text x="701" y="52" class="combo tap">DELETE</text>
+</g>
+<g class="combo combopos-8">
+<rect rx="6" ry="6" x="687" y="95" width="28" height="26" class="combo"/>
+<text x="701" y="108" class="combo tap">ENTER</text>
 </g>
 </g>
 </g>
@@ -3160,6 +3209,10 @@ path.combo {
 <rect rx="6" ry="6" x="687" y="39" width="28" height="26" class="combo"/>
 <text x="701" y="52" class="combo tap">DELETE</text>
 </g>
+<g class="combo combopos-8">
+<rect rx="6" ry="6" x="687" y="95" width="28" height="26" class="combo"/>
+<text x="701" y="108" class="combo tap">ENTER</text>
+</g>
 </g>
 </g>
 <g transform="translate(30, 4405)" class="layer-SCROLL_HOR_MAC">
@@ -3390,6 +3443,10 @@ path.combo {
 <rect rx="6" ry="6" x="687" y="39" width="28" height="26" class="combo"/>
 <text x="701" y="52" class="combo tap">DELETE</text>
 </g>
+<g class="combo combopos-8">
+<rect rx="6" ry="6" x="687" y="95" width="28" height="26" class="combo"/>
+<text x="701" y="108" class="combo tap">ENTER</text>
+</g>
 </g>
 </g>
 <g transform="translate(30, 4744)" class="layer-GESTURE_WIN">
@@ -3609,6 +3666,10 @@ path.combo {
 <rect rx="6" ry="6" x="687" y="39" width="28" height="26" class="combo"/>
 <text x="701" y="52" class="combo tap">DELETE</text>
 </g>
+<g class="combo combopos-8">
+<rect rx="6" ry="6" x="687" y="95" width="28" height="26" class="combo"/>
+<text x="701" y="108" class="combo tap">ENTER</text>
+</g>
 </g>
 </g>
 <g transform="translate(30, 5083)" class="layer-GESTURE_MAC">
@@ -3827,6 +3888,10 @@ path.combo {
 <g class="combo combopos-7">
 <rect rx="6" ry="6" x="687" y="39" width="28" height="26" class="combo"/>
 <text x="701" y="52" class="combo tap">DELETE</text>
+</g>
+<g class="combo combopos-8">
+<rect rx="6" ry="6" x="687" y="95" width="28" height="26" class="combo"/>
+<text x="701" y="108" class="combo tap">ENTER</text>
 </g>
 </g>
 </g>

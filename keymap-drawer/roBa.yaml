@@ -39,7 +39,7 @@ layers:
   - Sft+F10
   - {t: TAB, h: LEFT WIN}
   - LEFT ALT
-  - LCTRL
+  - {t: DELETE, h: LCTRL}
   - {t: SPACE, h: LEFT SHIFT}
   - {t: ENTER, h: NUM_WIN}
   - {t: BACKSPACE, h: SYMBOL_WIN}
@@ -130,7 +130,7 @@ layers:
   - Sft+LEFT CONTROL
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - DELETE
+  - {t: ▽, type: trans}
   - KBD_SETTING
   NUM_MAC:
   - ''
@@ -721,3 +721,5 @@ combos:
   k: '&mkp MB3'
 - p: [8, 9]
   k: DELETE
+- p: [21, 20]
+  k: ENTER
