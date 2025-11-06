@@ -130,7 +130,7 @@ layers:
   - Sft+LEFT CONTROL
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - DELETE
   - KBD_SETTING
   NUM_MAC:
   - ''
