@@ -11,13 +11,13 @@ layers:
   - I
   - O
   - P
-  - A
+  - {t: A, h: NUM_WIN}
   - S
   - D
   - F
   - G
   - Ctl+0
-  - {t: ESC, s: '`'}
+  - Alt+Ctl+TAB
   - H
   - J
   - K
@@ -28,18 +28,18 @@ layers:
   - {t: C, h: LEFT ALT}
   - {t: V, h: LEFT WIN}
   - B
-  - (
-  - )
+  - LEFT
+  - RIGHT
   - N
   - {t: M, h: LEFT GUI}
   - {t: ',', h: LEFT ALT, s: '!'}
   - {t: ., h: LCTRL, s: '?'}
   - {t: /, h: LEFT SHIFT, s: \}
-  - {t: LANGUAGE 2, h: NUM_WIN}
+  - {t: LANGUAGE 2, h: FUNC_SCROLL_WIN}
   - Sft+F10
   - {t: TAB, h: LEFT WIN}
   - LEFT ALT
-  - {t: DELETE, h: LCTRL}
+  - LCTRL
   - {t: SPACE, h: LEFT SHIFT}
   - {t: ENTER, h: NUM_WIN}
   - {t: BACKSPACE, h: SYMBOL_WIN}
@@ -99,7 +99,7 @@ layers:
   - Gui+TAB
   - ''
   - Alt+PRINTSCREEN
-  - ''
+  - {type: held}
   - '4'
   - '5'
   - '6'
@@ -123,7 +123,7 @@ layers:
   - PAGE UP
   - END
   - '*'
-  - {t: KBD_SETTING, type: held}
+  - KBD_SETTING
   - {t: ▽, type: trans}
   - Sft+LEFT WIN
   - Sft+LEFT ALT
@@ -299,15 +299,15 @@ layers:
   - Alt+RIGHT
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   FUNC_SCROLL_MAC:
   - F12
   - F7
@@ -407,7 +407,7 @@ layers:
   - MUTE
   - VOLUME DOWN
   - VOLUME UP
-  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -719,3 +719,5 @@ combos:
   k: '&mkp MB2'
 - p: [18, 20]
   k: '&mkp MB3'
+- p: [8, 9]
+  k: DELETE
