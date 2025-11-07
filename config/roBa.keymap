@@ -918,7 +918,7 @@
 &lt 3 LANGUAGE_2  &kp LC(LEFT_COMMAND)  &mt LEFT_CONTROL TAB  &kp LEFT_ALT        &mt_exit_AML_on_tap LEFT_COMMAND DELETE  &mt_exit_AML_on_tap LEFT_SHIFT SPACE      &lt 3 ENTER  &lt 5 BACKSPACE                                                       &lt 7 LANGUAGE_1
             >;
 
-            sensor-bindings = <&mod_morph_encoder_mac>;
+            sensor-bindings = <&inc_dec_kp A B>;
         };
 
         NUM_WIN {
