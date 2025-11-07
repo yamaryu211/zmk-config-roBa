@@ -712,13 +712,9 @@ combos:
 - p: [0, 1]
   k: ESCAPE
 - p: [18, 19]
-  k: '&mkp MB1'
+  k: '&mkp MB3'
 - p: [34, 42]
   k: Gui+SPACE
-- p: [19, 20]
-  k: '&mkp MB2'
-- p: [18, 20]
-  k: '&mkp MB3'
 - p: [8, 9]
   k: DELETE
 - p: [21, 20]
