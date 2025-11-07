@@ -39,8 +39,8 @@ layers:
   - Sft+F10
   - {t: TAB, h: LEFT WIN}
   - LEFT ALT
-  - {t: DELETE, h: LCTRL}
-  - {t: SPACE, h: LEFT SHIFT}
+  - {t: '&kp_exit_AML DELETE', h: LCTRL}
+  - {t: '&kp_exit_AML SPACE', h: LEFT SHIFT}
   - {t: ENTER, h: NUM_WIN}
   - {t: BACKSPACE, h: SYMBOL_WIN}
   - {t: LANGUAGE 1, h: FUNC_SCROLL_WIN}
