@@ -61,7 +61,7 @@ layers:
   - F
   - G
   - Gui+KP 0
-  - {t: ESC, s: '`'}
+  - Alt+TAB
   - H
   - J
   - K
@@ -72,8 +72,8 @@ layers:
   - {t: C, h: LEFT ALT}
   - {t: V, h: LEFT CONTROL}
   - B
-  - (
-  - )
+  - LEFT
+  - RIGHT
   - N
   - {t: M, h: LEFT CONTROL}
   - {t: ',', h: LEFT ALT, s: '!'}
@@ -81,10 +81,10 @@ layers:
   - {t: /, h: LEFT SHIFT, s: \}
   - {t: LANGUAGE 2, h: NUM_MAC}
   - Ctl+LEFT COMMAND
-  - LEFT CONTROL
+  - {t: TAB, h: LEFT CONTROL}
   - LEFT ALT
-  - {t: DELETE, h: LEFT COMMAND}
-  - {t: SPACE, h: LEFT SHIFT}
+  - {t: '&kp_exit_AML DELETE', h: LEFT COMMAND}
+  - {t: '&kp_exit_AML SPACE', h: LEFT SHIFT}
   - {t: ENTER, h: NUM_MAC}
   - {t: BACKSPACE, h: SYMBOL_MAC}
   - {t: LANGUAGE 1, h: FUNC_SCROLL_MAC}
@@ -96,7 +96,7 @@ layers:
   - ''
   - ''
   - ''
-  - Gui+TAB
+  - ''
   - ''
   - Alt+PRINTSCREEN
   - ''
