@@ -263,12 +263,6 @@
             timeout-ms = <80>;
         };
 
-        middle_click {
-            bindings = <&mkp MB3>;
-            key-positions = <18 19>;
-            timeout-ms = <80>;
-        };
-
         Globe {
             bindings = <&kp LG(SPACE)>;
             key-positions = <34 42>;
@@ -283,6 +277,16 @@
         Enter {
             bindings = <&kp ENTER>;
             key-positions = <21 20>;
+        };
+
+        Right_Click {
+            bindings = <&mkp MB2>;
+            key-positions = <19 20>;
+        };
+
+        Middle_Click {
+            bindings = <&mkp MB3>;
+            key-positions = <20 18>;
         };
     };
 
@@ -985,10 +989,10 @@
 
         AML {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB2  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans    &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                              &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                            &trans
             >;
         };
 
