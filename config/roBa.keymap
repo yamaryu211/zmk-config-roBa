@@ -263,8 +263,8 @@
             timeout-ms = <80>;
         };
 
-        left_click {
-            bindings = <&mkp MB1>;
+        middle_click {
+            bindings = <&mkp MB3>;
             key-positions = <18 19>;
             timeout-ms = <80>;
         };
@@ -272,18 +272,6 @@
         Globe {
             bindings = <&kp LG(SPACE)>;
             key-positions = <34 42>;
-            timeout-ms = <80>;
-        };
-
-        right_click {
-            bindings = <&mkp MB2>;
-            key-positions = <19 20>;
-            timeout-ms = <80>;
-        };
-
-        middle_click {
-            bindings = <&mkp MB3>;
-            key-positions = <18 20>;
             timeout-ms = <80>;
         };
 
