@@ -91,7 +91,7 @@
 
         excluded-positions = <
             18 // J
-            19 // K
+            // 19 // K
             // 20 // L
             // 32 // Ctrl/Command + .
             // 33 // Shift + /
