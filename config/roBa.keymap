@@ -93,15 +93,15 @@
             18 // J
             19 // K
             20 // L
-            32 // Ctrl/Command + .
-            33 // Shift + /
+            // 32 // Ctrl/Command + .
+            // 33 // Shift + /
             38 // Ctrl/Command + Del
             39 // Shift + Space
         >;
 
-        // キー入力から300ms間はAMLを発動しない
+        // キー入力から200ms間はAMLを発動しない
 
-        require-prior-idle-ms = <300>;
+        require-prior-idle-ms = <200>;
     };
 
     // トラックボール入力をキー入力に変換
@@ -151,7 +151,7 @@
         input-processors = <&zip_report_rate_limit 15>;
 
         // AML設定
-        // input-processors = <&zip_temp_layer AML 30000>;
+        input-processors = <&zip_temp_layer AML 10000>;
         // 自由スクロール
         // Macの場合
 
