@@ -372,7 +372,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '&mkp MB1'
-  - '&mkp MB2'
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -711,11 +711,13 @@ combos:
   k: Sft+TAB
 - p: [0, 1]
   k: ESCAPE
-- p: [18, 19]
-  k: '&mkp MB3'
 - p: [34, 42]
   k: Gui+SPACE
 - p: [8, 9]
   k: DELETE
 - p: [21, 20]
   k: ENTER
+- p: [19, 20]
+  k: '&mkp MB2'
+- p: [20, 18]
+  k: '&mkp MB3'
