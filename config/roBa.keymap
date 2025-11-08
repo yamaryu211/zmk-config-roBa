@@ -695,7 +695,7 @@
         sftgui_default_p: sftgui_default_p {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&msc SCRL_RIGHT>, <&gui_p>;
+            bindings = <&kp PAGE_UP>, <&gui_p>;
 
             mods = <(MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
         };
@@ -751,7 +751,7 @@
         sftgui_default_n: sftgui_default_n {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&msc SCRL_LEFT>, <&gui_n>;
+            bindings = <&kp PAGE_DOWN>, <&gui_n>;
 
             mods = <(MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
         };
