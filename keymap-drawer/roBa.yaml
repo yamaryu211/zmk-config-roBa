@@ -61,7 +61,7 @@ layers:
   - F
   - G
   - Gui+KP 0
-  - {t: ESC, s: '`'}
+  - Ctl+UP ARROW
   - H
   - J
   - K
