@@ -7,6 +7,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
+#include "elpekenin/behaviors.dtsi"
 
 #define DEFAULT_WIN 0
 #define DEFAULT_MAC 1
@@ -308,9 +309,12 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&tog_off 1>,
+                // <&tog_off 1>,
+                // <&macro_wait_time 200>,
+                <&bt BT_SEL 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3 &bt BT_DISC 4>,
                 <&macro_wait_time 200>,
-                <&bt BT_SEL 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3 &bt BT_DISC 4>;
+                // <&tog_on 1>;
+                <&df 0>;
 
             label = "BT0";
         };
@@ -319,11 +323,12 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&tog_off 1>,
-                <&macro_wait_time 200>,
+                //<&tog_off 1>,
+                //<&macro_wait_time 200>,
                 <&bt BT_SEL 1 &bt BT_DISC 0 &bt BT_DISC 2 &bt BT_DISC 3 &bt BT_DISC 4>,
-                <&macro_wait_time 500>,
-                <&tog_on 1>;
+                <&macro_wait_time 200>,
+                //<&tog_on 1>;
+                <&df 1>;
 
             label = "BT1";
         };
@@ -332,11 +337,12 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&tog_off 1>,
-                <&macro_wait_time 200>,
+                // <&tog_off 1>,
+                // <&macro_wait_time 200>,
                 <&bt BT_SEL 2 &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 3 &bt BT_DISC 4>,
-                <&macro_wait_time 500>,
-                <&tog_on 1>;
+                <&macro_wait_time 200>,
+                // <&tog_on 1>;
+                <&df 1>;
 
             label = "BT2_IPAD";
         };
@@ -345,11 +351,12 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&tog_off 1>,
-                <&macro_wait_time 200>,
+                // <&tog_off 1>,
+                // <&macro_wait_time 200>,
                 <&bt BT_SEL 3 &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 4>,
-                <&macro_wait_time 500>,
-                <&tog_on 1>;
+                <&macro_wait_time 200>,
+                // <&tog_on 1>;
+                <&df 1>;
 
             label = "BT3_IPHONE";
         };

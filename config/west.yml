@@ -12,6 +12,8 @@ manifest:
       url-base: https://github.com/te9no
     - name: kot149
       url-base: https://github.com/kot149
+    - name: elpekenin
+      url-base: https://github.com/elpekenin
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -31,6 +33,9 @@ manifest:
       revision: main
     - name: zmk-input-processor-report-rate-limit
       remote: badjeff
+      revision: main
+    - name: zmk-userspace
+      remote: elpekenin
       revision: main
 
   self:
