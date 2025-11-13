@@ -61,7 +61,7 @@ layers:
   - F
   - G
   - Gui+KP 0
-  - Ctl+UP ARROW
+  - Alt+TAB
   - H
   - J
   - K
