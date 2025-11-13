@@ -587,7 +587,7 @@
         shift_default_p: shift_default_p {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&msc SCRL_RIGHT>, <&shift_p>;
+            bindings = <&kp PAGE_DOWN>, <&shift_p>;
 
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
@@ -636,7 +636,7 @@
         shift_default_n: shift_default_n {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&msc SCRL_LEFT>, <&shift_n>;
+            bindings = <&kp PAGE_UP>, <&shift_n>;
 
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
