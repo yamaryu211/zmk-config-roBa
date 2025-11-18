@@ -902,10 +902,10 @@
 
         DEFAULT_WIN {
             bindings = <
-&kp Q             &kp W        &kp E             &kp R           &kp T                                                        &kp Y            &kp U           &kp I         &kp O              &kp P
-&kp A             &kp S        &kp D             &kp F           &kp G             &kp LC(N0)                &kp LA(LC(TAB))  &kp H            &kp J           &kp K         &lt 10 L           &lt 12 MINUS
-&mt LEFT_SHIFT Z  &mt LCTRL X  &mt LEFT_ALT C    &mt LEFT_WIN V  &kp B             &kp LEFT                  &kp RIGHT        &kp N            &mt LEFT_GUI M  &shift_comma  &shift_period_win  &shift_slash
-&lt 2 LANGUAGE_2  &kp LS(F10)  &mt LEFT_WIN TAB  &kp LEFT_ALT    &mt LCTRL DELETE  &mt LEFT_SHIFT SPACE      &lt 2 ENTER      &lt 4 BACKSPACE                                                   &lt 6 LANGUAGE_1
+&kp Q             &kp W        &kp E             &kp R         &kp T                                                        &kp Y            &kp U  &kp I         &kp O              &kp P
+&kp A             &kp S        &kp D             &kp F         &kp G             &kp LC(N0)                &kp LA(LC(TAB))  &kp H            &kp J  &kp K         &lt 10 L           &lt 12 MINUS
+&mt LEFT_SHIFT Z  &mt LCTRL X  &mt LEFT_ALT C    &kp V         &kp B             &kp LEFT                  &kp RIGHT        &kp N            &kp M  &shift_comma  &shift_period_win  &shift_slash
+&lt 2 LANGUAGE_2  &kp LS(F10)  &mt LEFT_WIN TAB  &kp LEFT_ALT  &mt LCTRL DELETE  &mt LEFT_SHIFT SPACE      &lt 2 ENTER      &lt 4 BACKSPACE                                          &lt 6 LANGUAGE_1
             >;
 
             sensor-bindings = <&mod_morph_encoder>;
