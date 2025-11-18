@@ -26,12 +26,12 @@ layers:
   - {t: Z, h: LEFT SHIFT}
   - {t: X, h: LCTRL}
   - {t: C, h: LEFT ALT}
-  - {t: V, h: LEFT WIN}
+  - V
   - B
   - LEFT
   - RIGHT
   - N
-  - {t: M, h: LEFT GUI}
+  - M
   - {t: ',', h: LEFT ALT, s: '!'}
   - {t: ., h: LCTRL, s: '?'}
   - {t: /, h: LEFT SHIFT, s: \}
