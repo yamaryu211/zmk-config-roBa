@@ -21,8 +21,8 @@ layers:
   - H
   - J
   - K
-  - {t: L, h: SCROLL_VER_WIN}
-  - {t: '-', h: SCROLL_HOR_WIN}
+  - L
+  - {t: '-', h: SCROLL_VER_WIN}
   - {t: Z, h: LEFT SHIFT}
   - {t: X, h: LCTRL}
   - {t: C, h: LEFT ALT}
@@ -461,8 +461,8 @@ layers:
   - {t: ▽, type: trans}
   - Sft+Ctl+TAB
   - Ctl+TAB
+  - SCROLL_HOR_WIN
   - {type: held}
-  - {t: ▽, type: trans}
   - F10
   - Ctl+F1
   - F2
@@ -549,7 +549,7 @@ layers:
   - {t: ▽, type: trans}
   - Sft+Ctl+TAB
   - Ctl+TAB
-  - {t: ▽, type: trans}
+  - {type: held}
   - {type: held}
   - F10
   - Ctl+F1
