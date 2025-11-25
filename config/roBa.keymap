@@ -74,6 +74,7 @@
 &lt {
     tapping-term-ms = <180>;
     quick-tap-ms = <180>;
+    flavor = "balanced";
 };
 
 &sl { release-after-ms = <30000>; };
