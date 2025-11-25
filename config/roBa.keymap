@@ -74,7 +74,6 @@
 &lt {
     tapping-term-ms = <180>;
     quick-tap-ms = <180>;
-    flavor = "balanced";
 };
 
 &sl { release-after-ms = <30000>; };
@@ -924,10 +923,10 @@
 
         NUM_WIN {
             bindings = <
-&none            &kp KP_NUMBER_7  &kp KP_NUMBER_8   &kp KP_NUMBER_9   &none                                                      &none     &none          &kp LG(TAB)  &none      &kp LA(PRINTSCREEN)
-&none            &kp KP_NUMBER_4  &kp KP_NUMBER_5   &kp KP_NUMBER_6   &none                 &trans             &trans            &kp LEFT  &kp DOWN       &kp UP       &kp RIGHT  &kp LS(EQUAL)
-&kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2   &kp KP_NUMBER_3   &none                 &kp LESS_THAN      &kp GREATER_THAN  &kp HOME  &kp PAGE_DOWN  &kp PAGE_UP  &kp END    &kp ASTERISK
-&mo 9            &trans           &kp LS(LEFT_WIN)  &kp LS(LEFT_ALT)  &kp LS(LEFT_CONTROL)  &trans             &trans            &trans                                           &mo 9
+&none         &kp NUMBER_7  &kp NUMBER_8      &kp NUMBER_9      &none                                                      &none     &none          &kp LG(TAB)  &none      &kp LA(PRINTSCREEN)
+&none         &kp NUMBER_4  &kp NUMBER_5      &kp NUMBER_6      &none                 &trans             &trans            &kp LEFT  &kp DOWN       &kp UP       &kp RIGHT  &kp LS(EQUAL)
+&kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2      &kp NUMBER_3      &none                 &kp LESS_THAN      &kp GREATER_THAN  &kp HOME  &kp PAGE_DOWN  &kp PAGE_UP  &kp END    &kp ASTERISK
+&mo 9         &trans        &kp LS(LEFT_WIN)  &kp LS(LEFT_ALT)  &kp LS(LEFT_CONTROL)  &trans             &trans            &trans                                           &mo 9
             >;
 
             sensor-bindings = <&mod_morph_encoder>;
