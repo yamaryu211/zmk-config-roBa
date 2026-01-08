@@ -28,8 +28,8 @@ layers:
   - {t: C, h: LEFT ALT}
   - V
   - B
-  - LEFT
-  - RIGHT
+  - '&move_window_left_max'
+  - '&move_window_right_max'
   - N
   - M
   - {t: ',', h: LEFT ALT, s: '!'}
