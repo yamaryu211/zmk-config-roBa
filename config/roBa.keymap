@@ -402,6 +402,10 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
+                <&kp LG(LEFT)>,
+                <&macro_wait_time 20>,
+                <&kp LG(RIGHT)>,
+                <&macro_wait_time 20>,
                 <&kp LS(LG(LEFT))>,
                 <&macro_wait_time 50>,
                 <&kp LG(UP_ARROW)>;
@@ -413,6 +417,10 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
+                <&kp LG(LEFT)>,
+                <&macro_wait_time 20>,
+                <&kp LG(RIGHT)>,
+                <&macro_wait_time 20>,
                 <&kp LS(LG(RIGHT))>,
                 <&macro_wait_time 50>,
                 <&kp LG(UP_ARROW)>;
