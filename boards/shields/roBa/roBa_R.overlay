@@ -70,3 +70,8 @@
         device = <&trackball>;
     };
   };
+
+// NFCピンをGPIOとして使用（CONFIG_NFCT_PINS_AS_GPIOSの代替）
+&uicr {
+    nfct-pins-as-gpios;
+};
