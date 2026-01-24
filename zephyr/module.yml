@@ -2,3 +2,5 @@ name: roBa
 build:
   settings:
     board_root: .
+  cmake: app
+  kconfig: app/Kconfig
