@@ -26,12 +26,12 @@ layers:
   - {t: Z, h: LEFT SHIFT}
   - {t: X, h: LCTRL}
   - {t: C, h: LEFT ALT}
-  - {t: V, h: LEFT WIN}
+  - V
   - B
-  - LEFT
-  - RIGHT
+  - '&move_window_left_max'
+  - '&move_window_right_max'
   - N
-  - {t: M, h: LEFT GUI}
+  - M
   - {t: ',', h: LEFT ALT, s: '!'}
   - {t: ., h: LCTRL, s: '?'}
   - {t: /, h: LEFT SHIFT, s: \}
@@ -61,7 +61,7 @@ layers:
   - F
   - G
   - Gui+KP 0
-  - Ctl+UP ARROW
+  - Alt+TAB
   - H
   - J
   - K
