@@ -224,9 +224,12 @@
             process-next;
         };
 
+        // レイヤー9 (KBD_SETTING) で直交移動のみ有効にして音量・輝度調整
+        // トラックボールの動きをX軸またはY軸のみにスナップしてからキー入力に変換
+
         volume_keys {
             layers = <KBD_SETTING>;
-            input-processors = <&zip_volume_keys>;
+            input-processors = <&zip_cursor_snap>, <&zip_volume_keys>;
             process-next;
         };
 
