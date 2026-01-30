@@ -176,7 +176,7 @@
         compatible = "zmk,input-listener";
         device = <&trackball>;
 
-        // レポートレート制限 + Threshold付きAML (25ピクセル以上動かすとAML発動、30秒後に解除)
+        // レポートレート制限 + Threshold付きAML (15ピクセル以上動かすとAML発動、30秒後に解除)
         input-processors = <&zip_report_rate_limit 4>, <&zip_temp_layer_threshold AML 30000>;
 
         // 自由スクロール
