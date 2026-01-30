@@ -104,6 +104,33 @@
         require-prior-idle-ms = <300>;
     };
 
+    // Threshold付きAML: トラックボールを一定以上動かしたときにAMLを発動
+
+    zip_temp_layer_threshold: zip_temp_layer_threshold {
+        compatible = "zmk,input-processor-temp-layer-threshold";
+        #input-processor-cells = <2>;
+
+        // AML発動に必要な累積移動量
+        threshold = <15>;
+
+        // 以下で指定したキー以外を押すとAML解除
+        excluded-positions = <
+            18 // J
+            19 // K
+            20 // L
+            32 // Ctrl/Command + .
+            33 // Shift + /
+            38 // Ctrl/Command + Del
+            39 // Shift + Space
+        >;
+
+        // キー入力から300ms間はAMLを発動しない
+        require-prior-idle-ms = <300>;
+
+        // 蓄積された移動量をリセットするまでの時間
+        reset-timeout-ms = <200>;
+    };
+
     // トラックボール入力をキー入力に変換
 
     zip_arrow_keys: zip_arrow_keys {
@@ -148,10 +175,10 @@
         status = "okay";
         compatible = "zmk,input-listener";
         device = <&trackball>;
-        input-processors = <&zip_report_rate_limit 15>;
 
-        // AML設定
-        // input-processors = <&zip_temp_layer AML 30000>;
+        // レポートレート制限 + Threshold付きAML (25ピクセル以上動かすとAML発動、30秒後に解除)
+        input-processors = <&zip_report_rate_limit 15>, <&zip_temp_layer_threshold AML 30000>;
+
         // 自由スクロール
         // Macの場合
 
