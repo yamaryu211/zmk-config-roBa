@@ -125,7 +125,7 @@
         >;
 
         // キー入力から300ms間はAMLを発動しない
-        require-prior-idle-ms = <300>;
+        require-prior-idle-ms = <0>;
 
         // 蓄積された移動量をリセットするまでの時間
         reset-timeout-ms = <200>;
