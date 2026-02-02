@@ -304,22 +304,6 @@
             key-positions = <18 19>;
             timeout-ms = <80>;
         };
-
-        Globe {
-            bindings = <&kp LG(SPACE)>;
-            key-positions = <34 42>;
-            timeout-ms = <80>;
-        };
-
-        delete {
-            bindings = <&kp DELETE>;
-            key-positions = <8 9>;
-        };
-
-        Enter {
-            bindings = <&kp ENTER>;
-            key-positions = <21 20>;
-        };
     };
 
     macros {
