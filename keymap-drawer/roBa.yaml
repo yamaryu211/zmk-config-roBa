@@ -713,9 +713,3 @@ combos:
   k: ESCAPE
 - p: [18, 19]
   k: '&mkp MB3'
-- p: [34, 42]
-  k: Gui+SPACE
-- p: [8, 9]
-  k: DELETE
-- p: [21, 20]
-  k: ENTER
