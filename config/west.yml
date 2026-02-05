@@ -14,6 +14,8 @@ manifest:
       url-base: https://github.com/kot149
     - name: elpekenin
       url-base: https://github.com/elpekenin
+    - name: oleksandrmaslov
+      url-base: https://github.com/oleksandrmaslov
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -39,6 +41,9 @@ manifest:
       revision: main
     - name: zmk-input-processor-temp-layer-threshold
       remote: yamaryu211
+      revision: main
+    - name: zmk-pointing-acceleration
+      remote: oleksandrmaslov
       revision: main
 
   self:
