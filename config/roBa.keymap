@@ -142,7 +142,7 @@
         compatible = "zmk,input-processor-scroll-acceleration";
         #input-processor-cells = <1>;
         decay-ms = <100>;
-        max-acceleration = <10>;
+        max-acceleration = <20>;
         min-speed-threshold = <1>;
     };
 
@@ -151,7 +151,7 @@
         compatible = "zmk,input-processor-acceleration";
         #input-processor-cells = <0>;
         input-type = <INPUT_EV_REL>;  // For relative input devices
-        track-remainders;             // Accumulate fractional movements
+        // track-remainders;             // Accumulate fractional movements
         min-factor = <600>;          // 0.6x at very slow speeds
         max-factor = <3000>;         // 3.0x at fast speeds
         speed-threshold = <1200>;     // 1200 counts/sec for 1x
@@ -208,7 +208,7 @@
         // レポートレート制限 + Threshold付きAML (15ピクセル以上動かすとAML発動、30秒後に解除)
 
         input-processors =
-            <&zip_report_rate_limit 16>,
+            //<&zip_report_rate_limit 16>,
             <&zip_temp_layer_threshold AML 30000>,
             <&pointer_accel>;
 
@@ -230,8 +230,7 @@
         scroller_win {
             layers = <FUNC_SCROLL_WIN>;
             input-processors =
-                //<&zip_scroll_acceleration 6>,
-                <&pointer_accel>,
+                <&zip_scroll_acceleration 6>,
                 <&zip_xy_scaler 1 4>,
                 <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
                 <&zip_xy_to_scroll_mapper>;
@@ -268,8 +267,7 @@
         scroller_win_vertical {
             layers = <SCROLL_VER_WIN>;
             input-processors =
-                //<&zip_scroll_acceleration 6>,
-                <&pointer_accel>,
+                <&zip_scroll_acceleration 6>,
                 <&zip_y_scaler 1 4>,
                 <&zip_x_scaler 0 1>,
                 <&zip_xy_to_scroll_mapper>;
@@ -280,8 +278,7 @@
         scroller_win_horizontal {
             layers = <SCROLL_HOR_WIN>;
             input-processors =
-                //<&zip_scroll_acceleration 6>,
-                <&pointer_accel>,
+                <&zip_scroll_acceleration 6>,
                 <&zip_x_scaler 1 4>,
                 <&zip_y_scaler 0 1>,
                 <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
