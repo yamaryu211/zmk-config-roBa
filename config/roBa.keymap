@@ -92,10 +92,10 @@
 
         excluded-positions = <
             18 // J
-            19 // K
-            20 // L
-            32 // Ctrl/Command + .
-            33 // Shift + /
+            // 19 // K
+            // 20 // L
+            // 32 // Ctrl/Command + .
+            // 33 // Shift + /
             38 // Ctrl/Command + Del
             39 // Shift + Space
         >;
@@ -119,10 +119,10 @@
 
         excluded-positions = <
             18 // J
-            19 // K
-            20 // L
-            32 // Ctrl/Command + .
-            33 // Shift + /
+            // 19 // K
+            // 20 // L
+            // 32 // Ctrl/Command + .
+            // 33 // Shift + /
             38 // Ctrl/Command + Del
             39 // Shift + Space
         >;
