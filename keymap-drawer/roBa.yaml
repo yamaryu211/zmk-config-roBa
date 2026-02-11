@@ -372,7 +372,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '&mkp MB1'
-  - '&mkp MB2'
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -712,4 +712,6 @@ combos:
 - p: [0, 1]
   k: ESCAPE
 - p: [18, 19]
+  k: '&mkp MB2'
+- p: [18, 20]
   k: '&mkp MB3'
