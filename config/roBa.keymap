@@ -209,7 +209,7 @@
         // レポートレート制限 + Threshold付きAML (15ピクセル以上動かすとAML発動、30秒後に解除)
 
         input-processors =
-            //<&zip_report_rate_limit 16>,,,
+            //<&zip_report_rate_limit 16>,,,,
             <&zip_temp_layer_threshold AML 30000>,
             <&pointer_accel>;
 
@@ -337,13 +337,13 @@
 
         right_click {
             bindings = <&mkp MB2>;
-            key-positions = <18 19>;
+            key-positions = <19 20>;
             timeout-ms = <80>;
         };
 
         middle_click {
             bindings = <&mkp MB3>;
-            key-positions = <18 20>;
+            key-positions = <18 20 19>;
         };
     };
 
