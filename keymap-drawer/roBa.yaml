@@ -711,7 +711,7 @@ combos:
   k: Sft+TAB
 - p: [0, 1]
   k: ESCAPE
-- p: [18, 19]
+- p: [19, 20]
   k: '&mkp MB2'
-- p: [18, 20]
+- p: [18, 20, 19]
   k: '&mkp MB3'
