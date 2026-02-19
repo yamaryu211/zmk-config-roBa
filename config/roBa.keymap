@@ -210,8 +210,8 @@
 
         input-processors =
             //<&zip_report_rate_limit 16>,
-            <&zip_temp_layer_threshold AML 30000>,
-            <&pointer_accel>;
+            <&zip_temp_layer_threshold AML 30000>;
+            // <&pointer_accel>;
 
         // 自由スクロール
         // Macの場合
