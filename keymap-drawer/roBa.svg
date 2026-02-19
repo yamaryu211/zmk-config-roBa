@@ -349,6 +349,10 @@ path.combo {
 <tspan x="588" dy="-0.6em">&amp;mkp</tspan><tspan x="588" dy="1.2em">MB3</tspan>
 </text>
 </g>
+<g class="combo combopos-4">
+<rect rx="6" ry="6" x="42" y="95" width="28" height="26" class="combo"/>
+<text x="56" y="108" class="combo tap"><tspan style="font-size: 88%">CAPSLOCK</tspan></text>
+</g>
 </g>
 </g>
 <g transform="translate(30, 339)" class="layer-DEFAULT_MAC">
@@ -581,6 +585,10 @@ path.combo {
 <tspan x="588" dy="-0.6em">&amp;mkp</tspan><tspan x="588" dy="1.2em">MB3</tspan>
 </text>
 </g>
+<g class="combo combopos-4">
+<rect rx="6" ry="6" x="42" y="95" width="28" height="26" class="combo"/>
+<text x="56" y="108" class="combo tap"><tspan style="font-size: 88%">CAPSLOCK</tspan></text>
+</g>
 </g>
 </g>
 <g transform="translate(30, 678)" class="layer-NUM_WIN">
@@ -781,6 +789,10 @@ path.combo {
 <text x="588" y="88" class="combo tap">
 <tspan x="588" dy="-0.6em">&amp;mkp</tspan><tspan x="588" dy="1.2em">MB3</tspan>
 </text>
+</g>
+<g class="combo combopos-4">
+<rect rx="6" ry="6" x="42" y="95" width="28" height="26" class="combo"/>
+<text x="56" y="108" class="combo tap"><tspan style="font-size: 88%">CAPSLOCK</tspan></text>
 </g>
 </g>
 </g>
@@ -986,6 +998,10 @@ path.combo {
 <tspan x="588" dy="-0.6em">&amp;mkp</tspan><tspan x="588" dy="1.2em">MB3</tspan>
 </text>
 </g>
+<g class="combo combopos-4">
+<rect rx="6" ry="6" x="42" y="95" width="28" height="26" class="combo"/>
+<text x="56" y="108" class="combo tap"><tspan style="font-size: 88%">CAPSLOCK</tspan></text>
+</g>
 </g>
 </g>
 <g transform="translate(30, 1355)" class="layer-SYMBOL_WIN">
@@ -1186,6 +1202,10 @@ path.combo {
 <tspan x="588" dy="-0.6em">&amp;mkp</tspan><tspan x="588" dy="1.2em">MB3</tspan>
 </text>
 </g>
+<g class="combo combopos-4">
+<rect rx="6" ry="6" x="42" y="95" width="28" height="26" class="combo"/>
+<text x="56" y="108" class="combo tap"><tspan style="font-size: 88%">CAPSLOCK</tspan></text>
+</g>
 </g>
 </g>
 <g transform="translate(30, 1694)" class="layer-SYMBOL_MAC">
@@ -1385,6 +1405,10 @@ path.combo {
 <text x="588" y="88" class="combo tap">
 <tspan x="588" dy="-0.6em">&amp;mkp</tspan><tspan x="588" dy="1.2em">MB3</tspan>
 </text>
+</g>
+<g class="combo combopos-4">
+<rect rx="6" ry="6" x="42" y="95" width="28" height="26" class="combo"/>
+<text x="56" y="108" class="combo tap"><tspan style="font-size: 88%">CAPSLOCK</tspan></text>
 </g>
 </g>
 </g>
@@ -1592,6 +1616,10 @@ path.combo {
 <tspan x="588" dy="-0.6em">&amp;mkp</tspan><tspan x="588" dy="1.2em">MB3</tspan>
 </text>
 </g>
+<g class="combo combopos-4">
+<rect rx="6" ry="6" x="42" y="95" width="28" height="26" class="combo"/>
+<text x="56" y="108" class="combo tap"><tspan style="font-size: 88%">CAPSLOCK</tspan></text>
+</g>
 </g>
 </g>
 <g transform="translate(30, 2372)" class="layer-FUNC_SCROLL_MAC">
@@ -1798,6 +1826,10 @@ path.combo {
 <tspan x="588" dy="-0.6em">&amp;mkp</tspan><tspan x="588" dy="1.2em">MB3</tspan>
 </text>
 </g>
+<g class="combo combopos-4">
+<rect rx="6" ry="6" x="42" y="95" width="28" height="26" class="combo"/>
+<text x="56" y="108" class="combo tap"><tspan style="font-size: 88%">CAPSLOCK</tspan></text>
+</g>
 </g>
 </g>
 <g transform="translate(30, 2711)" class="layer-AML">
@@ -1996,6 +2028,10 @@ path.combo {
 <text x="588" y="88" class="combo tap">
 <tspan x="588" dy="-0.6em">&amp;mkp</tspan><tspan x="588" dy="1.2em">MB3</tspan>
 </text>
+</g>
+<g class="combo combopos-4">
+<rect rx="6" ry="6" x="42" y="95" width="28" height="26" class="combo"/>
+<text x="56" y="108" class="combo tap"><tspan style="font-size: 88%">CAPSLOCK</tspan></text>
 </g>
 </g>
 </g>
@@ -2206,6 +2242,10 @@ path.combo {
 <tspan x="588" dy="-0.6em">&amp;mkp</tspan><tspan x="588" dy="1.2em">MB3</tspan>
 </text>
 </g>
+<g class="combo combopos-4">
+<rect rx="6" ry="6" x="42" y="95" width="28" height="26" class="combo"/>
+<text x="56" y="108" class="combo tap"><tspan style="font-size: 88%">CAPSLOCK</tspan></text>
+</g>
 </g>
 </g>
 <g transform="translate(30, 3388)" class="layer-SCROLL_VER_WIN">
@@ -2411,6 +2451,10 @@ path.combo {
 <tspan x="588" dy="-0.6em">&amp;mkp</tspan><tspan x="588" dy="1.2em">MB3</tspan>
 </text>
 </g>
+<g class="combo combopos-4">
+<rect rx="6" ry="6" x="42" y="95" width="28" height="26" class="combo"/>
+<text x="56" y="108" class="combo tap"><tspan style="font-size: 88%">CAPSLOCK</tspan></text>
+</g>
 </g>
 </g>
 <g transform="translate(30, 3727)" class="layer-SCROLL_VER_MAC">
@@ -2614,6 +2658,10 @@ path.combo {
 <text x="588" y="88" class="combo tap">
 <tspan x="588" dy="-0.6em">&amp;mkp</tspan><tspan x="588" dy="1.2em">MB3</tspan>
 </text>
+</g>
+<g class="combo combopos-4">
+<rect rx="6" ry="6" x="42" y="95" width="28" height="26" class="combo"/>
+<text x="56" y="108" class="combo tap"><tspan style="font-size: 88%">CAPSLOCK</tspan></text>
 </g>
 </g>
 </g>
@@ -2820,6 +2868,10 @@ path.combo {
 <tspan x="588" dy="-0.6em">&amp;mkp</tspan><tspan x="588" dy="1.2em">MB3</tspan>
 </text>
 </g>
+<g class="combo combopos-4">
+<rect rx="6" ry="6" x="42" y="95" width="28" height="26" class="combo"/>
+<text x="56" y="108" class="combo tap"><tspan style="font-size: 88%">CAPSLOCK</tspan></text>
+</g>
 </g>
 </g>
 <g transform="translate(30, 4405)" class="layer-SCROLL_HOR_MAC">
@@ -3024,6 +3076,10 @@ path.combo {
 <tspan x="588" dy="-0.6em">&amp;mkp</tspan><tspan x="588" dy="1.2em">MB3</tspan>
 </text>
 </g>
+<g class="combo combopos-4">
+<rect rx="6" ry="6" x="42" y="95" width="28" height="26" class="combo"/>
+<text x="56" y="108" class="combo tap"><tspan style="font-size: 88%">CAPSLOCK</tspan></text>
+</g>
 </g>
 </g>
 <g transform="translate(30, 4744)" class="layer-GESTURE_WIN">
@@ -3217,6 +3273,10 @@ path.combo {
 <tspan x="588" dy="-0.6em">&amp;mkp</tspan><tspan x="588" dy="1.2em">MB3</tspan>
 </text>
 </g>
+<g class="combo combopos-4">
+<rect rx="6" ry="6" x="42" y="95" width="28" height="26" class="combo"/>
+<text x="56" y="108" class="combo tap"><tspan style="font-size: 88%">CAPSLOCK</tspan></text>
+</g>
 </g>
 </g>
 <g transform="translate(30, 5083)" class="layer-GESTURE_MAC">
@@ -3409,6 +3469,10 @@ path.combo {
 <text x="588" y="88" class="combo tap">
 <tspan x="588" dy="-0.6em">&amp;mkp</tspan><tspan x="588" dy="1.2em">MB3</tspan>
 </text>
+</g>
+<g class="combo combopos-4">
+<rect rx="6" ry="6" x="42" y="95" width="28" height="26" class="combo"/>
+<text x="56" y="108" class="combo tap"><tspan style="font-size: 88%">CAPSLOCK</tspan></text>
 </g>
 </g>
 </g>

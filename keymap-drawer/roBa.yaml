@@ -713,3 +713,5 @@ combos:
   k: ESCAPE
 - p: [19, 18]
   k: '&mkp MB3'
+- p: [10, 11]
+  k: CAPSLOCK
