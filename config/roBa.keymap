@@ -209,10 +209,10 @@
         // レポートレート制限 + Threshold付きAML (15ピクセル以上動かすとAML発動、30秒後に解除)
 
         input-processors =
-            //<&zip_report_rate_limit 16>,
+            //<&zip_report_rate_limit 16>,,
             <&zip_temp_layer_threshold AML 30000>;
-            // <&pointer_accel>;
 
+        // <&pointer_accel>;
         // 自由スクロール
         // Macの場合
 
@@ -338,6 +338,11 @@
         middle_click {
             bindings = <&mkp MB3>;
             key-positions = <19 18>;
+        };
+
+        caps_lock {
+            bindings = <&kp CAPSLOCK>;
+            key-positions = <10 11>;
         };
     };
 
