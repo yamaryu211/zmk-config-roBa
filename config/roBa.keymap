@@ -210,6 +210,7 @@
 
         input-processors =
             //<&zip_report_rate_limit 16>,,
+            <&zip_xy_scaler 2 1>,
             <&zip_temp_layer_threshold AML 30000>;
 
         // <&pointer_accel>;
@@ -232,7 +233,7 @@
             layers = <FUNC_SCROLL_WIN>;
             input-processors =
                 <&zip_scroll_acceleration 6>,
-                <&zip_xy_scaler 1 4>,
+                <&zip_xy_scaler 1 2>,
                 <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
                 <&zip_xy_to_scroll_mapper>;
         };
@@ -269,7 +270,7 @@
             layers = <SCROLL_VER_WIN>;
             input-processors =
                 <&zip_scroll_acceleration 6>,
-                <&zip_y_scaler 1 4>,
+                <&zip_y_scaler 1 2>,
                 <&zip_x_scaler 0 1>,
                 <&zip_xy_to_scroll_mapper>;
         };
@@ -280,7 +281,7 @@
             layers = <SCROLL_HOR_WIN>;
             input-processors =
                 <&zip_scroll_acceleration 6>,
-                <&zip_x_scaler 1 4>,
+                <&zip_x_scaler 1 2>,
                 <&zip_y_scaler 0 1>,
                 <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
                 <&zip_xy_to_scroll_mapper>;
