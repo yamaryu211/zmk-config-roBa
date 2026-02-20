@@ -147,18 +147,38 @@
     };
 
     // マウスカーソル加速
-
     pointer_accel: pointer_accel {
         compatible = "zmk,input-processor-acceleration";
         #input-processor-cells = <0>;
         input-type = <INPUT_EV_REL>;  // For relative input devices
-        // track-remainders;             // Accumulate fractional movements
+        codes = <INPUT_REL_X INPUT_REL_Y>; // oleksandrmaslov氏モジュールではコメントアウト
 
-        min-factor = <600>;          // 0.6x at very slow speeds
-        max-factor = <3000>;         // 3.0x at fast speeds
-        speed-threshold = <1200>;     // 1200 counts/sec for 1x
-        speed-max = <6000>;          // 6000 counts/sec for max accel
-        acceleration-exponent = <1>;  // Quadratic acceleration curve
+        // 以下の詳細設定は、nuovotaka氏モジュール（シンプルモード）ではプリセット使用のためコメントアウト
+        // オリジナルのoleksandrmaslov氏モジュールでの設定
+        // min-factor = <600>;          // 0.6x at very slow speeds
+        // max-factor = <3000>;         // 3.0x at fast speeds
+        // speed-threshold = <1200>;     // 1200 counts/sec for 1x
+        // speed-max = <6000>;          // 6000 counts/sec for max accel
+        // acceleration-exponent = <1>;  // Quadratic acceleration curve
+
+        // nuovotaka氏モジュールでの設定（CONFIG_INPUT_PROCESSOR_ACCEL_PRESET_CUSTOM=y）
+        // カスタムシンプルモード
+        // sensitivity = <1300>;     // 1.3倍基本感度
+        // max-factor = <2800>;      // 2.8倍最大アクセラレーション（安全のため3.0倍でキャップ）
+        // curve-type = <1>;         // 0=リニア、1=マイルド、2=ストロング
+        // y-boost = <1200>;         // 1.2倍Y軸ブースト（オプション、デフォルト1000）
+        // sensor-dpi = <800>;       // 800 DPIセンサー（オプション、デフォルト800）
+
+        // nuovotaka氏モジュールでの設定（CONFIG_INPUT_PROCESSOR_ACCEL_PRESET_CUSTOM=y）
+        // カスタムスタンダードモード
+        // sensitivity = <1200>;         // 1.2倍基本感度
+        // max-factor = <3000>;          // 3.0倍最大アクセラレーション
+        // acceleration-exponent = <2>;  // 高度な指数カーブ (1-5)
+        // y-boost = <1300>;             // ワイドスクリーン用1.3倍Y軸ブースト
+        // speed-threshold = <600>;      // 600カウント/秒でアクセラレーション開始
+        // speed-max = <3500>;           // 3500カウント/秒で最大アクセラレーション
+        // min-factor = <1000>;          // 1.0倍最小値（減速なし）
+        // sensor-dpi = <800>;           // 800 DPIセンサー（オプション、デフォルト800）
     };
 
     // トラックボール入力をキー入力に変換
@@ -209,11 +229,11 @@
         // レポートレート制限 + Threshold付きAML (15ピクセル以上動かすとAML発動、30秒後に解除)
 
         input-processors =
-            //<&zip_report_rate_limit 16>,,
-            <&zip_xy_scaler 2 1>,
-            <&zip_temp_layer_threshold AML 30000>;
+            //<&zip_report_rate_limit 16>,
+            <&zip_temp_layer_threshold AML 30000>,
+            <&pointer_accel>,
+            <&zip_xy_scaler 2 1>;
 
-        // <&pointer_accel>;
         // 自由スクロール
         // Macの場合
 
