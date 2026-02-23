@@ -113,7 +113,7 @@
 
         // AML発動に必要な累積移動量
 
-        threshold = <10>;
+        threshold = <12>;
 
         // 以下で指定したキー以外を押すとAML解除
 
@@ -229,7 +229,7 @@
         // レポートレート制限 + Threshold付きAML (15ピクセル以上動かすとAML発動、30秒後に解除)
 
         input-processors =
-            //<&zip_report_rate_limit 16>,
+            <&zip_report_rate_limit 8>,
             <&zip_temp_layer_threshold AML 30000>,
             <&pointer_accel>,
             <&zip_xy_scaler 2 1>;
