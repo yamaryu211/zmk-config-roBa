@@ -40,7 +40,7 @@ manifest:
     - name: zmk-input-processor-temp-layer-threshold
       remote: yamaryu211
       revision: main
-    - name: zmk-pointing-acceleration-alpha
+    - name: zmk-pointing-acceleration
       remote: yamaryu211
       revision: main
 
