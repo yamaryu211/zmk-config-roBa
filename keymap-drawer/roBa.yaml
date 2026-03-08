@@ -32,9 +32,9 @@ layers:
   - '&move_window_right_max'
   - N
   - M
-  - ','
-  - .
-  - /
+  - {t: ',', h: LEFT ALT}
+  - {t: ., h: LEFT CONTROL}
+  - {t: /, h: LEFT SHIFT}
   - {t: LANGUAGE 2, h: NUM_WIN}
   - Sft+F10
   - {t: TAB, h: LEFT WIN}
@@ -76,9 +76,9 @@ layers:
   - )
   - N
   - {t: M, h: LEFT CONTROL}
-  - ','
-  - .
-  - /
+  - {t: ',', h: LEFT ALT}
+  - {t: ., h: LEFT COMMAND}
+  - {t: /, h: LEFT SHIFT}
   - {t: LANGUAGE 2, h: NUM_MAC}
   - Ctl+LEFT COMMAND
   - LEFT CONTROL
