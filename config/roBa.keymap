@@ -1000,10 +1000,10 @@
 
         DEFAULT_WIN {
             bindings = <
-&kp Q             &kp W        &kp E             &kp R         &kp T                                                                &kp Y            &kp U  &kp I      &kp O       &kp P
-&kp A             &kp S        &kp D             &kp F         &kp G             &kp LC(N0)                 &kp LA(LC(TAB))         &kp H            &kp J  &kp K      &lt 10 L    &lt 12 MINUS
-&mt LEFT_SHIFT Z  &mt LCTRL X  &mt LEFT_ALT C    &kp V         &kp B             &move_window_left_max      &move_window_right_max  &kp N            &kp M  &kp COMMA  &kp PERIOD  &kp SLASH
-&lt 2 LANGUAGE_2  &kp LS(F10)  &mt LEFT_WIN TAB  &kp LEFT_ALT  &mt LCTRL DELETE  &mt LEFT_SHIFT SPACE       &lt 2 ENTER             &lt 4 BACKSPACE                                &lt 6 LANGUAGE_1
+&kp Q             &kp W        &kp E             &kp R         &kp T                                                                &kp Y            &kp U  &kp I               &kp O                    &kp P
+&kp A             &kp S        &kp D             &kp F         &kp G             &kp LC(N0)                 &kp LA(LC(TAB))         &kp H            &kp J  &kp K               &lt 10 L                 &lt 12 MINUS
+&mt LEFT_SHIFT Z  &mt LCTRL X  &mt LEFT_ALT C    &kp V         &kp B             &move_window_left_max      &move_window_right_max  &kp N            &kp M  &mt LEFT_ALT COMMA  &mt LEFT_CONTROL PERIOD  &mt LEFT_SHIFT SLASH
+&lt 2 LANGUAGE_2  &kp LS(F10)  &mt LEFT_WIN TAB  &kp LEFT_ALT  &mt LCTRL DELETE  &mt LEFT_SHIFT SPACE       &lt 2 ENTER             &lt 4 BACKSPACE                                                      &lt 6 LANGUAGE_1
             >;
 
             sensor-bindings = <&mod_morph_encoder>;
@@ -1011,10 +1011,10 @@
 
         DEFAULT_MAC {
             bindings = <
-&kp Q             &kp W                 &kp E             &kp R               &kp T                                                                     &kp Y            &kp U               &kp I      &kp O       &kp P
-&kp A             &kp S                 &kp D             &kp F               &kp G                    &kp LG(KP_NUMBER_0)       &kp LA(TAB)            &kp H            &kp J               &kp K      &lt 11 L    &lt 13 MINUS
-&mt LEFT_SHIFT Z  &mt LEFT_GUI X        &mt LEFT_ALT C    &mt LEFT_CONTROL V  &kp B                    &kp LEFT_PARENTHESIS      &kp RIGHT_PARENTHESIS  &kp N            &mt LEFT_CONTROL M  &kp COMMA  &kp PERIOD  &kp SLASH
-&lt 3 LANGUAGE_2  &kp LC(LEFT_COMMAND)  &kp LEFT_CONTROL  &kp LEFT_ALT        &mt LEFT_COMMAND DELETE  &mt LEFT_SHIFT SPACE      &lt 3 ENTER            &lt 5 BACKSPACE                                             &lt 7 LANGUAGE_1
+&kp Q             &kp W                 &kp E             &kp R               &kp T                                                                     &kp Y            &kp U               &kp I               &kp O                    &kp P
+&kp A             &kp S                 &kp D             &kp F               &kp G                    &kp LG(KP_NUMBER_0)       &kp LA(TAB)            &kp H            &kp J               &kp K               &lt 11 L                 &lt 13 MINUS
+&mt LEFT_SHIFT Z  &mt LEFT_GUI X        &mt LEFT_ALT C    &mt LEFT_CONTROL V  &kp B                    &kp LEFT_PARENTHESIS      &kp RIGHT_PARENTHESIS  &kp N            &mt LEFT_CONTROL M  &mt LEFT_ALT COMMA  &mt LEFT_COMMAND PERIOD  &mt LEFT_SHIFT SLASH
+&lt 3 LANGUAGE_2  &kp LC(LEFT_COMMAND)  &kp LEFT_CONTROL  &kp LEFT_ALT        &mt LEFT_COMMAND DELETE  &mt LEFT_SHIFT SPACE      &lt 3 ENTER            &lt 5 BACKSPACE                                                                   &lt 7 LANGUAGE_1
             >;
 
             sensor-bindings = <&mod_morph_encoder_mac>;
