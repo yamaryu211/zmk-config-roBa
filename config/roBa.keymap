@@ -32,6 +32,24 @@
 #undef ZMK_POINTING_DEFAULT_SCRL_VAL  // 定義を削除
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 30
 
+// mod-morph マクロ定義
+#define MOD_MORPH(NAME, NORMAL, MORPHED, MODS_VAL) \
+    NAME: NAME { \
+        compatible = "zmk,behavior-mod-morph"; \
+        #binding-cells = <0>; \
+        bindings = <NORMAL>, <MORPHED>; \
+        mods = <MODS_VAL>; \
+    };
+
+#define MOD_MORPH_KEEP(NAME, NORMAL, MORPHED, MODS_VAL, KEEP_VAL) \
+    NAME: NAME { \
+        compatible = "zmk,behavior-mod-morph"; \
+        #binding-cells = <0>; \
+        bindings = <NORMAL>, <MORPHED>; \
+        mods = <MODS_VAL>; \
+        keep-mods = <KEEP_VAL>; \
+    };
+
 // スクロールスナップの設定
 
 &zip_scroll_snap {
@@ -654,242 +672,71 @@
             mods = <(MOD_LSFT)>;
         };
 
-        // mod morphを使用したエンコーダーの挙動制御
-        // Windows用
-        // デフォルト: スクロール
-        // Shift: Shift+Win+←/→
-        // Alt: Win+↑/↓
-        // Ctrl: Win+←/→
+        // ===== mod morphを使用したエンコーダーの挙動制御 (Windows用) =====
+        // 判定ツリー:
+        //   mod_morph_encoder_p/n
+        //   ├─ (default) shift_default_p/n
+        //   │   ├─ (default) PAGE_DOWN / PAGE_UP
+        //   │   └─ (Shift)   Shift+Win+→/←
+        //   └─ (Alt/Win) alt_win_p/n
+        //       ├─ (Alt) Win+↑/↓
+        //       └─ (Win) Win+←/→
 
-        shift_p: shift_p {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp 0>, <&kp LG(RIGHT)>;
+        // --- Positive (奥) ---
+        MOD_MORPH_KEEP(shift_p,         &kp 0, &kp LG(RIGHT), (MOD_LSFT|MOD_RSFT), (MOD_LSFT))
+        MOD_MORPH(shift_default_p,      &kp PAGE_DOWN, &shift_p, (MOD_LSFT|MOD_RSFT))
+        MOD_MORPH(alt_p,                &kp 0, &kp LG(UP),    (MOD_LALT|MOD_RALT))
+        MOD_MORPH(win_p,                &kp 0, &kp LG(LEFT),  (MOD_LGUI|MOD_RGUI))
+        MOD_MORPH(alt_win_p,            &alt_p, &win_p,        (MOD_LGUI|MOD_RGUI))
+        MOD_MORPH(mod_morph_encoder_p,  &shift_default_p, &alt_win_p, (MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI))
 
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            keep-mods = <(MOD_LSFT)>;
-        };
+        // --- Negative (手前) ---
+        MOD_MORPH_KEEP(shift_n,         &kp 0, &kp LG(LEFT),  (MOD_LSFT|MOD_RSFT), (MOD_LSFT))
+        MOD_MORPH(shift_default_n,      &kp PAGE_UP, &shift_n, (MOD_LSFT|MOD_RSFT))
+        MOD_MORPH(alt_n,                &kp 0, &kp LG(DOWN),  (MOD_LALT|MOD_RALT))
+        MOD_MORPH(win_n,                &kp 0, &kp LG(RIGHT), (MOD_LGUI|MOD_RGUI))
+        MOD_MORPH(alt_win_n,            &alt_n, &win_n,        (MOD_LGUI|MOD_RGUI))
+        MOD_MORPH(mod_morph_encoder_n,  &shift_default_n, &alt_win_n, (MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI))
 
-        shift_default_p: shift_default_p {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp PAGE_DOWN>, <&shift_p>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        alt_p: alt_p {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp 0>, <&kp LG(UP)>;
-
-            mods = <(MOD_LALT|MOD_RALT)>;
-        };
-
-        win_p: win_p {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp 0>, <&kp LG(LEFT)>;
-
-            mods = <(MOD_LGUI|MOD_RGUI)>;
-        };
-
-        alt_win_p: alt_win_p {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&alt_p>, <&win_p>;
-
-            mods = <(MOD_LGUI|MOD_RGUI)>;
-        };
-
-        mod_morph_encoder_p: mod_morph_encoder_p {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&shift_default_p>, <&alt_win_p>;
-
-            mods = <(MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI)>;
-        };
-
-        shift_n: shift_n {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp 0>, <&kp LG(LEFT)>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            keep-mods = <(MOD_LSFT)>;
-        };
-
-        shift_default_n: shift_default_n {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp PAGE_UP>, <&shift_n>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        alt_n: alt_n {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp 0>, <&kp LG(DOWN)>;
-
-            mods = <(MOD_LALT|MOD_RALT)>;
-        };
-
-        win_n: win_n {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp 0>, <&kp LG(RIGHT)>;
-
-            mods = <(MOD_LGUI|MOD_RGUI)>;
-        };
-
-        alt_win_n: alt_win_n {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&alt_n>, <&win_n>;
-
-            mods = <(MOD_LGUI|MOD_RGUI)>;
-        };
-
-        mod_morph_encoder_n: mod_morph_encoder_n {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&shift_default_n>, <&alt_win_n>;
-
-            mods = <(MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI)>;
-        };
-
+        // --- Encoder Rotate ---
         mod_morph_encoder: mod_morph_encoder {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&mod_morph_encoder_n>, <&mod_morph_encoder_p>;
-
             tap-ms = <20>;
         };
 
-        // Mac用
-        // デフォルト: スクロール
-        // GUI: command + +/-
-        // Shift: Shift+←/→
-        // Alt: Win+↑/↓
-        // Ctrl: Win+←/→
-        // positive: 手前
+        // ===== mod morphを使用したエンコーダーの挙動制御 (Mac用) =====
+        // 判定ツリー:
+        //   mod_morph_encoder_mac_p/n
+        //   ├─ (default) sftgui_default_p/n
+        //   │   ├─ (default) PAGE_UP / PAGE_DOWN
+        //   │   └─ (Shift/GUI) gui_p/n → DELETE/BACKSPACE or Cmd+/Cmd-
+        //   └─ (Alt/Ctrl) opt_ctrl_p/n
+        //       ├─ (Ctrl) Alt+Ctrl+Cmd+→/←
+        //       └─ (Alt)  Alt+Ctrl+Cmd+↓/↑
 
-        gui_p: gui_p {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp DELETE>, <&kp LG(PLUS)>;
+        // --- Positive (手前) ---
+        MOD_MORPH(gui_p,                     &kp DELETE, &kp LG(PLUS),          (MOD_LGUI|MOD_RGUI))
+        MOD_MORPH(sftgui_default_p,          &kp PAGE_UP, &gui_p,              (MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT))
+        MOD_MORPH(ctrl_p,                    &kp 0, &kp LA(LC(LG(RIGHT))),     (MOD_LCTL|MOD_RCTL))
+        MOD_MORPH(opt_p,                     &kp 0, &kp LA(LC(LG(DOWN))),      (MOD_LALT|MOD_RALT))
+        MOD_MORPH(opt_ctrl_p,                &ctrl_p, &opt_p,                  (MOD_LALT|MOD_RALT))
+        MOD_MORPH(mod_morph_encoder_mac_p,   &sftgui_default_p, &opt_ctrl_p,   (MOD_LALT|MOD_RALT|MOD_LCTL|MOD_RCTL))
 
-            mods = <(MOD_LGUI|MOD_RGUI)>;
+        // --- Negative (奥) ---
+        MOD_MORPH(gui_n,                     &kp BACKSPACE, &kp LG(MINUS),      (MOD_LGUI|MOD_RGUI))
+        MOD_MORPH(sftgui_default_n,          &kp PAGE_DOWN, &gui_n,             (MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT))
+        MOD_MORPH(ctrl_n,                    &kp 0, &kp LA(LC(LG(LEFT))),      (MOD_LCTL|MOD_RCTL))
+        MOD_MORPH(opt_n,                     &kp 0, &kp LA(LC(LG(UP))),        (MOD_LALT|MOD_RALT))
+        MOD_MORPH(opt_ctrl_n,                &ctrl_n, &opt_n,                  (MOD_LALT|MOD_RALT))
+        MOD_MORPH(mod_morph_encoder_mac_n,   &sftgui_default_n, &opt_ctrl_n,   (MOD_LALT|MOD_RALT|MOD_LCTL|MOD_RCTL))
 
-            // keep-mods = <(MOD_LGUI)>;
-        };
-
-        sftgui_default_p: sftgui_default_p {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp PAGE_UP>, <&gui_p>;
-
-            mods = <(MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
-        };
-
-        ctrl_p: ctrl_p {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp 0>, <&kp LA(LC(LG(RIGHT)))>;
-
-            mods = <(MOD_LCTL|MOD_RCTL)>;
-
-            // keep-mods = <(MOD_LALT|MOD_LCTL)>;
-        };
-
-        opt_p: opt_p {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp 0>, <&kp LA(LC(LG(DOWN)))>;
-
-            mods = <(MOD_LALT|MOD_RALT)>;
-
-            // keep-mods = <(MOD_LALT|MOD_LCTL)>;
-        };
-
-        opt_ctrl_p: opt_ctrl_p {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&ctrl_p>, <&opt_p>;
-
-            mods = <(MOD_LALT|MOD_RALT)>;
-        };
-
-        mod_morph_encoder_mac_p: mod_morph_encoder_mac_p {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&sftgui_default_p>, <&opt_ctrl_p>;
-
-            mods = <(MOD_LALT|MOD_RALT|MOD_LCTL|MOD_RCTL)>;
-        };
-
-        // negative: 奥
-
-        gui_n: gui_n {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp BACKSPACE>, <&kp LG(MINUS)>;
-
-            mods = <(MOD_LGUI|MOD_RGUI)>;
-
-            // keep-mods = <(MOD_LGUI)>;
-        };
-
-        sftgui_default_n: sftgui_default_n {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp PAGE_DOWN>, <&gui_n>;
-
-            mods = <(MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
-        };
-
-        ctrl_n: ctrl_n {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp 0>, <&kp LA(LC(LG(LEFT)))>;
-
-            mods = <(MOD_LCTL|MOD_RCTL)>;
-
-            // keep-mods = <(MOD_LALT|MOD_LCTL)>;
-        };
-
-        opt_n: opt_n {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp 0>, <&kp LA(LC(LG(UP)))>;
-
-            mods = <(MOD_LALT|MOD_RALT)>;
-
-            // keep-mods = <(MOD_LALT|MOD_LCTL)>;
-        };
-
-        opt_ctrl_n: opt_ctrl_n {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&ctrl_n>, <&opt_n>;
-
-            mods = <(MOD_LALT|MOD_RALT)>;
-        };
-
-        mod_morph_encoder_mac_n: mod_morph_encoder_mac_n {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&sftgui_default_n>, <&opt_ctrl_n>;
-
-            mods = <(MOD_LALT|MOD_RALT|MOD_LCTL|MOD_RCTL)>;
-        };
-
+        // --- Encoder Rotate ---
         mod_morph_encoder_mac: mod_morph_encoder_mac {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&mod_morph_encoder_mac_p>, <&mod_morph_encoder_mac_n>;
-
             tap-ms = <20>;
         };
 
