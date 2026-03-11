@@ -384,12 +384,16 @@
     };
 
     macros {
+        // ===== レイヤー切り替え =====
+
         to_layer_0: to_layer_0 {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
         };
+
+        // ===== Bluetooth接続マクロ =====
 
         bt0_win: bt0 {
             compatible = "zmk,behavior-macro";
@@ -435,7 +439,7 @@
             label = "BT3_IPHONE";
         };
 
-        // AML起動中にスクロールレイヤに入るためのマクロ(zaruSaruさん実装)
+        // ===== AML起動中スクロールレイヤ切り替え (zaruSaruさん実装) =====
 
         to_scroll_layer_win: to_scroll_layer_win {
             compatible = "zmk,behavior-macro";
@@ -465,7 +469,7 @@
             label = "TO_SCROLL_LAYER_MAC";
         };
 
-        // タップ時のみAML解除するための設定
+        // ===== タップ時AML解除 =====
 
         exit_AML: exit_AML {
             compatible = "zmk,behavior-macro";
@@ -484,6 +488,8 @@
             bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &exit_AML>;
             label = "KP_exit_AML";
         };
+
+        // ===== ウィンドウ移動マクロ =====
 
         move_window_left_max: move_window_left_max {
             compatible = "zmk,behavior-macro";
@@ -517,6 +523,8 @@
     };
 
     behaviors {
+        // ===== Layer / Hold-Tap =====
+
         lt_to_layer_0: lt_to_layer_0 {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_TO_0";
@@ -526,7 +534,7 @@
             tapping-term-ms = <200>;
         };
 
-        // タップ時のみAML解除するための設定
+        // ===== AML制御 =====
 
         mt_exit_AML_on_tap: mt_exit_AML_on_tap {
             compatible = "zmk,behavior-hold-tap";
@@ -539,11 +547,11 @@
             quick-tap-ms = <100>;
         };
 
-        // ロータリーエンコーダーでスクロールする設定
+        // ===== エンコーダー: スクロール =====
         // スクロール方向を逆にしたい場合は <&msc SCRL_DOWN> と <&msc SCRL_UP> を入れ替え
         // 使い方: 設定したいレイヤーに sensor-bindings = <&encoder_msc_down_up>; を追記
-        // mac用
 
+        // Mac用
         encoder_msc_down_up: encoder_msc_down_up {
             compatible = "zmk,behavior-sensor-rotate";
             label = "ENCODER_MSC_DOWN_UP";
@@ -562,9 +570,7 @@
             tap-ms = <20>;
         };
 
-        //
-        // windows用
-
+        // Windows用
         encoder_msc_up_down: encoder_msc_up_down {
             compatible = "zmk,behavior-sensor-rotate";
             label = "ENCODER_MSC_UP_DOWN";
@@ -584,7 +590,6 @@
         };
 
         // Ctrl+スクロール (Windows用)
-
         encoder_msc_ctrl_up_down: encoder_msc_ctrl_up_down {
             compatible = "zmk,behavior-sensor-rotate";
             label = "ENCODER_MSC_CTRL_UP_DOWN";
@@ -592,8 +597,7 @@
             bindings = <&sk LCTRL &msc SCRL_UP>, <&sk LCTRL &msc SCRL_DOWN>;
         };
 
-        // 接続先に応じてデフォルトレイヤーを変更するための動作
-        // zmk studioで接続先ごとにマクロ設定する。
+        // ===== Toggle Layer (zmk studioで接続先ごとにマクロ設定) =====
 
         tog_on: toggle_layer_on_only {
             compatible = "zmk,behavior-toggle-layer";
@@ -609,7 +613,7 @@
             toggle-mode = "off";
         };
 
-        // リピート付きのSpace and Shift
+        // ===== SandS / Hold-Tap =====
 
         sands: space_and_shift {
             compatible = "zmk,behavior-hold-tap";
@@ -644,9 +648,9 @@
             bindings = <&lt>, <&kp>;
         };
 
-        // mod morphによるKey Overrideの再現
+        // ===== mod morphによるKey Override =====
         // Shift+, -> !
-        // shift+. -> ?
+        // Shift+. -> ?
 
         shift_comma: shift_comma {
             compatible = "zmk,behavior-mod-morph";
@@ -740,6 +744,8 @@
             tap-ms = <20>;
         };
 
+        // ===== Tap Dance =====
+
         td_LT6_Lang1_and_MO4: td_LT6_Lang1_and_MO4 {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_LT6_LANG1_AND_MO4";
@@ -802,6 +808,8 @@
                 <&mt_exit_AML_on_tap LEFT_WIN M>,
                 <&mt_exit_AML_on_tap LS(LEFT_WIN) M>;
         };
+
+        // ===== その他 Hold-Tap / Mod-Morph =====
 
         lt_tap_pref: lt_tap_pref {
             compatible = "zmk,behavior-hold-tap";
