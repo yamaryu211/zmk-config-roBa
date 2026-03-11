@@ -23,7 +23,7 @@ layers:
   - K
   - {t: L, h: SCROLL_VER_WIN}
   - {t: '-', h: SCROLL_HOR_WIN}
-  - {t: Z, h: LEFT SHIFT}
+  - {t: Z, h: RIGHT SHIFT}
   - {t: X, h: LCTRL}
   - {t: C, h: LEFT ALT}
   - V
@@ -32,9 +32,9 @@ layers:
   - '&move_window_right_max'
   - N
   - M
-  - {t: ',', h: LEFT ALT}
-  - {t: ., h: LEFT CONTROL}
-  - {t: /, h: LEFT SHIFT}
+  - {t: ',', h: LEFT ALT, s: '!'}
+  - {t: ., h: LCTRL, s: '?'}
+  - {t: /, h: RIGHT SHIFT, s: \}
   - {t: LANGUAGE 2, h: NUM_WIN}
   - Sft+F10
   - {t: TAB, h: LEFT WIN}
@@ -67,7 +67,7 @@ layers:
   - K
   - {t: L, h: SCROLL_VER_MAC}
   - {t: '-', h: SCROLL_HOR_MAC}
-  - {t: Z, h: LEFT SHIFT}
+  - {t: Z, h: RIGHT SHIFT}
   - {t: X, h: LEFT GUI}
   - {t: C, h: LEFT ALT}
   - {t: V, h: LEFT CONTROL}
@@ -76,9 +76,9 @@ layers:
   - )
   - N
   - {t: M, h: LEFT CONTROL}
-  - {t: ',', h: LEFT ALT}
-  - {t: ., h: LEFT COMMAND}
-  - {t: /, h: LEFT SHIFT}
+  - {t: ',', h: LEFT ALT, s: '!'}
+  - {t: ., h: LEFT GUI, s: '?'}
+  - {t: /, h: RIGHT SHIFT, s: \}
   - {t: LANGUAGE 2, h: NUM_MAC}
   - Ctl+LEFT COMMAND
   - LEFT CONTROL
