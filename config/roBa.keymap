@@ -348,9 +348,7 @@
             input-processors = <&zip_xy_scaler 0 1>;
         };
     };
-};
 
-/ {
     combos {
         compatible = "zmk,combos";
 
@@ -648,9 +646,21 @@
             bindings = <&lt>, <&kp>;
         };
 
+        lt_tap_pref: lt_tap_pref {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LT_TAP_PREF";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <180>;
+            quick-tap-ms = <180>;
+            flavor = "tap-preferred";
+        };
+
         // ===== mod morphによるKey Override =====
         // Shift+, -> !
         // Shift+. -> ?
+        // Shift+/ -> \
 
         shift_comma: shift_comma {
             compatible = "zmk,behavior-mod-morph";
@@ -674,6 +684,15 @@
             bindings = <&mt LEFT_GUI DOT>, <&kp QUESTION>;
 
             mods = <(MOD_LSFT)>;
+        };
+
+        shift_slash: shift_slash {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&mt RIGHT_SHIFT SLASH>, <&kp BACKSLASH>;
+
+            mods = <(MOD_LSFT)>;
+            label = "SHIFT_SLASH";
         };
 
         // ===== mod morphを使用したエンコーダーの挙動制御 (Windows用) =====
@@ -807,28 +826,6 @@
             bindings =
                 <&mt_exit_AML_on_tap LEFT_WIN M>,
                 <&mt_exit_AML_on_tap LS(LEFT_WIN) M>;
-        };
-
-        // ===== その他 Hold-Tap / Mod-Morph =====
-
-        lt_tap_pref: lt_tap_pref {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LT_TAP_PREF";
-            bindings = <&mo>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <180>;
-            quick-tap-ms = <180>;
-            flavor = "tap-preferred";
-        };
-
-        shift_slash: shift_slash {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&mt RIGHT_SHIFT SLASH>, <&kp BACKSLASH>;
-
-            mods = <(MOD_LSFT)>;
-            label = "SHIFT_SLASH";
         };
 
         TD_0_win: TD_0_win {
