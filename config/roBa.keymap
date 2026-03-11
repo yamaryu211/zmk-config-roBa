@@ -664,7 +664,7 @@
         shift_p: shift_p {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp 0>, <&kp LG(LEFT)>;
+            bindings = <&kp 0>, <&kp LG(RIGHT)>;
 
             mods = <(MOD_LSFT|MOD_RSFT)>;
             keep-mods = <(MOD_LSFT)>;
@@ -713,7 +713,7 @@
         shift_n: shift_n {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp 0>, <&kp LG(RIGHT)>;
+            bindings = <&kp 0>, <&kp LG(LEFT)>;
 
             mods = <(MOD_LSFT|MOD_RSFT)>;
             keep-mods = <(MOD_LSFT)>;
