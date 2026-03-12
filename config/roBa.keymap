@@ -726,7 +726,7 @@
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&mod_morph_encoder_n>, <&mod_morph_encoder_p>;
-            tap-ms = <40>;
+            tap-ms = <120>;
         };
 
         // ===== mod morphを使用したエンコーダーの挙動制御 (Mac用) =====
@@ -760,7 +760,7 @@
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&mod_morph_encoder_mac_p>, <&mod_morph_encoder_mac_n>;
-            tap-ms = <40>;
+            tap-ms = <120>;
         };
 
         // ===== Tap Dance =====
