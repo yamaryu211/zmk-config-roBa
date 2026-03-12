@@ -708,25 +708,25 @@
         // --- Positive (奥) ---
         MOD_MORPH_KEEP(shift_p,         &kp 0, &kp LG(RIGHT), (MOD_LSFT|MOD_RSFT), (MOD_LSFT))
         MOD_MORPH(shift_default_p,      &kp PAGE_DOWN, &shift_p, (MOD_LSFT|MOD_RSFT))
-        MOD_MORPH(alt_p,                &kp 0, &kp LG(UP),    (MOD_LALT|MOD_RALT))
-        MOD_MORPH(win_p,                &kp 0, &kp LG(LEFT),  (MOD_LGUI|MOD_RGUI))
-        MOD_MORPH(alt_win_p,            &alt_p, &win_p,        (MOD_LGUI|MOD_RGUI))
-        MOD_MORPH(mod_morph_encoder_p,  &shift_default_p, &alt_win_p, (MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI))
+        MOD_MORPH_KEEP(alt_p,           &kp 0, &kp LG(UP),    (MOD_LALT|MOD_RALT), (MOD_LALT|MOD_RALT))
+        MOD_MORPH_KEEP(win_p,           &kp 0, &kp LG(LEFT),  (MOD_LGUI|MOD_RGUI), (MOD_LGUI|MOD_RGUI))
+        MOD_MORPH_KEEP(alt_win_p,       &alt_p, &win_p,        (MOD_LGUI|MOD_RGUI), (MOD_LGUI|MOD_RGUI))
+        MOD_MORPH_KEEP(mod_morph_encoder_p, &shift_default_p, &alt_win_p, (MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI), (MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI))
 
         // --- Negative (手前) ---
         MOD_MORPH_KEEP(shift_n,         &kp 0, &kp LG(LEFT),  (MOD_LSFT|MOD_RSFT), (MOD_LSFT))
         MOD_MORPH(shift_default_n,      &kp PAGE_UP, &shift_n, (MOD_LSFT|MOD_RSFT))
-        MOD_MORPH(alt_n,                &kp 0, &kp LG(DOWN),  (MOD_LALT|MOD_RALT))
-        MOD_MORPH(win_n,                &kp 0, &kp LG(RIGHT), (MOD_LGUI|MOD_RGUI))
-        MOD_MORPH(alt_win_n,            &alt_n, &win_n,        (MOD_LGUI|MOD_RGUI))
-        MOD_MORPH(mod_morph_encoder_n,  &shift_default_n, &alt_win_n, (MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI))
+        MOD_MORPH_KEEP(alt_n,           &kp 0, &kp LG(DOWN),  (MOD_LALT|MOD_RALT), (MOD_LALT|MOD_RALT))
+        MOD_MORPH_KEEP(win_n,           &kp 0, &kp LG(RIGHT), (MOD_LGUI|MOD_RGUI), (MOD_LGUI|MOD_RGUI))
+        MOD_MORPH_KEEP(alt_win_n,       &alt_n, &win_n,        (MOD_LGUI|MOD_RGUI), (MOD_LGUI|MOD_RGUI))
+        MOD_MORPH_KEEP(mod_morph_encoder_n, &shift_default_n, &alt_win_n, (MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI), (MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI))
 
         // --- Encoder Rotate ---
         mod_morph_encoder: mod_morph_encoder {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&mod_morph_encoder_n>, <&mod_morph_encoder_p>;
-            tap-ms = <20>;
+            tap-ms = <40>;
         };
 
         // ===== mod morphを使用したエンコーダーの挙動制御 (Mac用) =====
@@ -742,25 +742,25 @@
         // --- Positive (手前) ---
         MOD_MORPH(gui_p,                     &kp DELETE, &kp LG(PLUS),          (MOD_LGUI|MOD_RGUI))
         MOD_MORPH(sftgui_default_p,          &kp PAGE_UP, &gui_p,              (MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT))
-        MOD_MORPH(ctrl_p,                    &kp 0, &kp LA(LC(LG(RIGHT))),     (MOD_LCTL|MOD_RCTL))
-        MOD_MORPH(opt_p,                     &kp 0, &kp LA(LC(LG(DOWN))),      (MOD_LALT|MOD_RALT))
-        MOD_MORPH(opt_ctrl_p,                &ctrl_p, &opt_p,                  (MOD_LALT|MOD_RALT))
-        MOD_MORPH(mod_morph_encoder_mac_p,   &sftgui_default_p, &opt_ctrl_p,   (MOD_LALT|MOD_RALT|MOD_LCTL|MOD_RCTL))
+        MOD_MORPH_KEEP(ctrl_p,               &kp 0, &kp LA(LC(LG(RIGHT))),     (MOD_LCTL|MOD_RCTL), (MOD_LCTL|MOD_RCTL))
+        MOD_MORPH_KEEP(opt_p,                &kp 0, &kp LA(LC(LG(DOWN))),      (MOD_LALT|MOD_RALT), (MOD_LALT|MOD_RALT))
+        MOD_MORPH_KEEP(opt_ctrl_p,           &ctrl_p, &opt_p,                  (MOD_LALT|MOD_RALT), (MOD_LALT|MOD_RALT))
+        MOD_MORPH_KEEP(mod_morph_encoder_mac_p, &sftgui_default_p, &opt_ctrl_p, (MOD_LALT|MOD_RALT|MOD_LCTL|MOD_RCTL), (MOD_LALT|MOD_RALT|MOD_LCTL|MOD_RCTL))
 
         // --- Negative (奥) ---
         MOD_MORPH(gui_n,                     &kp BACKSPACE, &kp LG(MINUS),      (MOD_LGUI|MOD_RGUI))
         MOD_MORPH(sftgui_default_n,          &kp PAGE_DOWN, &gui_n,             (MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT))
-        MOD_MORPH(ctrl_n,                    &kp 0, &kp LA(LC(LG(LEFT))),      (MOD_LCTL|MOD_RCTL))
-        MOD_MORPH(opt_n,                     &kp 0, &kp LA(LC(LG(UP))),        (MOD_LALT|MOD_RALT))
-        MOD_MORPH(opt_ctrl_n,                &ctrl_n, &opt_n,                  (MOD_LALT|MOD_RALT))
-        MOD_MORPH(mod_morph_encoder_mac_n,   &sftgui_default_n, &opt_ctrl_n,   (MOD_LALT|MOD_RALT|MOD_LCTL|MOD_RCTL))
+        MOD_MORPH_KEEP(ctrl_n,               &kp 0, &kp LA(LC(LG(LEFT))),      (MOD_LCTL|MOD_RCTL), (MOD_LCTL|MOD_RCTL))
+        MOD_MORPH_KEEP(opt_n,                &kp 0, &kp LA(LC(LG(UP))),        (MOD_LALT|MOD_RALT), (MOD_LALT|MOD_RALT))
+        MOD_MORPH_KEEP(opt_ctrl_n,           &ctrl_n, &opt_n,                  (MOD_LALT|MOD_RALT), (MOD_LALT|MOD_RALT))
+        MOD_MORPH_KEEP(mod_morph_encoder_mac_n, &sftgui_default_n, &opt_ctrl_n, (MOD_LALT|MOD_RALT|MOD_LCTL|MOD_RCTL), (MOD_LALT|MOD_RALT|MOD_LCTL|MOD_RCTL))
 
         // --- Encoder Rotate ---
         mod_morph_encoder_mac: mod_morph_encoder_mac {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&mod_morph_encoder_mac_p>, <&mod_morph_encoder_mac_n>;
-            tap-ms = <20>;
+            tap-ms = <40>;
         };
 
         // ===== Tap Dance =====
