@@ -23,7 +23,7 @@ layers:
   - K
   - {t: L, h: SCROLL_VER_WIN}
   - {t: '-', h: SCROLL_HOR_WIN}
-  - {t: Z, h: LEFT SHIFT}
+  - {t: Z, h: RIGHT SHIFT}
   - {t: X, h: LCTRL}
   - {t: C, h: LEFT ALT}
   - V
@@ -34,7 +34,7 @@ layers:
   - M
   - {t: ',', h: LEFT ALT, s: '!'}
   - {t: ., h: LCTRL, s: '?'}
-  - {t: /, h: LEFT SHIFT, s: \}
+  - {t: /, h: RIGHT SHIFT, s: \}
   - {t: LANGUAGE 2, h: NUM_WIN}
   - Sft+F10
   - {t: TAB, h: LEFT WIN}
@@ -67,7 +67,7 @@ layers:
   - K
   - {t: L, h: SCROLL_VER_MAC}
   - {t: '-', h: SCROLL_HOR_MAC}
-  - {t: Z, h: LEFT SHIFT}
+  - {t: Z, h: RIGHT SHIFT}
   - {t: X, h: LEFT GUI}
   - {t: C, h: LEFT ALT}
   - {t: V, h: LEFT CONTROL}
@@ -78,7 +78,7 @@ layers:
   - {t: M, h: LEFT CONTROL}
   - {t: ',', h: LEFT ALT, s: '!'}
   - {t: ., h: LEFT GUI, s: '?'}
-  - {t: /, h: LEFT SHIFT, s: \}
+  - {t: /, h: RIGHT SHIFT, s: \}
   - {t: LANGUAGE 2, h: NUM_MAC}
   - Ctl+LEFT COMMAND
   - LEFT CONTROL
@@ -210,7 +210,7 @@ layers:
   - '['
   - ']'
   - {t: ▽, type: trans}
-  - /
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - Sft+LEFT GUI
@@ -254,7 +254,7 @@ layers:
   - '['
   - ']'
   - {t: ▽, type: trans}
-  - /
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - Sft+LCTRL
@@ -711,5 +711,7 @@ combos:
   k: Sft+TAB
 - p: [0, 1]
   k: ESCAPE
-- p: [18, 19]
+- p: [19, 18]
   k: '&mkp MB3'
+- p: [10, 11]
+  k: CAPSLOCK
