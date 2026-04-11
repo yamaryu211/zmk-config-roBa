@@ -1,5 +1,30 @@
 #include "roBa.dtsi"
 
+/ {
+    aliases {
+        led-red = &led0;
+        led-green = &led1;
+        led-blue = &led2;
+    };
+
+    leds {
+        compatible = "gpio-leds";
+        status = "okay";
+
+        led0: led_0 {
+            gpios = <&gpio0 26 GPIO_ACTIVE_LOW>;
+        };
+
+        led1: led_1 {
+            gpios = <&gpio0 30 GPIO_ACTIVE_LOW>;
+        };
+
+        led2: led_2 {
+            gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;
+        };
+    };
+};
+
 &kscan0 {
         col-gpios
             = <&xiao_d 10 GPIO_ACTIVE_HIGH>
@@ -13,4 +38,9 @@
 
 &left_encoder {
     status = "okay";
+};
+
+// NFCピンをGPIOとして使用（CONFIG_NFCT_PINS_AS_GPIOSの代替）
+&uicr {
+    nfct-pins-as-gpios;
 };
